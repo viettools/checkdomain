@@ -1,0 +1,110 @@
+# -*- coding: utf-8 -*-
+# https://check.rs/
+
+from whois import Whois
+from cctld import WhOISccTLD
+from parse_whois_socket import ParseWhoisSocket
+
+from fastapi import FastAPI, Request, Body
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from fastapi.middleware.cors import CORSMiddleware
+
+import uvicorn
+from bs4 import BeautifulSoup
+from tld import get_tld
+import re
+
+app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
+
+app.add_middleware(CORSMiddleware,
+                   allow_origins=['*'],
+                   allow_credentials=True,
+                   allow_methods=['*'],
+                   allow_headers=['*'])
+
+app.mount('/static', StaticFiles(directory='static/src'), name='static')
+templates = Jinja2Templates('templates')
+
+@app.get('/', response_class=HTMLResponse)
+def main(request: Request):
+    header_template = templates.TemplateResponse('header.html', {'request': request})
+    footer_template = templates.TemplateResponse('footer.html', {'request': request})
+    main_template = templates.TemplateResponse('index.html', 
+												{
+													'request': request,
+													'header_template': header_template.body.decode('utf-8'),
+													'footer_template': footer_template.body.decode('utf-8'),
+												})
+    return main_template
+
+@app.post('/api/v1/whois')
+def whois_data(domain: str = Body(..., embed=True)):
+    result = {'status': False, 'result': False}
+    parse_data = {
+        'registrar': '',
+        'registrar_url': '',
+        'domain_status': [],
+        'nameservers': [],
+        'creation_date': '',
+        'updated_date': '',
+        'expiry_date': '',
+    }
+    result.update({'parse': parse_data})
+    
+    if not domain:
+        return result
+    domain = BeautifulSoup(domain, features='html.parser').get_text()
+    
+    #google.com -> tld_domain = 'com'
+    tld_domain = False
+    try:
+        tld_domain = get_tld(domain, fix_protocol=True)
+    except:
+        spl = domain.split('.')
+        if spl:
+            tld_domain = spl[-1]
+    
+    if not tld_domain:
+        return result
+    
+    whois_result = {}
+    wcc = WhOISccTLD()
+    
+    if len(tld_domain) == 2 and wcc.get_whois_server(tld_domain):
+        whois_server = wcc.get_whois_server(tld_domain)
+        # Socket
+        if whois_server:
+            whois_data = Whois(domain, False)
+            whois_data.set_hostname(whois_server)
+            whois_result = whois_data.get_data()   
+    else:
+        whois_iana_data = Whois(domain, tld_domain)
+        result_iana = whois_iana_data.get_data()
+        
+        if result_iana['result']:
+            check = re.findall('whois:\s+(.+)', result_iana['result'], re.IGNORECASE)
+            # .AD no whois server --> [status:       ACTIVE]
+            if check and check[0] and check[0].find('status') == -1:
+                next_query = check[0].strip()
+                
+                whois_data = Whois(domain, tld_domain)
+                whois_data.set_hostname(next_query)
+                whois_result = whois_data.get_data()
+            else:
+                # Only whois data from whois.iana.org
+                whois_result.update({'status': True, 'result': result_iana['result']})
+    
+    if whois_result:
+        result.update(whois_result)
+        
+        if whois_result.get('result', False):
+            parse_obj = ParseWhoisSocket()
+            parse_raw = parse_obj.parse_socket_data(whois_result['result'], tld_domain)
+            result.update({'parse': parse_raw})
+    
+    return result
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host='0.0.0.0', port=6996, reload=True)

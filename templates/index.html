@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+    {{ header_template | safe }}
+
+    <body>
+        <div class="page">
+        <!-- JS files -->
+        <script src="{{ url_for('static', path='/js/theme.js') }}"></script>
+        <!-- Navbar -->
+        <header class="navbar navbar-expand-md d-print-none">
+            <div class="container-xl">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal check_domain_logo">
+                    <span>[CHECK DOMAIN]</span>
+                </h1>
+            </div>
+        </header>
+        <header class="navbar-expand-md">
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <div class="navbar">
+                    <div class="container-xl">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="./">
+                                <span
+                                    class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                    </svg>
+                                </span>
+                                <span class="nav-link-title">
+                                    Home
+                                </span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-show-about-me">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/lifebuoy -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M15 15l3.35 3.35" /><path d="M9 15l-3.35 3.35" /><path d="M5.65 5.65l3.35 3.35" /><path d="M18.35 5.65l-3.35 3.35" /></svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        About
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="page-wrapper">
+            <!-- Page header -->
+            <!-- Page body -->
+            <div class="page-body">
+                <div class="container-xl">
+                <div class="row row-deck row-cards">
+
+                    <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3" id="check_domain_search">
+                        <div class="card">
+                            <div class="row g-2" id="single_domain_area">
+                                <div class="col">
+                                <input id="single_domain_input" type="text" class="form-control" placeholder="Domain…">
+                                </div>
+                                <div class="col-auto">
+                                    <a class="btn btn-icon btn-primary" aria-label="Button" id="single_domain_btn">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row g-2" id="multi_domain_area_input">
+                                <div class="col input-group">
+                                    <textarea id="multi_domain_input" class="form-control" data-bs-toggle="autosize" placeholder="Multi Domain…" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="row g-2" style="display: flex;justify-content: center; margin-top: 0.05rem;" id="multi_domain_area_btn">
+                                <div class="col-auto">
+                                    <a class="btn btn-icon btn-primary" aria-label="Button" id="multi_domain_btn">
+                                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="progress d-none" id="check_domain_progress">
+                                <div class="progress-bar progress-bar-indeterminate bg-green"></div>
+                            </div>
+                            <div class="row g-2" style="margin-top: 0.25rem;">
+                                <div class="offset-lg-3 offset-md-4">
+                                    <label class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio_inline_multi_domain" checked value="single">
+                                        <span class="form-check-label">Single Domain</span>
+                                    </label>
+                                    <label class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="radio_inline_multi_domain" value="multi">
+                                        <span class="form-check-label">Multi Domain</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-blur fade" id="modal-show-about-me" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">About Me!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Creation Date: 15/08/2023
+                        </p>
+                        <p>
+                            Updated Date: 17/08/2023
+                        </p>
+                        <p>
+                            Author: ALIENSOFTWARE
+                        </p>
+                        <p>
+                            Version: 1.0.0-dev
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer footer-transparent d-print-none">
+            <div class="container-xl">
+                <div class="row text-center align-items-center">
+                    <div class="col-12">
+                        0nl.net
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+    
+    {{ footer_template | safe }}
+
+    </body>
+
+</html>
