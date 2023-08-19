@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from bs4 import BeautifulSoup
 from tld import get_tld
-import re
+import re, os
 
 app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
 
@@ -24,8 +24,10 @@ app.add_middleware(CORSMiddleware,
                    allow_methods=['*'],
                    allow_headers=['*'])
 
-app.mount('/static', StaticFiles(directory='./static/src'), name='static')
-templates = Jinja2Templates('templates')
+current_path_dir = os.path.dirname(os.path.abspath(__file__))
+
+app.mount('/static', StaticFiles(directory='{0}/static/src'.format(current_path_dir)), name='static')
+templates = Jinja2Templates('{0}/templates'.format(current_path_dir))
 
 @app.get('/', response_class=HTMLResponse)
 def main(request: Request):
