@@ -24,7 +24,7 @@ app.add_middleware(CORSMiddleware,
                    allow_methods=['*'],
                    allow_headers=['*'])
 
-app.mount('/static', StaticFiles(directory='static/src'), name='static')
+app.mount('/static', StaticFiles(directory='./static/src'), name='static')
 templates = Jinja2Templates('templates')
 
 @app.get('/', response_class=HTMLResponse)
