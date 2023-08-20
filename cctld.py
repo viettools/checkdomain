@@ -11,6 +11,8 @@ class WhOISccTLD:
             'ag': 'whois.nic.ag',
             'ai': 'whois.nic.ai',
             'am':'whois.amnic.net',
+            'ar': 'whois.nic.ar',
+            'as': 'whois.nic.as',
             'ki': 'whois.coccaregistry.org',
         }
         return dict_extension.get(extension, False)
