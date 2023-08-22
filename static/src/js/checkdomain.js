@@ -292,6 +292,17 @@ function identify_domain(domain)
         if(spl_domain.length > 0)
         {
             result.extension = spl_domain.at(-1);
+            // pseudo sld
+            if(spl_domain.length > 2)
+            {
+                if((spl_domain.at(-1) === 'com' && ['br', 'cn', 'de', 'eu', 'gr', 'ru',
+                                                    'sa', 'uk', 'us', 'za', 'jpn'].includes(spl_domain.at(-2)))
+                    || (spl_domain.at(-1) === 'net' && ['gb', 'in', 'se', 'uk'].includes(spl_domain.at(-2)))
+                )
+                {
+                    result.extension = spl_domain.at(-2) + '.' + spl_domain.at(-1);
+                }
+            }
         }
     }
 

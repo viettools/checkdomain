@@ -23,5 +23,26 @@ class WhOISccTLD:
             'ax': 'whois.ax',
             # 'az': 'http://whois.az/',
             'ki': 'whois.coccaregistry.org',
+            'ye': 'whois.y.net.ye',
         }
+        
+        pseudo_sld = {
+            'br.com': 'whois.centralnic.net',
+            'cn.com': 'whois.centralnic.net',
+            'de.com': 'whois.centralnic.net',
+            'eu.com': 'whois.centralnic.net',
+            'gb.net': 'whois.centralnic.net',
+            'gr.com': 'whois.centralnic.net',
+            'in.net': 'whois.centralnic.net',
+            'ru.com': 'whois.centralnic.net',
+            'sa.com': 'whois.centralnic.net',
+            'se.net': 'whois.centralnic.net',
+            'uk.com': 'whois.centralnic.net',
+            'uk.net': 'whois.centralnic.net',
+            'us.com': 'whois.centralnic.net',
+            'za.com': 'whois.centralnic.net',
+            'jpn.com': 'whois.centralnic.net',
+            'it.com': 'whois.it.com'
+        }
+        dict_extension.update(pseudo_sld)
         return dict_extension.get(extension, False)
