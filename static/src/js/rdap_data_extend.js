@@ -6,6 +6,9 @@ var rdap_data_extend = `
     "bh": {
         "rdap": "https://rdap.centralnic.com/bh/"
     },
+    "my": {
+        "rdap": "https://rdap.mynic.my/rdap/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
