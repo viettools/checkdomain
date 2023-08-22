@@ -23,6 +23,7 @@ class WhOISccTLD:
             'ax': 'whois.ax',
             # 'az': 'http://whois.az/',
             'ki': 'whois.coccaregistry.org',
+            'my': 'rdap.mynic.my',
             'ye': 'whois.y.net.ye',
         }
         
