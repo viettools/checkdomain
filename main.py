@@ -74,7 +74,7 @@ def whois_data(domain: str = Body(..., embed=True)):
     whois_result = {}
     wcc = WhOISccTLD()
     
-    if len(tld_domain) == 2 and wcc.get_whois_server(tld_domain):
+    if wcc.get_whois_server(tld_domain):
         whois_server = wcc.get_whois_server(tld_domain)
         # Socket
         if whois_server:

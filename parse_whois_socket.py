@@ -81,7 +81,7 @@ class ParseWhoisSocket:
                 for item_status in domain_status:
                     if tld_domain in ['pt']:
                         # [('Domain Status:', 'Pending Delete')]
-                        result['domain_status'].append(self.remove_redundancy(spl_item_status[1]))
+                        result['domain_status'].append(self.remove_redundancy(item_status[1]))
                     else:
                         # Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
                         # Status: clientDeleteProhibited
