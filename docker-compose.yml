@@ -9,3 +9,4 @@ services:
             - .:/data/checkdomain
         ports:
             - 6996:6996
+        restart: always
