@@ -175,7 +175,7 @@ class ParseWhoisSocket:
         
         if not nameservers:
             nameservers = re.findall('(Name Server:|Nserver:|nserver:|Name servers:|'
-                                        'nserver..............:)\s+(.+)', raw_nameservers, re.IGNORECASE)
+                                        'nserver..............:|Hostname:)\s+(.+)', raw_nameservers, re.IGNORECASE)
         if nameservers:
             for item_ns in nameservers:
                 res_ns_rem_red = self.remove_redundancy(item_ns[1])

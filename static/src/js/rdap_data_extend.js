@@ -66,6 +66,10 @@ var rdap_data_extend = `
 }
 `;
 
+/*"de": {
+    "rdap": "https://rdap.denic.de/"
+},*/
+
 function get_rdap_data_extend()
 {
     return rdap_data_extend;
