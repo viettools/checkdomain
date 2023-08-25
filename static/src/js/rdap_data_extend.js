@@ -9,6 +9,15 @@ var rdap_data_extend = `
     "my": {
         "rdap": "https://rdap.mynic.my/rdap/"
     },
+    "io": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "sh": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "ac": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
