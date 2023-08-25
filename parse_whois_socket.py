@@ -54,7 +54,8 @@ class ParseWhoisSocket:
             return result
         
         creation_date = re.findall('(Creation Date:|Registered:|\[Created on\]|created:|'
-                                       'Registered on|created..............:|Registered On:|Fecha de activación:)\s+(.+)', data, re.IGNORECASE)
+                                       'Registered on|created..............:|Registered On:|Fecha de activación:|'
+                                       'Registration Time:)\s+(.+)', data, re.IGNORECASE)
         if creation_date:
             result = self.remove_redundancy(creation_date[0][1])
         return result
@@ -82,7 +83,8 @@ class ParseWhoisSocket:
 
         expiry_date = re.findall('(Registry Expiry Date:|Expires:|\[Expires on\]|'
                                     'option expiration date:|expiration date:|Registry fee due on|'
-                                    'available............:|Expires On:|Fecha de corte:)\s+(.+)', data, re.IGNORECASE)
+                                    'available............:|Expires On:|Fecha de corte:|'
+                                    'Expiration Time:|expire:)\s+(.+)', data, re.IGNORECASE)
         if expiry_date:
             result = self.remove_redundancy(expiry_date[0][1])
         return result
@@ -129,7 +131,7 @@ class ParseWhoisSocket:
         
         if domain_status:
             for item_status in domain_status:
-                if tld_domain in ['pt', 'am', 'bg']:
+                if tld_domain in ['pt', 'am', 'bg', 'cr']:
                     # [('Domain Status:', 'Pending Delete')]
                     result.append(self.remove_redundancy(item_status[1]))
                 else:
@@ -201,5 +203,5 @@ class ParseWhoisSocket:
             result['domain_status'] = self.parse_domain_status( data, tld_domain)
             result['nameservers'] = self.parse_nameservers( data, tld_domain)
             
-            print(result)
+            # print(result) # Check Result
         return result

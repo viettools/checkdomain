@@ -80,18 +80,26 @@ function rdap_parse_data(data)
                 }
 
                 if('objectClassName' in entities && 'roles' in entities &&
-                    entities.roles.length == 1 && entities.roles[0] === 'registrar' &&
-                        'vcardArray' in entities && entities.vcardArray.length == 2)
+                    entities.roles.length == 1 && entities.roles[0] === 'registrar')
                 {
-                    let vcardArray = entities.vcardArray[1];
-                    for (let j = 0; j < vcardArray.length; ++j)
+                    if('vcardArray' in entities && entities.vcardArray.length == 2)
                     {
-                        if(vcardArray[j].length == 4 && (vcardArray[j][0] === 'fn' || vcardArray[j][0] === 'org'))
+                        let vcardArray = entities.vcardArray[1];
+                        for (let j = 0; j < vcardArray.length; ++j)
                         {
-                            result.registrar = vcardArray[j][3];
-                            break;
+                            if(vcardArray[j].length == 4 && (vcardArray[j][0] === 'fn' || vcardArray[j][0] === 'org'))
+                            {
+                                result.registrar = vcardArray[j][3];
+                                break;
+                            }
                         }
                     }
+                    else if ('handle' in entities && entities.handle)
+                    {
+                        // RDAP nic.cz
+                        result.registrar = entities.handle;
+                    }
+                    
                 }
 
                 if(result.registrar_url.length == 0 && 'entities' in entities && entities.entities.length > 0)
