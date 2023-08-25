@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    web:
+        build: .
+        image: checkdomain:1.x.x
+        command: python3 /data/checkdomain/main.py
+        volumes:
+            - .:/data/checkdomain
+        ports:
+            - 6996:6996
