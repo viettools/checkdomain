@@ -80,17 +80,23 @@ function rdap_parse_data(data)
                 }
 
                 if('objectClassName' in entities && 'roles' in entities &&
-                    entities.roles.length == 1 && entities.roles[0] === 'registrar')
+                    entities.roles.length >= 1 && entities.roles[0] === 'registrar')
                 {
                     if('vcardArray' in entities && entities.vcardArray.length == 2)
                     {
                         let vcardArray = entities.vcardArray[1];
                         for (let j = 0; j < vcardArray.length; ++j)
                         {
-                            if(vcardArray[j].length == 4 && (vcardArray[j][0] === 'fn' || vcardArray[j][0] === 'org'))
+                            if(vcardArray[j].length == 4)
                             {
-                                result.registrar = vcardArray[j][3];
-                                break;
+                                if(!result.registrar && (vcardArray[j][0] === 'fn' || vcardArray[j][0] === 'org'))
+                                {
+                                    result.registrar = vcardArray[j][3];
+                                }
+                                if(!result.registrar_url && vcardArray[j][0] === 'url')
+                                {
+                                    result.registrar_url = vcardArray[j][3];
+                                }
                             }
                         }
                     }
@@ -258,18 +264,46 @@ function rdap_render_view(domain, data, uuid)
     return render;
 }
 
-function re_render_view(data, uuid)
+function re_render_view(data, uuid, is_rdap)
 {
     // Use whois data to fill some inputs
-    $('#' + uuid).find('#input_registrar').attr('value', data.parse.registrar);
-    $('#' + uuid).find('#input_registrar_url').attr('value', data.parse.registrar_url);
-    $('#' + uuid).find('#input_creation_date').attr('value', data.parse.creation_date);
-    $('#' + uuid).find('#input_updated_date').attr('value', data.parse.updated_date);
-    $('#' + uuid).find('#input_expiry_date').attr('value', data.parse.expiry_date);
+    var query_input_registrar = $('#' + uuid).find('#input_registrar');
+    if(!query_input_registrar.attr('value'))
+    {
+        query_input_registrar.attr('value', data.parse.registrar);
+    }
+    
+    var query_input_registrar_url = $('#' + uuid).find('#input_registrar_url');
+    if(!query_input_registrar_url.attr('value'))
+    {
+        query_input_registrar_url.attr('value', data.parse.registrar_url);
+    }
+    
+    var query_input_creation_date = $('#' + uuid).find('#input_creation_date');
+    if(!query_input_creation_date.attr('value'))
+    {
+        query_input_creation_date.attr('value', data.parse.creation_date);
+    }
+    
+    var query_input_updated_date = $('#' + uuid).find('#input_updated_date');
+    if(!query_input_updated_date.attr('value'))
+    {
+        query_input_updated_date.attr('value', data.parse.updated_date);
+    }
+    
+    var query_input_expiry_date = $('#' + uuid).find('#input_expiry_date');
+    if(!query_input_expiry_date.attr('value'))
+    {
+        query_input_expiry_date.attr('value', data.parse.expiry_date);
+    }
 
-    $('#' + uuid).find('.check_domain_whois_status_area').empty();
-    var render_status = render_status_view(data.parse);
-    $('#' + uuid).find('.check_domain_whois_status_area').append(render_status);
+    if(!is_rdap)
+    {
+        $('#' + uuid).find('.check_domain_whois_status_area').empty();
+        var render_status = render_status_view(data.parse);
+        $('#' + uuid).find('.check_domain_whois_status_area').append(render_status);
+    }
+    
 }
 
 function identify_domain(domain)
@@ -340,9 +374,10 @@ function query_whois_data(domain, uuid, is_rdap)
             }
             $('#' + uuid).find('.check_domain_whois_data_no_progress').removeClass('d-none');
             $('#' + uuid).find('.check_domain_whois_data_progress').addClass('d-none');
-            if(!is_rdap && 'parse' in data && data.parse)
+            // Some RDAP data does not contain full data. We can use WHOIS to fill it.
+            if('parse' in data && data.parse)
             {
-                re_render_view(data, uuid);
+                re_render_view(data, uuid, is_rdap);
             }
         },
         error: function (err){
