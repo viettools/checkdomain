@@ -40,7 +40,8 @@ class ParseWhoisSocket:
                 del pre_raw_registrar
 
         registrar = re.findall('(Registrar:|Registrar Name:|registrar:|'
-                                   'registrar............:|Referral URL:)\s+(.+)', raw_registrar, re.IGNORECASE)
+                                   'registrar............:|Referral URL:|'
+                                   'registrar..........:)\s+(.+)', raw_registrar, re.IGNORECASE)
         if registrar:
             result = self.remove_redundancy(registrar[0][1])
         return result
@@ -64,7 +65,8 @@ class ParseWhoisSocket:
                 raw_registrar_url = raw_registrar_url.replace('url:', 'Registrar URL:')
                 del pre_raw_registrar_url
         
-        registrar_url = re.findall('(Registrar URL:|website:|www..................:|Referral URL:)\s+(.+)', raw_registrar_url, re.IGNORECASE)
+        registrar_url = re.findall('(Registrar URL:|website:|www..................:|'
+                                   'Referral URL:|www................:)\s+(.+)', raw_registrar_url, re.IGNORECASE)
         if registrar_url:
             result = self.remove_redundancy(registrar_url[0][1])
         return result
@@ -76,7 +78,7 @@ class ParseWhoisSocket:
         
         creation_date = re.findall('(Creation Date:|Registered:|\[Created on\]|created:|'
                                        'Registered on|created..............:|Registered On:|Fecha de activación:|'
-                                       'Registration Time:)\s+(.+)', data, re.IGNORECASE)
+                                       'Registration Time:|created............:)\s+(.+)', data, re.IGNORECASE)
         if creation_date:
             result = self.remove_redundancy(creation_date[0][1])
         return result
@@ -92,7 +94,7 @@ class ParseWhoisSocket:
                 result = self.remove_redundancy(updated_date[0])
         else:
             updated_date = re.findall('(Updated Date:|Last modified:|\[Last Updated\]|Changed:|'
-                                        'modified.............:|Modified Date:)\s+(.+)', data, re.IGNORECASE)
+                                        'modified.............:|Modified Date:|modified...........:)\s+(.+)', data, re.IGNORECASE)
             if updated_date:
                 result = self.remove_redundancy(updated_date[0][1])
         return result
@@ -105,7 +107,7 @@ class ParseWhoisSocket:
         expiry_date = re.findall('(Registry Expiry Date:|Expires:|\[Expires on\]|'
                                     'option expiration date:|expiration date:|Registry fee due on|'
                                     'available............:|Expires On:|Fecha de corte:|'
-                                    'Expiration Time:|expire:)\s+(.+)', data, re.IGNORECASE)
+                                    'Expiration Time:|expire:|available..........:)\s+(.+)', data, re.IGNORECASE)
         if expiry_date:
             result = self.remove_redundancy(expiry_date[0][1])
         return result
@@ -148,7 +150,7 @@ class ParseWhoisSocket:
         
         if not domain_status:
             domain_status = re.findall('(Domain Status:|Status:|\[Status\]|'
-                                        'eppstatus:|status...............:)\s+(.+)', raw_domain_status, re.IGNORECASE)
+                                        'eppstatus:|status...............:|status.............:)\s+(.+)', raw_domain_status, re.IGNORECASE)
         
         if domain_status:
             for item_status in domain_status:
@@ -196,7 +198,7 @@ class ParseWhoisSocket:
         
         if not nameservers:
             nameservers = re.findall('(Name Server:|Nserver:|nserver:|Name servers:|'
-                                        'nserver..............:|Hostname:)\s+(.+)', raw_nameservers, re.IGNORECASE)
+                                        'nserver..............:|Hostname:|nserver............:)\s+(.+)', raw_nameservers, re.IGNORECASE)
         if nameservers:
             for item_ns in nameservers:
                 res_ns_rem_red = self.remove_redundancy(item_ns[1])
