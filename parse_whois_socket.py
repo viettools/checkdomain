@@ -24,7 +24,21 @@ class ParseWhoisSocket:
                 raw_registrar = self.remove_redundancy(pre_raw_registrar[-1])
                 result = raw_registrar
                 del pre_raw_registrar
-                
+        elif tld_domain == 'ee':
+            '''
+            Registrar:
+            name:       Zone Media OÜ
+            url:        http://www.zone.ee
+            phone:      +372 6886886
+            changed:    2020-07-01 13:55:58 +03:00
+            --> Normal keyword --> Need to filter
+            '''
+            pre_raw_registrar = re.findall('Registrar:(.*?)url:', raw_registrar, re.DOTALL | re.IGNORECASE)
+            if pre_raw_registrar:
+                raw_registrar = pre_raw_registrar[-1]
+                raw_registrar = raw_registrar.replace('name:', 'registrar:')
+                del pre_raw_registrar
+
         registrar = re.findall('(Registrar:|Registrar Name:|registrar:|'
                                    'registrar............:|Referral URL:)\s+(.+)', raw_registrar, re.IGNORECASE)
         if registrar:
@@ -43,6 +57,13 @@ class ParseWhoisSocket:
                 raw_registrar_url = self.remove_redundancy(pre_raw_registrar_url[-1])
                 result = raw_registrar_url
                 del pre_raw_registrar_url
+        elif tld_domain == 'ee':
+            pre_raw_registrar_url = re.findall('Registrar:(.*?)phone:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
+            if pre_raw_registrar_url:
+                raw_registrar_url = pre_raw_registrar_url[-1]
+                raw_registrar_url = raw_registrar_url.replace('url:', 'Registrar URL:')
+                del pre_raw_registrar_url
+        
         registrar_url = re.findall('(Registrar URL:|website:|www..................:|Referral URL:)\s+(.+)', raw_registrar_url, re.IGNORECASE)
         if registrar_url:
             result = self.remove_redundancy(registrar_url[0][1])
