@@ -71,18 +71,25 @@ def whois_data(domain: str = Body(..., embed=True)):
     if not tld_domain:
         return result
     
+    final_tld_domain = tld_domain
+    # sub domain ? 'com.ps' --> 'ps'
+    if tld_domain.find('.') > -1:
+        spl_tld_domain = tld_domain.split('.')
+        if spl_tld_domain:
+            final_tld_domain = spl_tld_domain[-1]
+    
     whois_result = {}
     wcc = WhOISccTLD()
     
-    if wcc.get_whois_server(tld_domain):
-        whois_server = wcc.get_whois_server(tld_domain)
+    if wcc.get_whois_server(final_tld_domain):
+        whois_server = wcc.get_whois_server(final_tld_domain)
         # Socket
         if whois_server:
-            whois_data = Whois(domain, tld_domain)
+            whois_data = Whois(domain, final_tld_domain)
             whois_data.set_hostname(whois_server)
             whois_result = whois_data.get_data()   
     else:
-        whois_iana_data = Whois(domain, tld_domain)
+        whois_iana_data = Whois(domain, final_tld_domain)
         result_iana = whois_iana_data.get_data()
         
         if result_iana['result']:
@@ -91,7 +98,7 @@ def whois_data(domain: str = Body(..., embed=True)):
             if check and check[0] and check[0].find('status') == -1:
                 next_query = check[0].strip()
                 
-                whois_data = Whois(domain, tld_domain)
+                whois_data = Whois(domain, final_tld_domain)
                 whois_data.set_hostname(next_query)
                 whois_result = whois_data.get_data()
             else:
