@@ -59,6 +59,12 @@ def whois_data(domain: str = Body(..., embed=True)):
         return result
     domain = BeautifulSoup(domain, features='html.parser').get_text()
     
+    # Special TLD
+    arr_special_tld = ['br.com', 'cn.com', 'de.com', 'eu.com', 'gb.net',
+                       'gr.com', 'in.net', 'ru.com', 'sa.com', 'se.net',
+                       'uk.com', 'uk.net', 'us.com', 'za.com', 'jpn.com',
+                       'it.com']
+    
     #google.com -> tld_domain = 'com'
     tld_domain = False
     try:
@@ -73,7 +79,7 @@ def whois_data(domain: str = Body(..., embed=True)):
     
     final_tld_domain = tld_domain
     # sub domain ? 'com.ps' --> 'ps'
-    if tld_domain.find('.') > -1:
+    if tld_domain not in arr_special_tld and tld_domain.find('.') > -1:
         spl_tld_domain = tld_domain.split('.')
         if spl_tld_domain:
             final_tld_domain = spl_tld_domain[-1]
