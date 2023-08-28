@@ -350,7 +350,15 @@ function identify_domain(domain)
 
     if(result.extension in rdap_data)
     {
-        result.rdap_url = rdap_data[result.extension].rdap + "domain/" + parse_domain;
+        if(['de', 've'].includes(result.extension))
+        {
+            // Bypass: Response body is not available to scripts (Reason: CORS Missing Allow Origin)
+            result.rdap_url = '/api/v1/proxy/rdap?domain=' + parse_domain;
+        }
+        else
+        {
+            result.rdap_url = rdap_data[result.extension].rdap + "domain/" + parse_domain;
+        }
     }
     return result;
 }
