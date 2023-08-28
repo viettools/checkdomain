@@ -110,7 +110,7 @@ def whois_data(domain: str = Body(..., embed=True)):
         
         if whois_result.get('result', False):
             parse_obj = ParseWhoisSocket()
-            parse_raw = parse_obj.parse_socket_data(whois_result['result'], tld_domain)
+            parse_raw = parse_obj.parse_socket_data(whois_result['result'], final_tld_domain)
             result.update({'parse': parse_raw})
     
     return result
