@@ -36,6 +36,9 @@ var rdap_data_extend = `
     "ve": {
         "rdap": "https://rdap.nic.ve/rdap/"
     },
+    "de": {
+        "rdap": "https://rdap.denic.de/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
@@ -83,10 +86,6 @@ var rdap_data_extend = `
     }
 }
 `;
-
-/*"de": {
-    "rdap": "https://rdap.denic.de/"
-},*/
 
 function get_rdap_data_extend()
 {
