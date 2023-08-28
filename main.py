@@ -14,7 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from bs4 import BeautifulSoup
 from tld import get_tld
-import re, os
+import re, os, requests, json
 
 app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
 
@@ -110,8 +110,38 @@ def whois_data(domain: str = Body(..., embed=True)):
         
         if whois_result.get('result', False):
             parse_obj = ParseWhoisSocket()
-            parse_raw = parse_obj.parse_socket_data(whois_result['result'], tld_domain)
+            parse_raw = parse_obj.parse_socket_data(whois_result['result'], final_tld_domain)
             result.update({'parse': parse_raw})
+    
+    return result
+
+@app.get('/api/v1/proxy/rdap')
+def query_rdap_proxy(domain: str | None = None):
+    # Bypass: Response body is not available to scripts (Reason: CORS Missing Allow Origin)
+    result = {}
+    if not domain:
+        return result
+    
+    domain = BeautifulSoup(domain, features='html.parser').get_text()
+    rdap_url = False
+
+    spl_domain = domain.split('.')
+    if spl_domain:
+        if spl_domain[-1] == 'de':
+            rdap_url = 'https://rdap.denic.de'
+        elif spl_domain[-1] == 've':
+            rdap_url = 'https://rdap.nic.ve/rdap'
+    
+    if rdap_url:
+        req = requests.Session()
+        req_get = False
+        try:
+            req_get = req.get('{0}/domain/{1}'.format(rdap_url, domain))
+        except:
+            pass
+
+        if req_get and req_get.status_code == 200:
+            result = json.loads(req_get.text)
     
     return result
 
