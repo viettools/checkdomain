@@ -39,6 +39,9 @@ var rdap_data_extend = `
     "de": {
         "rdap": "https://rdap.denic.de/"
     },
+    "lc": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
