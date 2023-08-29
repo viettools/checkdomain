@@ -115,7 +115,7 @@ class ParseWhoisSocket:
                                        'Registered on|created..............:|Registered On:|Fecha de activación:|'
                                        'Registration Time:|created............:|Date de création:|'
                                        'Domain Name Commencement Date:|Created On:|'
-                                       'Registered Date             :)\s+(.+)', data, re.IGNORECASE)
+                                       'Registered Date             :|Record created on)\s+(.+)', data, re.IGNORECASE)
         if creation_date:
             result = self.remove_redundancy(creation_date[0][1])
         return result
@@ -148,7 +148,7 @@ class ParseWhoisSocket:
                                     'available............:|Expires On:|Fecha de corte:|'
                                     'Expiration Time:|expire:|available..........:|'
                                     'Date d\'expiration:|Expiry Date:|validity:|Expire Date:|'
-                                    'Expiration Date             :)\s+(.+)', data, re.IGNORECASE)
+                                    'Expiration Date             :|Expires    on:|Record expires on)\s+(.+)', data, re.IGNORECASE)
         if expiry_date:
             result = self.remove_redundancy(expiry_date[0][1])
         return result
@@ -197,7 +197,8 @@ class ParseWhoisSocket:
         if not domain_status:
             domain_status = re.findall('(Domain Status:|Status:|\[Status\]|'
                                         'eppstatus:|status...............:|status.............:|'
-                                        'Statut:|Domain status :|domaintype:)\s+(.+)', raw_domain_status, re.IGNORECASE)
+                                        'Statut:|Domain status :|domaintype:|'
+                                        'Domain  state:)\s+(.+)', raw_domain_status, re.IGNORECASE)
         
         if domain_status:
             for item_status in domain_status:
@@ -287,5 +288,5 @@ class ParseWhoisSocket:
             result['domain_status'] = self.parse_domain_status( data, tld_domain)
             result['nameservers'] = self.parse_nameservers( data, tld_domain)
             
-            # print(result) # Check Result
+            print(result) # Check Result
         return result

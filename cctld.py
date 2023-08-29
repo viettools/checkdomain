@@ -137,7 +137,28 @@ class WhOISccTLD:
             'lu': 'whois.dns.lu',
             'lv': 'whois.nic.lv',
             'ly': 'whois.nic.ly',
+            'ma': 'whois.registre.ma',
+            # 'mc': 'https://www.nic.mc/',
+            'md': 'whois.nic.md',
+            'me': 'whois.nic.me',
+            # 'mf': '',
+            'mg': 'whois.nic.mg',
+            # 'mh': 'http://www.nic.net.mh/',
+            'mk': 'whois.marnet.mk',
+            'ml': 'whois.nic.ml',
+            'mn': 'whois.nic.mn',
+            'mo': 'whois.monic.mo',
+            'mp': 'https://get.mp/',
+            'mq': 'whois.mediaserv.net', # Recheck
+            'mr': 'whois.nic.mr',
+            'ms': 'whois.nic.ms',
+            # 'mt': 'https://www.nic.org.mt/dotmt/',
+            'mu': 'whois.nic.mu', # Recheck
+            # 'mv': 'dhiraagu.com.mv',
+            'mw': 'whois.nic.mw',
+            'mx': 'whois.mx', # recheck
             'my': 'rdap.mynic.my',
+            'mz': 'whois.nic.mz',
             'ps': '95.217.44.246',
             'ye': 'whois.y.net.ye',
         }
