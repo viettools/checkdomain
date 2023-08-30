@@ -18,11 +18,11 @@ class ParseWhoisSocket:
             return result
         
         raw_registrar = str(data)
-        if tld_domain in ['be', 'gh']:
+        if tld_domain in ['be', 'gh', 'sy']:
             pre_raw_registrar = []
             if tld_domain == 'be':
                 pre_raw_registrar = re.findall('Name:(.*?)Website:', raw_registrar, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'gh':
+            elif tld_domain in ['gh', 'sy']:
                 pre_raw_registrar = re.findall('Sponsoring Registrar:(.*?)Sponsoring Registrar IANA ID:', raw_registrar, re.DOTALL | re.IGNORECASE)
             
             if pre_raw_registrar:
@@ -83,14 +83,14 @@ class ParseWhoisSocket:
             return result
         
         raw_registrar_url = str(data)
-        if tld_domain in ['be', 'gh', 'gi', 'gl', 'la', 'kw', 'ps', 'rw']:
+        if tld_domain in ['be', 'gh', 'gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so']:
             pre_raw_registrar_url = []
             if tld_domain == 'be':
                 pre_raw_registrar_url = re.findall('Website:(.*?)Nameservers:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'gh':
                 pre_raw_registrar_url = re.findall('Sponsoring Registrar URL:(.*?)Sponsoring Registrar Country:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             # Related DONUTS
-            elif tld_domain in ['gi', 'gl', 'la', 'kw', 'ps', 'rw']:
+            elif tld_domain in ['gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so']:
                 pre_raw_registrar_url = re.findall('Registrar URL:(.*?)Updated Date:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             
             if pre_raw_registrar_url:
@@ -105,6 +105,13 @@ class ParseWhoisSocket:
             raw_registrar_url = registrar_url_short_replace(data, 'Registrar:(.*?)Registrant:', 'URL:', 'Registrar URL:')
         elif tld_domain == 'no':
             raw_registrar_url = ''
+        elif tld_domain == 'st':
+            raw_registrar_url = registrar_url_short_replace(data,
+                                                            'REGISTRATION-SERVICE-PROVIDER:(.*?)created-date:',
+                                                            'URL:',
+                                                            'Registrar URL:')
+        elif tld_domain == 'sy':
+            raw_registrar_url = registrar_url_short_replace(data, 'WHOIS Server:(.*?)Creation Date:', 'Referral URL:', 'Registrar URL:')
         
         registrar_url = re.findall('(Registrar URL:|website:|www..................:|'
                                    'Referral URL:|www................:|registrar info:|'
@@ -134,8 +141,13 @@ class ParseWhoisSocket:
         if not data:
             return result
         
-        if tld_domain.find('au') > -1:
-            updated_date = re.findall('Last Modified: (.+)', data, re.IGNORECASE)
+        if tld_domain in ['au', 'sk']:
+            updated_date = []
+            if tld_domain == 'au':
+                updated_date = re.findall('Last Modified: (.+)', data, re.IGNORECASE)
+            elif tld_domain == 'sk':
+                updated_date = re.findall('Updated:(.+)', data, re.IGNORECASE)
+            
             if updated_date:
                 result = self.remove_redundancy(updated_date[0])
         else:
@@ -161,7 +173,7 @@ class ParseWhoisSocket:
                                     'Date d\'expiration:|Expiry Date:|validity:|Expire Date:|'
                                     'Expiration Date             :|Expires    on:|Record expires on|'
                                     'Expires on               :|Expire \(JJ/MM/AAAA\) :|'
-                                    'Expiration date:|free-date:)\s+(.+)', data, re.IGNORECASE)
+                                    'Expiration date:|free-date:|Valid Until:)\s+(.+)', data, re.IGNORECASE)
         if expiry_date:
             result = self.remove_redundancy(expiry_date[0][1])
         return result
@@ -215,7 +227,7 @@ class ParseWhoisSocket:
         
         if domain_status:
             for item_status in domain_status:
-                if tld_domain in ['pt', 'am', 'bg', 'cr', 'il', 'lu', 'pk']:
+                if tld_domain in ['pt', 'am', 'bg', 'cr', 'il', 'lu', 'pk', 'sg', 'si', 'sk', 'st']:
                     # [('Domain Status:', 'Pending Delete')]
                     result.append(self.remove_redundancy(item_status[1]))
                 else:
@@ -238,7 +250,8 @@ class ParseWhoisSocket:
         nameservers = []
         raw_nameservers = str(data)
         if tld_domain in ['as', 'je', 'gg', 'aw', 'be', 'bg', 'hk',
-                          'im', 'it', 'kg', 'mx', 'nc', 'nl', 'pf', 'pl', 'rs']:
+                          'im', 'it', 'kg', 'mx', 'nc', 'nl', 'pf', 'pl', 'rs',
+                          'sa', 'sg', 'sm']:
             if tld_domain in ['as', 'je', 'gg']:
                 pre_nameservers = re.findall('Name servers:(.*?)WHOIS lookup made on', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'aw':
@@ -267,6 +280,10 @@ class ParseWhoisSocket:
                 pre_nameservers = re.findall('nameservers:(.+)last modified:', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'rs':
                 pre_nameservers = re.findall('DNS:(.+)DNSSEC signed:', raw_nameservers, re.DOTALL | re.IGNORECASE)
+            elif tld_domain in ['sa', 'sg']:
+                pre_nameservers = re.findall('Name Servers:(.+)DNSSEC:', raw_nameservers, re.DOTALL | re.IGNORECASE)
+            elif tld_domain == 'sm':
+                pre_nameservers = re.findall('DNS Servers:(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
             
             if pre_nameservers:
                 arr_reformat = re.findall('(.+)\n', pre_nameservers[0], re.IGNORECASE)
