@@ -344,6 +344,10 @@ function identify_domain(domain)
                 {
                     result.extension = spl_domain.at(-2) + '.' + spl_domain.at(-1);
                 }
+                else if(spl_domain.at(-1) === 'uz' && ['com', 'co', 'net', 'org'].includes(spl_domain.at(-2)))
+                {
+                    result.extension = '';
+                }
             }
         }
     }
