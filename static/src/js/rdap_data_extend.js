@@ -45,6 +45,12 @@ var rdap_data_extend = `
     "sc": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "vc": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "vu": {
+        "rdap": "https://rdap.dnrs.vu/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },

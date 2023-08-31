@@ -235,6 +235,13 @@ class WhOISccTLD:
             'us': 'whois.nic.us',
             # 'uy': 'whois.nic.org.uy',
             'uz': 'whois.cctld.uz',
+            # 'va': '',
+            'vc': 'whois2.afilias-grs.net',
+            've': 'whois.nic.ve',
+            'vg': 'whois.nic.vg',
+            # 'vi': 'https://whmcs.nic.vi/index.php?m=whois',
+            # 'vn': 'https://www.vnnic.vn/en',
+            'vu': 'whois.dnrs.vu',
             'ye': 'whois.y.net.ye',
         }
         
