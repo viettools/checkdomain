@@ -242,6 +242,12 @@ class WhOISccTLD:
             # 'vi': 'https://whmcs.nic.vi/index.php?m=whois',
             # 'vn': 'https://www.vnnic.vn/en',
             'vu': 'whois.dnrs.vu',
+            'wf': 'whois.nic.wf',
+            'ws': 'whois.website.ws',
+            'yt': 'whois.nic.yt',
+            # 'za': 'https://www.nic.za/za-domains/',
+            'zm': 'whois.zicta.zm',
+            # 'zw': 'http://www.zispa.co.zw/',
             'ye': 'whois.y.net.ye',
         }
         
