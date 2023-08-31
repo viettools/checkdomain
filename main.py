@@ -137,6 +137,10 @@ def query_rdap_proxy(domain: str | None = None):
             rdap_url = 'https://rdap.denic.de'
         elif spl_domain[-1] == 've':
             rdap_url = 'https://rdap.nic.ve/rdap'
+        elif spl_domain[-1] == 'tz':
+            rdap_url = 'https://whois.tznic.or.tz/rdap'
+        elif spl_domain[-1] == 'uz':
+            rdap_url = 'http://cctld.uz:9000'
     
     if rdap_url:
         req = requests.Session()

@@ -229,6 +229,12 @@ class WhOISccTLD:
             'tv': 'whois.nic.tv',
             'tw': 'whois.twnic.net.tw',
             'tz': 'whois.tznic.or.tz',
+            'ua': 'whois.ua',
+            'ug': 'whois.co.ug',
+            'uk': 'whois.nic.uk',
+            'us': 'whois.nic.us',
+            # 'uy': 'whois.nic.org.uy',
+            'uz': 'whois.cctld.uz',
             'ye': 'whois.y.net.ye',
         }
         
