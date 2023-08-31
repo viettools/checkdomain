@@ -153,7 +153,7 @@ class ParseWhoisSocket:
         if not data:
             return result
         
-        if tld_domain in ['au', 'sk', 'tz']:
+        if tld_domain in ['au', 'sk', 'tz', 'ac.ru']:
             updated_date = []
             if tld_domain == 'au':
                 updated_date = re.findall('Last Modified: (.+)', data, re.IGNORECASE)
@@ -161,6 +161,10 @@ class ParseWhoisSocket:
                 updated_date = re.findall('Updated:(.+)', data, re.IGNORECASE)
             elif tld_domain == 'tz':
                 updated_date = re.findall('changed:(.+)expire:', data, re.DOTALL | re.IGNORECASE)
+            elif tld_domain == 'ac.ru':
+                arr_small_area = re.findall('created:(.+)organization', data, re.DOTALL | re.IGNORECASE)
+                if arr_small_area:
+                    updated_date = re.findall('updated:(.+)source:', arr_small_area[0], re.DOTALL | re.IGNORECASE)
             
             if updated_date:
                 result = self.remove_redundancy(updated_date[0])
@@ -170,7 +174,7 @@ class ParseWhoisSocket:
                                         'Dernière modification:|Last Updated On:|Last Update:|'
                                         'Last Updated Date           :|Last modified :|'
                                         'Last updated on          :|modified:|Last renewed \(JJ/MM/AAAA\) :|'
-                                        'Modification date:|Last updated:)\s+(.+)', data, re.IGNORECASE)
+                                        'Modification date:|Last updated:|LastMod:|Entry updated:)\s+(.+)', data, re.IGNORECASE)
             if updated_date:
                 result = self.remove_redundancy(updated_date[0][1])
         return result
@@ -222,22 +226,22 @@ class ParseWhoisSocket:
                     del item_reformat
                 del arr_reformat
             del pre_domain_status
-        # Special BE, HK
-        elif tld_domain in ['be', 'hk', 'tg']:
+        # Special BE, HK, TK
+        elif tld_domain in ['be', 'hk', 'tg', 'net.ru', 'org.ru', 'pp.ru']:
             pre_domain_status = []
             if tld_domain == 'be':
-                pre_domain_status = re.findall('Flags:(.*?)Please visit', raw_domain_status, re.DOTALL | re.IGNORECASE)
+                pre_domain_status = re.findall('Flags:\r\n\t(.*?)Please visit', raw_domain_status, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'hk':
                 pre_domain_status = re.findall('Domain Status:(.*?)DNSSEC:', raw_domain_status, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'tg':
                 pre_domain_status = re.findall('Status:.............(.*?)Contact Type:', raw_domain_status, re.DOTALL | re.IGNORECASE)
+            elif tld_domain in ['net.ru', 'org.ru', 'pp.ru']:
+                pre_domain_status = re.findall('state:(.+)', raw_domain_status, re.IGNORECASE)
             
             if pre_domain_status:
                 raw_domain_status = pre_domain_status[-1]
                 redundancy = self.remove_redundancy(raw_domain_status)
-                # Avoid values of 'Keys:'
-                if redundancy.find(' ') == -1:
-                    result.append(redundancy)
+                result.append(redundancy)
                 del pre_domain_status
                 del redundancy
         
@@ -245,7 +249,8 @@ class ParseWhoisSocket:
             domain_status = re.findall('(Domain Status:|Status:|\[Status\]|'
                                         'eppstatus:|status...............:|status.............:|'
                                         'Statut:|Domain status :|domaintype:|'
-                                        'Domain  state:|Status :|Status :|Domain status.......:)\s+(.+)', raw_domain_status, re.IGNORECASE)
+                                        'Domain  state:|Status :|Status :|Domain status.......:|'
+                                        'Status.:)\s+(.+)', raw_domain_status, re.IGNORECASE)
         
         if domain_status:
             for item_status in domain_status:
@@ -273,7 +278,7 @@ class ParseWhoisSocket:
         raw_nameservers = str(data)
         if tld_domain in ['as', 'je', 'gg', 'aw', 'be', 'bg', 'hk',
                           'im', 'it', 'kg', 'mx', 'nc', 'nl', 'pf', 'pl', 'rs',
-                          'sa', 'sg', 'sm', 'tm', 'tn', 'tr', 'tw', 'uk']:
+                          'sa', 'sg', 'sm', 'tm', 'tn', 'tr', 'tw', 'uk', 'co.pl']:
             if tld_domain in ['as', 'je', 'gg']:
                 pre_nameservers = re.findall('Name servers:(.*?)WHOIS lookup made on', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'aw':
@@ -316,6 +321,8 @@ class ParseWhoisSocket:
                 pre_nameservers = re.findall('Domain servers in listed order:(.+)Registration Service Provider:', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'uk':
                 pre_nameservers = re.findall('Name servers:(.+)WHOIS lookup made at', raw_nameservers, re.DOTALL | re.IGNORECASE)
+            elif tld_domain == 'co.pl':
+                pre_nameservers = re.findall('Nameservers:(.+)Holder data:', raw_nameservers, re.DOTALL | re.IGNORECASE)
             
             if pre_nameservers:
                 arr_reformat = re.findall('(.+)\n', pre_nameservers[0], re.IGNORECASE)
@@ -327,7 +334,7 @@ class ParseWhoisSocket:
                             item_reformat = item_reformat.replace('NameServer:', '')
                         elif tld_domain in ['mx', 'rs']:
                             item_reformat = item_reformat.replace('DNS:', '')
-                        elif tld_domain in ['nc', 'pf', 'tm', 'tn']:
+                        elif tld_domain in ['nc', 'pf', 'tm', 'tn', 'co.pl']:
                             spl_irf = item_reformat.split(':')
                             if len(spl_irf) == 2:
                                 item_reformat = spl_irf[1]

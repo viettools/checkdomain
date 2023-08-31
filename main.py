@@ -63,7 +63,9 @@ def whois_data(domain: str = Body(..., embed=True)):
     arr_special_tld = ['br.com', 'cn.com', 'de.com', 'eu.com', 'gb.net',
                        'gr.com', 'in.net', 'ru.com', 'sa.com', 'se.net',
                        'uk.com', 'uk.net', 'us.com', 'za.com', 'jpn.com',
-                       'it.com']
+                       'it.com', 'priv.at', 'co.ca', 'co.pl', 'ac.ru', 'com.ru',
+                       'msk.ru', 'net.ru', 'nov.ru', 'org.ru', 'pp.ru', 'spb.ru',
+                       'ac.uk', 'gov.uk', 'co.uz', 'com.uz', 'net.uz', 'org.uz']
     
     #google.com -> tld_domain = 'com'
     tld_domain = False

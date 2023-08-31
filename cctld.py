@@ -267,7 +267,25 @@ class WhOISccTLD:
             'us.com': 'whois.centralnic.net',
             'za.com': 'whois.centralnic.net',
             'jpn.com': 'whois.centralnic.net',
-            'it.com': 'whois.it.com'
+            'it.com': 'whois.it.com',
+            
+            'priv.at': 'whois.nic.priv.at',
+            'co.ca': 'whois.co.ca',
+            'co.pl': 'whois.co.pl',
+            'ac.ru': 'whois.free.net',
+            'com.ru': 'whois.flexireg.net',
+            'msk.ru': 'whois.flexireg.net',
+            'net.ru': 'whois.nic.net.ru',
+            'nov.ru': 'whois.flexireg.net',
+            'org.ru': 'whois.nic.net.ru',
+            'pp.ru': 'whois.nic.net.ru',
+            'spb.ru': 'whois.flexireg.net',
+            'ac.uk': 'whois.ac.uk',
+            'gov.uk': 'whois.gov.uk',
+            'co.uz': 'whois.reg.uz',
+            'com.uz': 'whois.reg.uz',
+            'net.uz': 'whois.reg.uz',
+            'org.uz': 'whois.reg.uz',
         }
         dict_extension.update(pseudo_sld)
         return dict_extension.get(extension, False)
