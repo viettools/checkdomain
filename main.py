@@ -65,7 +65,8 @@ def whois_data(domain: str = Body(..., embed=True)):
                        'uk.com', 'uk.net', 'us.com', 'za.com', 'jpn.com',
                        'it.com', 'priv.at', 'co.ca', 'co.pl', 'ac.ru', 'com.ru',
                        'msk.ru', 'net.ru', 'nov.ru', 'org.ru', 'pp.ru', 'spb.ru',
-                       'ac.uk', 'gov.uk', 'co.uz', 'com.uz', 'net.uz', 'org.uz']
+                       'ac.uk', 'gov.uk', 'co.uz', 'com.uz', 'net.uz', 'org.uz',
+                       'ac.za', 'co.za', 'net.za', 'org.za', 'web.za', 'gov.za']
     
     #google.com -> tld_domain = 'com'
     tld_domain = False

@@ -286,6 +286,12 @@ class WhOISccTLD:
             'com.uz': 'whois.reg.uz',
             'net.uz': 'whois.reg.uz',
             'org.uz': 'whois.reg.uz',
+            'ac.za': 'whois.ac.za',
+            'co.za': 'whois.registry.net.za',
+            'net.za': 'net-whois.registry.net.za',
+            'org.za': 'org-whois.registry.net.za',
+            'web.za': 'web-whois.registry.net.za',
+            'gov.za': 'whois.gov.za'
         }
         dict_extension.update(pseudo_sld)
         return dict_extension.get(extension, False)
