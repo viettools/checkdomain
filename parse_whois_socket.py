@@ -18,7 +18,7 @@ class ParseWhoisSocket:
             return result
         
         raw_registrar = str(data)
-        if tld_domain in ['be', 'gh', 'sy', 'tg', 'tr', 'ua']:
+        if tld_domain in ['be', 'gh', 'sy', 'tg', 'tr', 'ua', 'ac.za']:
             pre_raw_registrar = []
             if tld_domain == 'be':
                 pre_raw_registrar = re.findall('Name:(.*?)Website:', raw_registrar, re.DOTALL | re.IGNORECASE)
@@ -30,6 +30,8 @@ class ParseWhoisSocket:
                 pre_raw_registrar = re.findall('Organization Name	:(.*?)Address', raw_registrar, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'ua':
                 pre_raw_registrar = re.findall('% Registrar:(.*?)organization:', raw_registrar, re.DOTALL | re.IGNORECASE)
+            elif tld_domain == 'ac.za':
+                pre_raw_registrar = re.findall('Registrar:(.*?)Registrar WHOIS Server:', raw_registrar, re.DOTALL | re.IGNORECASE)
             
             if pre_raw_registrar:
                 raw_registrar = self.remove_redundancy(pre_raw_registrar[-1])
