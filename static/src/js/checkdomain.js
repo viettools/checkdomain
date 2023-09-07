@@ -32,11 +32,11 @@ function rdap_parse_data(data)
     var result = rdap_custom_data();
     if(!jQuery.isEmptyObject(data))
     {
-        if('status' in data && data.status.length > 0)
+        if('status' in data && data.status && data.status.length > 0)
         {
             result.domain_status = data.status;
         }
-        if('nameservers' in data && data.nameservers.length > 0)
+        if('nameservers' in data && data.nameservers && data.nameservers.length > 0)
         {
             var nameservers = [];
             for (let i = 0; i < data.nameservers.length; ++i)
@@ -48,7 +48,7 @@ function rdap_parse_data(data)
             }
             result.nameservers = nameservers;
         }
-        if('events' in data && data.events.length > 0)
+        if('events' in data && data.events && data.events.length > 0)
         {
             for (let i = 0; i < data.events.length; ++i)
             {
@@ -69,7 +69,7 @@ function rdap_parse_data(data)
                 }
             }
         }
-        if('entities' in data && data.entities.length > 0)
+        if('entities' in data && data.entities && data.entities.length > 0)
         {
             for (let i = 0; i < data.entities.length; ++i)
             {
@@ -354,7 +354,7 @@ function identify_domain(domain)
 
     if(result.extension in rdap_data)
     {
-        if(['de', 've', 'tz', 'uz'].includes(result.extension))
+        if(['de', 've', 'tz', 'uz', 'kg'].includes(result.extension))
         {
             // Bypass: Response body is not available to scripts (Reason: CORS Missing Allow Origin)
             result.rdap_url = '/api/v1/proxy/rdap?domain=' + parse_domain;
