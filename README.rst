@@ -2,19 +2,9 @@
 CHECK DOMAIN
 ============
 
-Docker
-======
+Port
+====
 
-docker-compose build
+Port: 6996
 
-docker-compose up -d
-
-docker-compose down
-
-docker container rm <hash>
-
-docker ps -a
-
-docker-compose build --no-cache
-
-docker logs -f --tail 10 <hash>
+Support: Whois Socket, RDAP

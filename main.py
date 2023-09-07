@@ -144,6 +144,8 @@ def query_rdap_proxy(domain: str | None = None):
             rdap_url = 'https://whois.tznic.or.tz/rdap'
         elif spl_domain[-1] == 'uz':
             rdap_url = 'http://cctld.uz:9000'
+        elif spl_domain[-1] == 'kg':
+            rdap_url = 'https://rdap.cctld.kg/'
     
     if rdap_url:
         req = requests.Session()
