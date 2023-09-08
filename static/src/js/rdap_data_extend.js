@@ -18,6 +18,18 @@ var rdap_data_extend = `
     "ac": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "ag": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "bz": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "mn": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "pr": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "ch": {
         "rdap": "https://rdap.nic.ch/"
     },
