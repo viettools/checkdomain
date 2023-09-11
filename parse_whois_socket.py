@@ -13,6 +13,15 @@ class ParseWhoisSocket:
         return result
     
     def parse_registrar(self, data, tld_domain):
+        def registrar_short_replace(data, regex_string, before_replace, after_replace):
+            result = str(data)
+            short_filtered = re.findall(regex_string, result, re.DOTALL | re.IGNORECASE)
+            if short_filtered:
+                result = short_filtered[-1]
+                result = result.replace(before_replace, after_replace)
+                del short_filtered
+            return result
+        
         result = ''
         if not data:
             return result
@@ -39,30 +48,18 @@ class ParseWhoisSocket:
                 del pre_raw_registrar
         elif tld_domain == 'ee':
             '''
-            Registrar:
-            name:       Zone Media OÜ
-            url:        http://www.zone.ee
-            phone:      +372 6886886
-            changed:    2020-07-01 13:55:58 +03:00
-            --> Normal keyword --> Need to filter
+                Registrar:
+                name:       Zone Media OÜ
+                url:        http://www.zone.ee
+                phone:      +372 6886886
+                changed:    2020-07-01 13:55:58 +03:00
+                --> Normal keyword --> Need to filter
             '''
-            pre_raw_registrar = re.findall('Registrar:(.*?)url:', raw_registrar, re.DOTALL | re.IGNORECASE)
-            if pre_raw_registrar:
-                raw_registrar = pre_raw_registrar[-1]
-                raw_registrar = raw_registrar.replace('name:', 'registrar:')
-                del pre_raw_registrar
+            raw_registrar = registrar_short_replace(raw_registrar, 'Registrar:(.*?)url:', 'name:', 'registrar:')
         elif tld_domain == 'it':
-            pre_raw_registrar = re.findall('Registrar(.*?)Name:', raw_registrar, re.DOTALL | re.IGNORECASE)
-            if pre_raw_registrar:
-                raw_registrar = pre_raw_registrar[-1]
-                raw_registrar = raw_registrar.replace('Organization:', 'registrar:')
-                del pre_raw_registrar
+            raw_registrar = registrar_short_replace(raw_registrar, 'Registrar(.*?)Name:', 'Organization:', 'registrar:')
         elif tld_domain == 'lv':
-            pre_raw_registrar = re.findall('\[Registrar\](.*?)\[Nservers\]', raw_registrar, re.DOTALL | re.IGNORECASE)
-            if pre_raw_registrar:
-                raw_registrar = pre_raw_registrar[-1]
-                raw_registrar = raw_registrar.replace('Name:', 'registrar:')
-                del pre_raw_registrar
+            raw_registrar = registrar_short_replace(raw_registrar, '\[Registrar\](.*?)\[Nservers\]', 'Name:', 'registrar:')
 
         registrar = re.findall('(Registrar:|Registrar Name:|registrar:|'
                                    'registrar............:|Referral URL:|'
