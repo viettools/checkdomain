@@ -275,7 +275,7 @@ class ParseWhoisSocket:
 
         nameservers = []
         raw_nameservers = str(data)
-        if tld_domain in ['as', 'je', 'gg', 'aw', 'be', 'bg', 'hk',
+        if tld_domain in ['as', 'je', 'gg', 'aw', 'be', 'bg', 'hk', 'am',
                           'im', 'it', 'kg', 'mx', 'nc', 'nl', 'pf', 'pl', 'rs',
                           'sa', 'sg', 'sm', 'tm', 'tn', 'tr', 'tw', 'uk', 'co.pl']:
             if tld_domain in ['as', 'je', 'gg']:
@@ -320,6 +320,8 @@ class ParseWhoisSocket:
                 pre_nameservers = re.findall('Domain servers in listed order:(.+)Registration Service Provider:', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'uk':
                 pre_nameservers = re.findall('Name servers:(.+)WHOIS lookup made at', raw_nameservers, re.DOTALL | re.IGNORECASE)
+            elif tld_domain == 'am':
+                pre_nameservers = re.findall('DNS servers:(.+)Registered:', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'co.pl':
                 pre_nameservers = re.findall('Nameservers:(.+)Holder data:', raw_nameservers, re.DOTALL | re.IGNORECASE)
             
