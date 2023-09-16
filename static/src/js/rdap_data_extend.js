@@ -30,6 +30,9 @@ var rdap_data_extend = `
     "pr": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "bm": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "ch": {
         "rdap": "https://rdap.nic.ch/"
     },
