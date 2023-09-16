@@ -89,14 +89,14 @@ class ParseWhoisSocket:
             return result
         
         raw_registrar_url = str(data)
-        if tld_domain in ['be', 'gh', 'gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so', 'vg']:
+        if tld_domain in ['be', 'gh', 'gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so', 'vg', 'bh', 'bm']:
             pre_raw_registrar_url = []
             if tld_domain == 'be':
                 pre_raw_registrar_url = re.findall('Website:(.*?)Nameservers:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'gh':
                 pre_raw_registrar_url = re.findall('Sponsoring Registrar URL:(.*?)Sponsoring Registrar Country:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             # Related DONUTS
-            elif tld_domain in ['gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so', 'vg']:
+            elif tld_domain in ['gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so', 'vg', 'bh', 'bm']:
                 pre_raw_registrar_url = re.findall('Registrar URL:(.*?)Updated Date:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             
             if pre_raw_registrar_url:
