@@ -14,10 +14,11 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from bs4 import BeautifulSoup
 from tld import get_tld
-import re, os, requests, json
+import re, os, requests, json, time
 
 # Web WHOIS Import
 import webwhois.es as web_whois_es
+import webwhois.vn as web_whois_vn
 
 app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
 
@@ -71,7 +72,7 @@ def whois_data(domain: str = Body(..., embed=True)):
                        'ac.uk', 'gov.uk', 'co.uz', 'com.uz', 'net.uz', 'org.uz',
                        'ac.za', 'co.za', 'net.za', 'org.za', 'web.za', 'gov.za']
     # Web WHOIS
-    arr_web_tld = ['es']
+    arr_web_tld = ['es', 'vn']
     
     #google.com -> tld_domain = 'com'
     tld_domain = False
@@ -105,7 +106,11 @@ def whois_data(domain: str = Body(..., embed=True)):
     elif final_tld_domain in arr_web_tld:
         USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0'
         if final_tld_domain == 'es':
-            whois_result = web_whois_es.whois_via_web(USER_AGENT, domain, tld_domain)  
+            whois_result = web_whois_es.whois_via_web(USER_AGENT, domain, tld_domain)
+        elif final_tld_domain == 'vn':
+            whois_result = web_whois_vn.whois_via_web(USER_AGENT, domain, tld_domain)
+        # I want to limit query via web
+        time.sleep(10)
     else:
         whois_iana_data = Whois(domain, final_tld_domain)
         result_iana = whois_iana_data.get_data()
