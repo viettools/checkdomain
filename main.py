@@ -16,6 +16,9 @@ from bs4 import BeautifulSoup
 from tld import get_tld
 import re, os, requests, json
 
+# Web WHOIS Import
+import webwhois.es as web_whois_es
+
 app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
 
 app.add_middleware(CORSMiddleware,
@@ -67,6 +70,8 @@ def whois_data(domain: str = Body(..., embed=True)):
                        'msk.ru', 'net.ru', 'nov.ru', 'org.ru', 'pp.ru', 'spb.ru',
                        'ac.uk', 'gov.uk', 'co.uz', 'com.uz', 'net.uz', 'org.uz',
                        'ac.za', 'co.za', 'net.za', 'org.za', 'web.za', 'gov.za']
+    # Web WHOIS
+    arr_web_tld = ['es']
     
     #google.com -> tld_domain = 'com'
     tld_domain = False
@@ -96,7 +101,11 @@ def whois_data(domain: str = Body(..., embed=True)):
         if whois_server:
             whois_data = Whois(domain, final_tld_domain)
             whois_data.set_hostname(whois_server)
-            whois_result = whois_data.get_data()   
+            whois_result = whois_data.get_data()
+    elif final_tld_domain in arr_web_tld:
+        USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/117.0'
+        if final_tld_domain == 'es':
+            whois_result = web_whois_es.whois_via_web(USER_AGENT, domain, tld_domain)  
     else:
         whois_iana_data = Whois(domain, final_tld_domain)
         result_iana = whois_iana_data.get_data()
