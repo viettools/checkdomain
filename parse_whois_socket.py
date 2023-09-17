@@ -89,14 +89,14 @@ class ParseWhoisSocket:
             return result
         
         raw_registrar_url = str(data)
-        if tld_domain in ['be', 'gh', 'gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so', 'vg', 'bh', 'bm']:
+        if tld_domain in ['be', 'gh', 'gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so', 'vg', 'bh', 'bm', 'do']:
             pre_raw_registrar_url = []
             if tld_domain == 'be':
                 pre_raw_registrar_url = re.findall('Website:(.*?)Nameservers:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'gh':
                 pre_raw_registrar_url = re.findall('Sponsoring Registrar URL:(.*?)Sponsoring Registrar Country:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
-            # Related DONUTS
-            elif tld_domain in ['gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so', 'vg', 'bh', 'bm']:
+            # Related DONUTS, CoCCA, CNIC
+            elif tld_domain in ['gi', 'gl', 'la', 'kw', 'ps', 'rw', 'so', 'vg', 'bh', 'bm', 'do']:
                 pre_raw_registrar_url = re.findall('Registrar URL:(.*?)Updated Date:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             
             if pre_raw_registrar_url:
@@ -122,6 +122,8 @@ class ParseWhoisSocket:
             raw_registrar_url = registrar_url_short_replace(data, '% Registrar:(.*?)abuse-email:', 'url:', 'Registrar URL:')
         elif tld_domain == 'uk':
             raw_registrar_url = registrar_url_short_replace(data, 'Registrar:(.*?)Relevant dates:', 'URL:', 'Registrar URL:')
+        elif tld_domain == 'de':
+            raw_registrar_url = ''
         
         registrar_url = re.findall('(Registrar URL:|website:|www..................:|'
                                    'Referral URL:|www................:|registrar info:|'
