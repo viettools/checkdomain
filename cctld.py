@@ -68,7 +68,7 @@ class WhOISccTLD:
             # 'eg': 'https://domain.eg/',
             # 'eh': '',
             # 'er': 'https://www.eritel.com.er/',
-            'es': 'whois.nic.es',
+            # 'es': 'whois.nic.es',
             'et': 'whois.ethiotelecom.et',
             'eu': 'whois.eu',
             'fi': 'whois.fi',
