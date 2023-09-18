@@ -33,7 +33,7 @@ class WhOISccTLD:
             'bj': 'whois.nic.bj',
             'bm': 'whois.afilias-srs.net',
             'bn': 'whois.bnnic.bn',
-            # 'bo': 'whois.nic.bo',
+            'bo': 'whois.nic.bo',
             'br': 'whois.registro.br',
             # 'bs': 'http://www.register.bs/',
             # 'bt': 'https://www.nic.bt/',
