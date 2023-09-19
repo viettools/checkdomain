@@ -65,10 +65,10 @@ def whois_via_web(USER_AGENT, domain, domain_type):
                 result.extend(clean_first_space(technical_details))
             if billing_details:
                 result.append('\n')
-                result.append('DNS Primario')
                 result.extend(clean_first_space(billing_details))
             if ns_details:
                 result.append('\n')
+                result.append('DNS Primario')
                 result.extend(clean_first_space(ns_details))
             
     if result:
