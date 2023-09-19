@@ -146,7 +146,7 @@ class ParseWhoisSocket:
                                        'Registered Date             :|Record created on|'
                                        'Created on               :|Created \(JJ/MM/AAAA\) :|'
                                        'Registration date:|Created date:|Creation date.......:|'
-                                       'Created on..............:)\s+(.+)', data, re.IGNORECASE)
+                                       'Created on..............:|Data Submissão:)\s+(.+)', data, re.IGNORECASE)
         if creation_date:
             result = self.remove_redundancy(creation_date[0][1])
         return result
@@ -253,7 +253,7 @@ class ParseWhoisSocket:
                                         'eppstatus:|status...............:|status.............:|'
                                         'Statut:|Domain status :|domaintype:|'
                                         'Domain  state:|Status :|Status :|Domain status.......:|'
-                                        'Status.:)\s+(.+)', raw_domain_status, re.IGNORECASE)
+                                        'Status.:|Estado:)\s+(.+)', raw_domain_status, re.IGNORECASE)
         
         if domain_status:
             for item_status in domain_status:
