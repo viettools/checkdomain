@@ -195,7 +195,7 @@ class ParseWhoisSocket:
                                     'Expiration Date             :|Expires    on:|Record expires on|'
                                     'Expires on               :|Expire \(JJ/MM/AAAA\) :|'
                                     'Expiration date:|free-date:|Valid Until:|Exp date:|'
-                                    'Expiry :|Expires on..............:)\s+(.+)', data, re.IGNORECASE)
+                                    'Expiry :|Expires on..............:|Expired    on:)\s+(.+)', data, re.IGNORECASE)
         if expiry_date:
             result = self.remove_redundancy(expiry_date[0][1])
         else:
@@ -257,7 +257,7 @@ class ParseWhoisSocket:
         
         if domain_status:
             for item_status in domain_status:
-                if tld_domain in ['pt', 'am', 'bg', 'cr', 'il', 'lu', 'pk', 'sg', 'si', 'sk', 'st', 'tm', 'tr', 'uk']:
+                if tld_domain in ['pt', 'am', 'bg', 'cr', 'il', 'lu', 'pk', 'sg', 'si', 'sk', 'st', 'tm', 'tr', 'uk', 'cy']:
                     # [('Domain Status:', 'Pending Delete')]
                     result.append(self.remove_redundancy(item_status[1]))
                 else:

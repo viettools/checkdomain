@@ -28,6 +28,8 @@ def whois_via_web(USER_AGENT, domain, domain_type):
         raw_data = req_get.text
         json_data = json.loads(raw_data or '{}')
         
+        if json_data.get('registrantName', False):
+            result.append('Registrant Name: {0}'.format(json_data.get('registrantName')))
         if json_data.get('registrar', False):
             result.append('Registrar: {0}'.format(json_data.get('registrar')))
         if json_data.get('creationDate', False):
