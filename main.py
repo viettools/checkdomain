@@ -4,6 +4,7 @@
 from whois import Whois
 from cctld import WhOISccTLD
 from parse_whois_socket import ParseWhoisSocket
+from verified.registrar import VerifiedRegistrar
 
 from fastapi import FastAPI, Request, Body
 from fastapi.responses import HTMLResponse
@@ -52,6 +53,7 @@ def whois_data(domain: str = Body(..., embed=True)):
         'creation_date': '',
         'updated_date': '',
         'expiry_date': '',
+        'verified': False
     }
     result.update({'parse': parse_data})
     
@@ -68,7 +70,11 @@ def whois_data(domain: str = Body(..., embed=True)):
                        'ac.uk', 'gov.uk', 'co.uz', 'com.uz', 'net.uz', 'org.uz',
                        'ac.za', 'co.za', 'net.za', 'org.za', 'web.za', 'gov.za']
     # Web WHOIS
-    arr_web_tld = ['ao', 'az', 'ba', 'bb', 'bd', 'bt', 'cu', 'cv', 'es', 'vn']
+    arr_web_tld = ['ao', 'az',
+                   'ba', 'bb', 'bd', 'bt',
+                   'cu', 'cv', 'cy',
+                   'dz',
+                   'es', 'vn']
     
     #google.com -> tld_domain = 'com'
     tld_domain = False
@@ -133,7 +139,12 @@ def whois_data(domain: str = Body(..., embed=True)):
         
         if whois_result.get('result', False):
             parse_obj = ParseWhoisSocket()
+            verified_obj = VerifiedRegistrar()
+            
             parse_raw = parse_obj.parse_socket_data(whois_result['result'], final_tld_domain)
+            verified_data = verified_obj.check_registrar(whois_result['result'])
+            
+            parse_raw.update({'verified': verified_data})
             result.update({'parse': parse_raw})
     
     return result
