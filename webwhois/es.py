@@ -65,7 +65,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
             if creation:
                 result.append('Creation Date: {0}'.format(creation))
                 
-            expiry = parse_es_data('Fecha Expiración:(.*?)Servidores DNS:', raw_data)
+            expiry = parse_es_data('Fecha Expiración:(.*?)<br />', raw_data)
             if expiry:
                 result.append('Registry Expiry Date: {0}'.format(expiry))
             
