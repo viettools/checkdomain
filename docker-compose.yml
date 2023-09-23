@@ -7,6 +7,14 @@ services:
         command: python3 /data/checkdomain/main.py
         volumes:
             - .:/data/checkdomain
+        sysctls:
+            - net.ipv6.conf.all.disable_ipv6=0
+        networks:
+            - checkdomainnet
         ports:
             - 6996:6996
         restart: always
+
+networks:
+    checkdomainnet:
+        external: true
