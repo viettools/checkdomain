@@ -26,7 +26,7 @@ class Whois:
     def _connect_port(self):
         sk = False
         if self.tld_domain == 'pt':
-            socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
+            sk = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
         else:
             sk = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sk.settimeout(self.timeout)
