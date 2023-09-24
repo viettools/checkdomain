@@ -9,6 +9,12 @@ Port: 6996
 
 Support: Whois Socket, RDAP
 
+Docker IPv4: docker-compose -f docker-compose-ipv4.yml build
+
+If your server support connect IPv6 (whois .pt domain). Please using docker-compose-ipv6.yml
+
+Docker IPv6: docker-compose -f docker-compose-ipv6.yml build
+
 IPv6-Docker:
 
 .. code-block:: text
