@@ -15,9 +15,11 @@ class VerifiedRegistrar:
             if domain_id:
                 domain_id = domain_id.strip()
         
-        if domain_id in ['4013247_DOMAIN_COM-VRSN', '32797606_DOMAIN_COM-VRSN', '91721384_DOMAIN_COM-VRSN',
-                         '1566083588_DOMAIN_COM-VRSN', '108966382_DOMAIN_COM-VRSN', '1542998887_DOMAIN_COM-VRSN',
-                         '16002259_DOMAIN_COM-VRSN']:
+        if domain_id in ['4013247_DOMAIN_COM-VRSN', '32797606_DOMAIN_COM-VRSN', '1566083588_DOMAIN_COM-VRSN',
+                         '92496457_DOMAIN_COM-VRSN', '91721384_DOMAIN_COM-VRSN', '108966382_DOMAIN_COM-VRSN',
+                         '16002259_DOMAIN_COM-VRSN', '2287435_DOMAIN_COM-VRSN', '6683836_DOMAIN_NET-VRSN',
+                         '1542998887_DOMAIN_COM-VRSN', '340491054_DOMAIN_COM-VRSN', '1477422972_DOMAIN_NET-VRSN'
+                         ]:
             result = True
         return result
 
@@ -49,4 +51,24 @@ class VerifiedRegistrar:
     Registrar: CloudFlare, Inc.
     Registrar IANA ID: 1910
     Registry Domain ID: 1542998887_DOMAIN_COM-VRSN
+    
+    Registrar: HOSTINGER operations, UAB
+    Registrar IANA ID: 1636
+    Registry Domain ID: 92496457_DOMAIN_COM-VRSN
+    
+    Registrar: Sav.com, LLC
+    Registrar IANA ID: 609
+    Registry Domain ID: 2287435_DOMAIN_COM-VRSN
+    
+    Registrar: Gandi SAS
+    Registrar IANA ID: 81
+    Registry Domain ID: 6683836_DOMAIN_NET-VRSN
+    
+    Registrar: AFRIREGISTER S.A.
+    Registrar IANA ID: 1381
+    Registry Domain ID: 340491054_DOMAIN_COM-VRSN
+    
+    Registrar: Internet Domain Service BS Corp
+    Registrar IANA ID: 2487
+    Registry Domain ID: 1477422972_DOMAIN_NET-VRSN
 '''
