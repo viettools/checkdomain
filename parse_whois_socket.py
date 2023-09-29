@@ -195,7 +195,7 @@ class ParseWhoisSocket:
                                     'Expiration Date             :|Expires    on:|Record expires on|'
                                     'Expires on               :|Expire \(JJ/MM/AAAA\) :|'
                                     'Expiration date:|free-date:|Valid Until:|Exp date:|'
-                                    'Expiry :|Expires on..............:|Expired    on:)\s+(.+)', data, re.IGNORECASE)
+                                    'Expiry :|Expires on..............:|Expired    on:|Expiration:)\s+(.+)', data, re.IGNORECASE)
         if expiry_date:
             result = self.remove_redundancy(expiry_date[0][1])
         else:

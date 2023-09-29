@@ -91,7 +91,7 @@ class WhOISccTLD:
             'gq': 'whois.dominio.gq',
             # 'gr': 'https://grweb.ics.forth.gr/public/whois',
             'gs': 'whois.nic.gs',
-            'gt': 'https://www.gt/sitio/index.php?lang=en',
+            # 'gt': 'https://www.gt/sitio/index.php?lang=en',
             # 'gu': 'https://give.uog.edu/gu-domain-application-form/',
             # 'gw': 'https://nic.gw/en/whois/',
             'gy': 'whois.registry.gy',

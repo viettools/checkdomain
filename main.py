@@ -75,7 +75,7 @@ def whois_data(domain: str = Body(..., embed=True)):
                    'cu', 'cv', 'cy',
                    'dz', 'dj',
                    'es', 'eg',
-                   'gm', 'gr',
+                   'gm', 'gr', 'gt', 'gw',
                    'vn']
     
     #google.com -> tld_domain = 'com'
