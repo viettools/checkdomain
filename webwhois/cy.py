@@ -5,18 +5,6 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-def parse_bt_data(regex_input, raw_data):
-    result = False
-    if raw_data:
-        regex_data = re.findall(regex_input, raw_data, re.DOTALL|re.M)
-        if regex_data:
-            pre_clean_data = regex_data[0]
-            clean_data = BeautifulSoup(pre_clean_data, features='html.parser').get_text()
-            if clean_data:
-                result = clean_data.strip()
-                del clean_data
-    return result
-
 def get_cy_id(req, headers, domain, domain_type):
     query_domain = ''
     if domain and domain_type:
