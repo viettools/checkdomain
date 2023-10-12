@@ -218,7 +218,7 @@ class WhOISccTLD:
             'tf': 'whois.nic.tf',
             'tg': 'whois.nic.tg',
             'th': 'whois.thnic.co.th',
-            'tj': 'http://www.nic.tj/whois.html',
+            # 'tj': 'http://www.nic.tj/whois.html',
             'tk': 'whois.dot.tk',
             'tl': 'whois.nic.tl',
             'tm': 'whois.nic.tm',

@@ -259,7 +259,7 @@ class ParseWhoisSocket:
         
         if domain_status:
             for item_status in domain_status:
-                if tld_domain in ['pt', 'am', 'bg', 'cr', 'il', 'lu', 'pk', 'sg', 'si', 'sk', 'st', 'tm', 'tr', 'uk', 'cy']:
+                if tld_domain in ['pt', 'am', 'bg', 'cr', 'il', 'lu', 'pk', 'sg', 'si', 'sk', 'st', 'tm', 'tr', 'uk', 'cy', 'tj']:
                     # [('Domain Status:', 'Pending Delete')]
                     result.append(self.remove_redundancy(item_status[1]))
                 else:
