@@ -79,6 +79,7 @@ def whois_data(domain: str = Body(..., embed=True)):
                    'hm',
                    'lk',
                    'tj',
+                   'jo',
                    'vn']
     
     #google.com -> tld_domain = 'com'
