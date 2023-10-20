@@ -66,6 +66,9 @@ var rdap_data_extend = `
     "vu": {
         "rdap": "https://rdap.dnrs.vu/"
     },
+    "pn": {
+        "rdap": "https://rdap.nominet.uk/pn/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },

@@ -180,7 +180,7 @@ class WhOISccTLD:
             'pk': 'whois.pknic.net.pk',
             'pl': 'whois.dns.pl',
             'pm': 'whois.nic.pm',
-            # 'pn': 'https://nic.pn/cgi-bin/whois.cgi',
+            'pn': 'whois.nic.pn',
             'pr': 'whois.afilias-srs.net',
             'ps': '95.217.44.246',
             'pt': 'whois.dns.pt',
