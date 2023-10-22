@@ -283,7 +283,7 @@ class ParseWhoisSocket:
         raw_nameservers = str(data)
         if tld_domain in ['as', 'je', 'gg', 'aw', 'be', 'bg', 'hk', 'am', 'eu',
                           'im', 'it', 'kg', 'mx', 'nc', 'nl', 'pf', 'pl', 'rs',
-                          'sa', 'sg', 'sm', 'tm', 'tn', 'tr', 'tw', 'uk', 'co.pl']:
+                          'sa', 'sg', 'sm', 'tm', 'tn', 'tr', 'tw', 'uk', 'co.pl', 'mo']:
             if tld_domain in ['as', 'je', 'gg']:
                 pre_nameservers = re.findall('Name servers:(.*?)WHOIS lookup made on', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'aw':
@@ -332,6 +332,8 @@ class ParseWhoisSocket:
                 pre_nameservers = re.findall('Nameservers:(.+)Holder data:', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'eu':
                 pre_nameservers = re.findall('Name servers:(.+)Please visit', raw_nameservers, re.DOTALL | re.IGNORECASE)
+            elif tld_domain == 'mo':
+                pre_nameservers = re.findall('-----------------------------------------------------\n(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
             
             if pre_nameservers:
                 arr_reformat = re.findall('(.+)\n', pre_nameservers[0], re.IGNORECASE)
@@ -350,6 +352,8 @@ class ParseWhoisSocket:
                         elif tld_domain == 'pl':
                             if item_reformat.find('created:') > -1:
                                 continue
+                        elif tld_domain == 'mo':
+                            item_reformat = item_reformat.strip()
                         
                         nameservers.append([item_reformat, item_reformat])
                     del item_reformat

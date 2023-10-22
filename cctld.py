@@ -148,7 +148,7 @@ class WhOISccTLD:
             'ml': 'whois.nic.ml',
             'mn': 'whois.nic.mn',
             'mo': 'whois.monic.mo',
-            'mp': 'https://get.mp/',
+            # 'mp': 'https://get.mp/',
             'mq': 'whois.mediaserv.net',
             'mr': 'whois.nic.mr',
             'ms': 'whois.nic.ms',
