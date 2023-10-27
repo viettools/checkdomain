@@ -8,5 +8,5 @@ services:
         volumes:
             - .:/data/checkdomain
         ports:
-            - 6996:6996
+            - "127.0.0.1:6996:6996"
         restart: always
