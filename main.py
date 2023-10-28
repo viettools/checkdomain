@@ -189,5 +189,17 @@ def query_rdap_proxy(domain: str | None = None):
     
     return result
 
+def is_docker():
+    path = '/proc/self/cgroup'
+    if not os.path.isfile(path): return False
+    with open(path) as f:
+        for line in f:
+            if re.match('\d+:[\w=]+:/docker(-[ce]e)?/\w+', line):
+                return True
+    return False
+
 if __name__ == '__main__':
-    uvicorn.run('main:app', host='0.0.0.0', port=6996, reload=True)
+    listen_host = '0.0.0.0'
+    if not is_docker():
+        listen_host= '127.0.0.1'
+    uvicorn.run('main:app', host=listen_host, port=6996, reload=True)

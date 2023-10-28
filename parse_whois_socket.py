@@ -283,7 +283,8 @@ class ParseWhoisSocket:
         raw_nameservers = str(data)
         if tld_domain in ['as', 'je', 'gg', 'aw', 'be', 'bg', 'hk', 'am', 'eu',
                           'im', 'it', 'kg', 'mx', 'nc', 'nl', 'pf', 'pl', 'rs',
-                          'sa', 'sg', 'sm', 'tm', 'tn', 'tr', 'tw', 'uk', 'co.pl', 'mo']:
+                          'sa', 'sg', 'sm', 'tm', 'tn', 'tr', 'tw', 'uk', 'co.pl',
+                          'mo', 'tg', 'to']:
             if tld_domain in ['as', 'je', 'gg']:
                 pre_nameservers = re.findall('Name servers:(.*?)WHOIS lookup made on', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'aw':
@@ -334,6 +335,23 @@ class ParseWhoisSocket:
                 pre_nameservers = re.findall('Name servers:(.+)Please visit', raw_nameservers, re.DOTALL | re.IGNORECASE)
             elif tld_domain == 'mo':
                 pre_nameservers = re.findall('-----------------------------------------------------\n(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
+            elif tld_domain == 'tg':
+                pre_tg_nameservers = re.findall('Name Server \(DB\):\.\.\.(.+)', raw_nameservers, re.IGNORECASE)
+                # Remove duplicate ns server
+                if pre_tg_nameservers:
+                    pre_nameservers = ['\n'.join([ns_tg.strip() for ns_tg in list(set(pre_tg_nameservers))]) + '\n']
+            elif tld_domain == 'to':
+                # Example: ['Tonic whoisd V1.1', 'google ns2.google.com', 'google ns1.google.com', '']
+                spl_raw_ns = data.split('\n')
+                arr_ns_to = []
+                for ns_to in spl_raw_ns:
+                    if ns_to and ns_to.find('Tonic whoisd') == -1:
+                        spl_ns = ns_to.split(' ')
+                        if spl_ns and len(spl_ns) == 2:
+                            arr_ns_to.append(spl_ns[1])
+                
+                if arr_ns_to:
+                    pre_nameservers = ['\n'.join(arr_ns_to) + '\n']
             
             if pre_nameservers:
                 arr_reformat = re.findall('(.+)\n', pre_nameservers[0], re.IGNORECASE)
