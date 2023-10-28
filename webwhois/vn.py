@@ -17,16 +17,22 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     
     req = requests.Session()
     req_get = False
+    
     try:
-        req_get = req.get('https://whois.inet.vn/api/whois/domainspecify/{0}'.format(domain), headers=headers, verify=False)
+        req_get = req.get('https://whois.inet.vn', headers=headers)
+    except:
+        pass
+    
+    req_cookie = req.cookies.get_dict()
+    
+    try:
+        req_get = req.get('https://whois.inet.vn/api/whois/domainspecify/{0}'.format(domain), headers=headers, cookies=req_cookie)
     except:
         pass
     
     result = []
-    raw_data = ''
     if req_get and req_get.status_code == 200 and req_get.text:
-        raw_data = req_get.text
-        json_data = json.loads(raw_data or '{}')
+        json_data = req_get.json()
         
         if json_data.get('registrantName', False):
             result.append('Registrant Name: {0}'.format(json_data.get('registrantName')))
