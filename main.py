@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from bs4 import BeautifulSoup
 from tld import get_tld
-import re, os, requests, json, time
+import re, os, requests, json, time, pathlib
 
 app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
 
@@ -196,6 +196,8 @@ def is_docker():
         for line in f:
             if re.match('\d+:[\w=]+:/docker(-[ce]e)?/\w+', line):
                 return True
+    if pathlib.Path('/.dockerenv').exists():
+        return True
     return False
 
 if __name__ == '__main__':
