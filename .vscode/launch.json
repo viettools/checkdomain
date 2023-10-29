@@ -8,7 +8,7 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "python": "${workspaceFolder}/venv/bin/python3.10",
+            "python": "${workspaceFolder}/venv/bin/python3.11",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
             "justMyCode": true

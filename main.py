@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from bs4 import BeautifulSoup
 from tld import get_tld
-import re, os, requests, json, time, pathlib
+import re, os, requests, json, time, pathlib, sys
 
 app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
 
@@ -201,6 +201,7 @@ def is_docker():
     return False
 
 if __name__ == '__main__':
+    assert (sys.version_info.major, sys.version_info.minor) == (3, 11), 'Run Python 3.11 bro!!!'
     listen_host = '0.0.0.0'
     if not is_docker():
         listen_host= '127.0.0.1'
