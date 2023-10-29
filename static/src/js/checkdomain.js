@@ -524,6 +524,18 @@ $(document).on('click', '#multi_domain_btn', function(){
     });
 });
 
+$(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+        $('.btn-scroll-top').addClass('show');
+    } else {
+        $('.btn-scroll-top').removeClass('show');
+    }
+});
+
+$('.btn-scroll-top').on('click', function(e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+});
 
 new ClipboardJS('.btn_check_domain_clipboard', {
     text: function(trigger) {
