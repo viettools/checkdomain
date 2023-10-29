@@ -190,14 +190,14 @@ def query_rdap_proxy(domain: str | None = None):
     return result
 
 def is_docker():
+    if pathlib.Path('/.dockerenv').exists():
+        return True
     path = '/proc/self/cgroup'
     if not os.path.isfile(path): return False
     with open(path) as f:
         for line in f:
             if re.match('\d+:[\w=]+:/docker(-[ce]e)?/\w+', line):
                 return True
-    if pathlib.Path('/.dockerenv').exists():
-        return True
     return False
 
 if __name__ == '__main__':
