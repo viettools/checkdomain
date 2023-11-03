@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from bs4 import BeautifulSoup
 from tld import get_tld
-import re, os, requests, json, time, pathlib, sys
+import re, os, requests, json, time, pathlib, sys, configparser
 
 app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
 
@@ -32,11 +32,37 @@ templates = Jinja2Templates('{0}/templates'.format(current_path_dir))
 
 @app.get('/', response_class=HTMLResponse)
 def main(request: Request):
+    dict_config = {
+        'flagcounter': {
+            'enable': False
+        },
+        'tidio': {
+            'enable': False
+        }
+    }
+    
+    config_path = '{0}/config/checkdomain.ini'.format(current_path_dir)
+    if pathlib.Path(config_path).exists():
+        config = configparser.ConfigParser()
+        config.read(config_path)
+        
+        dict_config['flagcounter'].update({
+            'enable': config.getboolean('flagcounter', 'enable'),
+            'url': config.get('flagcounter', 'url'),
+            'img': config.get('flagcounter', 'img'),
+        })
+        
+        dict_config['tidio'].update({
+            'enable': config.getboolean('tidio', 'enable'),
+            'url': config.get('tidio', 'url'),
+        })
+    
     header_template = templates.TemplateResponse('header.html', {'request': request})
-    footer_template = templates.TemplateResponse('footer.html', {'request': request})
+    footer_template = templates.TemplateResponse('footer.html', {'request': request, 'dict_config': dict_config})
     main_template = templates.TemplateResponse('index.html', 
 												{
 													'request': request,
+                                                    'dict_config': dict_config,
 													'header_template': header_template.body.decode('utf-8'),
 													'footer_template': footer_template.body.decode('utf-8'),
 												})

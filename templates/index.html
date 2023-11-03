@@ -118,13 +118,13 @@
                             Creation Date: 15/08/2023
                         </p>
                         <p>
-                            Updated Date: 29/10/2023
+                            Updated Date: 03/11/2023
                         </p>
                         <p>
                             Author: ALIENSOFTWARE
                         </p>
                         <p>
-                            Version: 3.0.0-dev
+                            Version: 3.0.1-dev
                         </p>
                         <p>
                             Support: https://check.rs
@@ -148,10 +148,15 @@
                     <path d="M12 21a9 9 0 1 0 -.265 0l.265 0z"></path>
                 </svg>
             </a>
-            <div class="container-xl">
+            {% if dict_config['flagcounter']['enable'] %}
+                <a class="container d-flex align-items-center justify-content-center" href="{{ dict_config['flagcounter'].get('url', '') }}">
+                    <img src="{{ dict_config['flagcounter'].get('img', '') }}" alt="Flag Counter" border="0">
+                </a>
+            {% endif %}
+            <div class="container-xl mt-1">
                 <div class="row text-center align-items-center">
                     <div class="col-12">
-                        checkdomain.biz
+                        check.rs
                     </div>
                 </div>
             </div>
