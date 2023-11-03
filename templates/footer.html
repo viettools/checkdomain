@@ -6,3 +6,6 @@
     <script src="{{ url_for('static', path='/js/rdap_data.js') }}"></script>
     <script src="{{ url_for('static', path='/js/rdap_data_extend.js') }}"></script>
     <script src="{{ url_for('static', path='/js/checkdomain.js') }}"></script>
+    {% if dict_config['tidio']['enable'] %}
+    <script src="{{ dict_config['tidio'].get('url', '') }}" async></script>
+    {% endif %}

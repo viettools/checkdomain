@@ -123,3 +123,6 @@ venv.bak/
 
 # Pyre type checker
 .pyre/
+
+# Check domain config
+config/
