@@ -139,8 +139,21 @@ class TestG(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status'] or []), 0, 'google.gl: Domain status must be a value!')
         self.assertGreater(len(data['parse']['nameservers'] or []), 0, 'google.gl: NS must be a value!')
 
-    # def test_GQ(self):
-    #     pass
+    def test_GN(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "ande.gov.gn"},
+        )
+        data = json.loads(response.content)
+        self.assertTrue(data['status'], 'Please check connection for ande.gov.gn')
+        self.assertEqual(data['parse']['registrar'] or False, 'Internal Registrars', 'ande.gov.gn: Internal Registrars?')
+        self.assertEqual(data['parse']['registrar_url'] or False, 'https://ande.gov.gn/dns-gn/', 'ande.gov.gn: https://ande.gov.gn/dns-gn/?')
+        self.assertEqual(data['parse']['creation_date'] or False, '2023-08-02T14:29:11.523Z', 'ande.gov.gn: 2023-08-02T14:29:11.523Z?')
+        self.assertEqual(type(data['parse']['updated_date'] or False), str, 'ande.gov.gn: Updated Date must be a value!')
+        self.assertEqual(type(data['parse']['expiry_date'] or False), str, 'ande.gov.gn: Expiry Date must be a value!')
+        self.assertGreater(len(data['parse']['domain_status'] or []), 0, 'ande.gov.gn: Domain status must be a value!')
+        self.assertGreater(len(data['parse']['nameservers'] or []), 0, 'ande.gov.gn: NS must be a value!')
 
     def test_GS(self):
         response = client.post(
