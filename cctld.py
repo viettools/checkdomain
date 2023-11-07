@@ -86,7 +86,7 @@ class WhOISccTLD:
             'gi': 'whois2.afilias-grs.net',
             'gl': 'whois.nic.gl',
             # 'gm': 'http://www.nic.gm/htmlpages/whois.htm',
-            # 'gn': 'https://psg.com/dns/gn/',
+            'gn': 'whois.ande.gov.gn',
             # 'gp': 'https://whois.nic.gp/',
             'gq': 'whois.dominio.gq',
             # 'gr': 'https://grweb.ics.forth.gr/public/whois',
