@@ -91,10 +91,21 @@ class TestM(unittest.TestCase):
         self.assertEqual(len(data['parse']['domain_status'] or []), 0, 'google.mk: Domain status must not be a value!')
         self.assertGreater(len(data['parse']['nameservers'] or []), 0, 'google.mk: NS must be a value!')
     
-    '''
-    def test_MK(self):
-        pass
-    '''
+    def test_ML(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "apple.ml"},
+        )
+        data = json.loads(response.content)
+        self.assertTrue(data['status'], 'Please check connection for apple.ml')
+        self.assertEqual(data['parse']['registrar'] or False, 'CSC Corporate Domains, Inc.', 'apple.ml: CSC Corporate Domains, Inc.')
+        self.assertEqual(data['parse']['registrar_url'] or False, False, 'apple.ml ?')
+        self.assertEqual(data['parse']['creation_date'] or False, '2023-07-17T00:00:00.0Z', 'apple.ml: 2023-07-17T00:00:00.0Z?')
+        self.assertEqual(type(data['parse']['updated_date'] or False), str, 'apple.mlk: Updated Date must be a value!')
+        self.assertEqual(type(data['parse']['expiry_date'] or False), str, 'apple.ml: Expiry Date must be a value!')
+        self.assertGreater(len(data['parse']['domain_status'] or []), 0, 'apple.ml: Domain status must not be a value!')
+        self.assertGreater(len(data['parse']['nameservers'] or []), 0, 'apple.ml: NS must be a value!')
     
     def test_MN(self):
         response = client.post(
