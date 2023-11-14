@@ -73,7 +73,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
                 result.append(whois_details)
             
     if result:
-        result.append('Full WHOIS: http://www.nic.pa/en')
+        result.append('Full WHOIS: https://www.dot.ph')
         final_result = {
             'status': True,
             'result': '\n'.join(result)
