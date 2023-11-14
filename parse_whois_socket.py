@@ -91,7 +91,7 @@ class ParseWhoisSocket:
         raw_registrar_url = str(data)
         if tld_domain in ['be', 'gh', 'gi', 'gl', 'la', 'kw', 'ps',
                           'rw', 'so', 'vg', 'bh', 'bm', 'do', 'fm',
-                          'gd', 'pw', 'ke']:
+                          'gd', 'pw', 'ke', 'rw']:
             pre_raw_registrar_url = []
             if tld_domain == 'be':
                 pre_raw_registrar_url = re.findall('Website:(.*?)Nameservers:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
@@ -100,7 +100,7 @@ class ParseWhoisSocket:
             # Related DONUTS, CoCCA, CNIC
             elif tld_domain in ['gi', 'gl', 'la', 'kw', 'ps', 'rw',
                                 'so', 'vg', 'bh', 'bm', 'do', 'fm',
-                                'gd', 'pw', 'ke']:
+                                'gd', 'pw', 'ke', 'rw']:
                 pre_raw_registrar_url = re.findall('Registrar URL:(.*?)Updated Date:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
             
             if pre_raw_registrar_url:
@@ -128,6 +128,12 @@ class ParseWhoisSocket:
             raw_registrar_url = registrar_url_short_replace(data, 'Registrar:(.*?)Relevant dates:', 'URL:', 'Registrar URL:')
         elif tld_domain == 'de':
             raw_registrar_url = ''
+        elif tld_domain == 'ec':
+            # Bug no Registrar URL. Ex: google.ec
+            raw_registrar_url = registrar_url_short_replace(data, 'Registrar URL:(.*?)Creation Date:', ' ', 'Registrar URL: ')
+        elif tld_domain == 'fi':
+            # Bug no Registrar URL. Ex: 99.fi
+            raw_registrar_url = registrar_url_short_replace(data, 'www................:(.*?)>>> Last update of WHOIS database', ' ', 'Registrar URL: ')
         
         registrar_url = re.findall('(Registrar URL:|website:|www..................:|'
                                    'Referral URL:|www................:|registrar info:|'
