@@ -195,7 +195,7 @@ class WhOISccTLD:
             'sa': 'whois.nic.net.sa',
             'sb': 'whois.nic.net.sb',
             'sc': 'whois2.afilias-grs.net',
-            # 'sd': 'whois.sdnic.sd',
+            'sd': 'whois.sdnic.sd',
             'se': 'whois.iis.se',
             'sg': 'whois.sgnic.sg',
             'sh': 'whois.nic.sh',
