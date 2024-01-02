@@ -58,6 +58,22 @@ class TestS(unittest.TestCase):
         self.assertEqual(type(data['parse']['expiry_date'] or False), str, 'google.sc: Expiry Date must be a value!')
         self.assertGreater(len(data['parse']['domain_status'] or []), 0, 'google.sc: Domain status must be a value!')
         self.assertGreater(len(data['parse']['nameservers'] or []), 0, 'google.sc: NS must be a value!')
+        
+    def test_SD(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "google.sd"},
+        )
+        data = json.loads(response.content)
+        self.assertTrue(data['status'], 'Please check connection for google.sd')
+        self.assertEqual(data['parse']['registrar'] or False, 'AfriRegister', 'google.sd: AfriRegister')
+        self.assertEqual(data['parse']['registrar_url'] or False, False, 'google.sd ?')
+        self.assertEqual(data['parse']['creation_date'] or False, '2020-05-12T15:03:41.109Z', 'google.sd: 2020-05-12T15:03:41.109Z?')
+        self.assertEqual(type(data['parse']['updated_date'] or False), str, 'google.sd: Updated Date must be a value!')
+        self.assertEqual(type(data['parse']['expiry_date'] or False), str, 'google.sd: Expiry Date must be a value!')
+        self.assertGreater(len(data['parse']['domain_status'] or []), 0, 'google.sd: Domain status must be a value!')
+        self.assertGreater(len(data['parse']['nameservers'] or []), 0, 'google.sd: NS must be a value!')
 
     def test_SE(self):
         response = client.post(
