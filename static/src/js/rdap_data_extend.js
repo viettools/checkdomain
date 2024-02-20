@@ -69,6 +69,57 @@ var rdap_data_extend = `
     "pn": {
         "rdap": "https://rdap.nominet.uk/pn/"
     },
+    "gs": {
+        "rdap": "https://rdap.nic.gs/"
+    },
+    "ki": {
+        "rdap": "https://rdap.nic.ki/"
+    },
+    "ht": {
+        "rdap": "https://rdap.nic.ht/"
+    },
+    "ht": {
+        "rdap": "https://rdap.nic.ht/"
+    },
+    "gy": {
+        "rdap": "https://rdap.registry.gy/"
+    },
+    "hn": {
+        "rdap": "https://rdap.nic.hn/"
+    },
+    "tl": {
+        "rdap": "https://rdap.nic.tl/"
+    },
+    "sb": {
+        "rdap": "https://rdap.coccaregistry.org/"
+    },
+    "nf": {
+        "rdap": "https://rdap.coccaregistry.org/"
+    },
+    "af": {
+        "rdap": "https://rdap.nic.af/"
+    },
+    "ml": {
+        "rdap": "https://rdap.ns.ml/rdap-api/"
+    },
+    "ye": {
+        "rdap": "https://rdap.y.net.ye/"
+    },
+    "vi": {
+        "rdap": "https://rdap.nic.vi/"
+    },
+    "mr": {
+        "rdap": "https://rdap.nic.mr/"
+    },
+    "ke": {
+        "rdap": "https://rdap.kenic.or.ke/"
+    },
+    "rw": {
+        "rdap": "https://rdap.ricta.org.rw/"
+    },
+    "cx": {
+        "rdap": "https://rdap.coccaregistry.org/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
