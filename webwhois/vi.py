@@ -21,7 +21,7 @@ def get_hidden_value(req, headers):
     result = {}
     req_get = False
     try:
-        req_get = req.get('https://whmcs.nic.vi/index.php?m=whois', headers=headers, verify=False)
+        req_get = req.get('https://secure.nic.vi/index.php?m=whois', headers=headers, verify=False)
     except:
         pass
     if req_get and req_get.status_code == 200 and req_get.text:
@@ -54,13 +54,13 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     
     req_cookie = req.cookies.get_dict()
     headers.update({
-        'Referer': 'https://whmcs.nic.vi/index.php?m=whois',
-        'Origin': 'https://whmcs.nic.vi'
+        'Referer': 'https://secure.nic.vi/index.php?m=whois',
+        'Origin': 'https://secure.nic.vi'
     })
 
     req_post = False
     try:
-        req_post = requests.post('https://whmcs.nic.vi/index.php?m=whois', data=post_data, headers=headers, cookies=req_cookie, verify=False)
+        req_post = requests.post('https://secure.nic.vi/index.php?m=whois', data=post_data, headers=headers, cookies=req_cookie, verify=False)
     except:
         pass
     
@@ -73,7 +73,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
                 result.append(whois_details)
             
     if result:
-        result.append('Full WHOIS: https://whmcs.nic.vi')
+        result.append('Full WHOIS: https://secure.nic.vi')
         final_result = {
             'status': True,
             'result': '\n'.join(result)

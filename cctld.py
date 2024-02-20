@@ -239,7 +239,7 @@ class WhOISccTLD:
             'vc': 'whois.donuts.co',
             've': 'whois.nic.ve',
             'vg': 'whois.nic.vg',
-            # 'vi': 'https://whmcs.nic.vi/index.php?m=whois',
+            'vi': 'whois.nic.vi',
             # 'vn': 'https://www.vnnic.vn/en',
             'vu': 'whois.dnrs.vu',
             'wf': 'whois.nic.wf',
