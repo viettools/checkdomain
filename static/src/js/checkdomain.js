@@ -310,13 +310,21 @@ function re_render_view(data, uuid, is_rdap)
         );
     }
 
-    if(!is_rdap)
+    var arr_rdap_status = new Array();
+    $('.check_domain_whois_status_area > input').each(function() {
+        var input = $(this);
+        var val = input.val();
+        if(typeof val === "string")
+        {
+            arr_rdap_status.push(val);
+        }
+    });
+    if(arr_rdap_status.length == 0)
     {
         $('#' + uuid).find('.check_domain_whois_status_area').empty();
         var render_status = render_status_view(data.parse);
         $('#' + uuid).find('.check_domain_whois_status_area').append(render_status);
     }
-    
 }
 
 function identify_domain(domain)
