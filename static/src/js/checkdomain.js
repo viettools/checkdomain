@@ -314,7 +314,7 @@ function re_render_view(data, uuid, is_rdap)
     $('.check_domain_whois_status_area > input').each(function() {
         var input = $(this);
         var val = input.val();
-        if(typeof val === "string")
+        if(typeof val === "string" && val.length > 0)
         {
             arr_rdap_status.push(val);
         }
@@ -438,7 +438,7 @@ async function query_rdap_data(domain_url)
         },
         complete: function (data) {
         },
-        timeout: 10000,
+        timeout: 5000,
     });
 }
 
