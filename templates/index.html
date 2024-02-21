@@ -57,52 +57,61 @@
             <!-- Page body -->
             <div class="page-body">
                 <div class="container-xl">
-                <div class="row row-deck row-cards">
-
-                    <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3" id="check_domain_search">
-                        <div class="card">
-                            <div class="row g-2" id="single_domain_area">
-                                <div class="col">
-                                <input id="single_domain_input" type="text" class="form-control" placeholder="Domain…">
-                                </div>
-                                <div class="col-auto">
-                                    <a class="btn btn-icon btn-primary" aria-label="Button" id="single_domain_btn">
-                                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="row g-2" id="multi_domain_area_input">
-                                <div class="col input-group">
-                                    <textarea id="multi_domain_input" class="form-control" data-bs-toggle="autosize" placeholder="Multi Domain…" rows="10"></textarea>
-                                </div>
-                            </div>
-                            <div class="row g-2" style="display: flex;justify-content: center; margin-top: 0.05rem;" id="multi_domain_area_btn">
-                                <div class="col-auto">
-                                    <a class="btn btn-icon btn-primary" aria-label="Button" id="multi_domain_btn">
-                                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="progress d-none" id="check_domain_progress">
-                                <div class="progress-bar progress-bar-indeterminate bg-green"></div>
-                            </div>
-                            <div class="row g-2" style="margin-top: 0.25rem;">
-                                <div class="offset-lg-3 offset-md-4">
-                                    <label class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="radio_inline_multi_domain" checked value="single">
-                                        <span class="form-check-label">Single Domain</span>
-                                    </label>
-                                    <label class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="radio_inline_multi_domain" value="multi">
-                                        <span class="form-check-label">Multi Domain</span>
-                                    </label>
-                                </div>
-                            </div>
+                    <div id="whois_ai_alert">
+                        <div class="alert alert-info col-sm-12 col-md-12 col-lg-6 offset-lg-3 whois_ai_alert_inaccurate" role="alert">
+                            <marquee direction="left">
+                                Visit trollai.net to get full WHOIS .ai (If lucky)!!!
+                            </marquee>
                         </div>
                     </div>
 
+                    <div class="row row-deck row-cards">
+
+                        <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3" id="check_domain_search">
+                            <div class="card">
+                                <div class="row g-2" id="single_domain_area">
+                                    <div class="col">
+                                    <input id="single_domain_input" type="text" class="form-control" placeholder="Domain…">
+                                    </div>
+                                    <div class="col-auto">
+                                        <a class="btn btn-icon btn-primary" aria-label="Button" id="single_domain_btn">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row g-2" id="multi_domain_area_input">
+                                    <div class="col input-group">
+                                        <textarea id="multi_domain_input" class="form-control" data-bs-toggle="autosize" placeholder="Multi Domain…" rows="10"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row g-2" style="display: flex;justify-content: center; margin-top: 0.05rem;" id="multi_domain_area_btn">
+                                    <div class="col-auto">
+                                        <a class="btn btn-icon btn-primary" aria-label="Button" id="multi_domain_btn">
+                                            <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="progress d-none" id="check_domain_progress">
+                                    <div class="progress-bar progress-bar-indeterminate bg-green"></div>
+                                </div>
+                                <div class="row g-2" style="margin-top: 0.25rem;">
+                                    <div class="offset-lg-3 offset-md-4">
+                                        <label class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_inline_multi_domain" checked value="single">
+                                            <span class="form-check-label">Single Domain</span>
+                                        </label>
+                                        <label class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="radio_inline_multi_domain" value="multi">
+                                            <span class="form-check-label">Multi Domain</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -124,7 +133,7 @@
                             Author: ALIENSOFTWARE
                         </p>
                         <p>
-                            Version: 3.0.6-dev
+                            Version: 3.0.7-dev
                         </p>
                         <p>
                             Support: https://check.rs
