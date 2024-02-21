@@ -429,7 +429,8 @@ async function query_rdap_data(domain_url)
             
         },
         complete: function (data) {
-        }
+        },
+        timeout: 10000,
     });
 }
 

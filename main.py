@@ -233,4 +233,4 @@ if __name__ == '__main__':
     listen_host = '0.0.0.0'
     if not is_docker():
         listen_host= '127.0.0.1'
-    uvicorn.run('main:app', host=listen_host, port=6996, reload=True)
+    uvicorn.run('main:app', host=listen_host, port=6996, proxy_headers=True, forwarded_allow_ips='*', reload=True)
