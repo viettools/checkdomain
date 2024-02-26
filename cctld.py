@@ -151,7 +151,7 @@ class WhOISccTLD:
             # 'mp': 'https://get.mp/',
             'mq': 'whois.mediaserv.net',
             'mr': 'whois.nic.mr',
-            'ms': 'whois.nic.ms',
+            'ms': 'production.epp.mninet.ms', #'whois.nic.ms',
             # 'mt': 'https://www.nic.org.mt/dotmt/',
             'mu': 'whois.nic.mu',
             # 'mv': 'dhiraagu.com.mv',
