@@ -120,6 +120,9 @@ var rdap_data_extend = `
     "cx": {
         "rdap": "https://rdap.coccaregistry.org/"
     },
+    "ms": {
+        "rdap": "https://rdap.nic.ms/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
