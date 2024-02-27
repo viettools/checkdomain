@@ -311,7 +311,7 @@ function re_render_view(data, uuid, is_rdap)
     }
 
     var arr_rdap_status = new Array();
-    $('.check_domain_whois_status_area > input').each(function() {
+    $('#' + uuid).find('.check_domain_whois_status_area > input').each(function() {
         var input = $(this);
         var val = input.val();
         if(typeof val === "string" && val.length > 0)

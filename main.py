@@ -38,6 +38,9 @@ def main(request: Request):
         },
         'tidio': {
             'enable': False
+        },
+        'alert': {
+            'enable': False
         }
     }
     
@@ -55,6 +58,10 @@ def main(request: Request):
         dict_config['tidio'].update({
             'enable': config.getboolean('tidio', 'enable'),
             'url': config.get('tidio', 'url'),
+        })
+        
+        dict_config['alert'].update({
+            'enable': config.getboolean('alert', 'enable'),
         })
     
     header_template = templates.TemplateResponse('header.html', {'request': request})
