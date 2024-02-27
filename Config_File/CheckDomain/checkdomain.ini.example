@@ -6,3 +6,6 @@ img = https://s11.flagcounter.com/count2/yjYx/bg_FFFFFF/txt_000000/border_CCCCCC
 [tidio]
 enable = true
 url = //code.tidio.co/epf1fibyxxhpexzpvrvjjj6lmoyiwcku.js
+
+[alert]
+enable = false
