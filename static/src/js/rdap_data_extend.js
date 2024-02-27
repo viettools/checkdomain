@@ -123,6 +123,9 @@ var rdap_data_extend = `
     "ms": {
         "rdap": "https://rdap.nic.ms/"
     },
+    "lb": {
+        "rdap": "https://rdap.lbdr.org.lb/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
