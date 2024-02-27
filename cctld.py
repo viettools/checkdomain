@@ -127,7 +127,7 @@ class WhOISccTLD:
             'ky': 'whois.kyregistry.ky',
             'kz': 'whois.nic.kz',
             'la': 'whois.nic.la',
-            'lb': 'whois.lbdr.org.lb',
+            'lb': 'registry.lbdr.org.lb', #'whois.lbdr.org.lb',
             'lc': 'whois.donuts.co',
             'li': 'whois.nic.li',
             # 'lk': 'whois.nic.lk',
