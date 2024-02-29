@@ -126,6 +126,9 @@ var rdap_data_extend = `
     "lb": {
         "rdap": "https://rdap.lbdr.org.lb/"
     },
+    "kn": {
+        "rdap": "https://rdap.nic.kn/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
