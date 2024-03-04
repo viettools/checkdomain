@@ -52,7 +52,7 @@ class WhOISccTLD:
             'co': 'whois.nic.co',
             'cr': 'whois.nic.cr',
             # 'cu': 'http://www.nic.cu',
-            # 'cv': 'http://www.dns.cv/',
+            'cv': 'whois.olacv.com', # 'whois.nic.cv',
             # 'cw': 'http://www.uoc.cw/cw-registry',
             'cx': 'whois.nic.cx',
             # 'cy': 'http://www.nic.cy',

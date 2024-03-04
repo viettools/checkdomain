@@ -2091,6 +2091,9 @@ var rdap_data = `
     "cuisinella": {
         "rdap": "https://rdap.nic.cuisinella/"
     },
+    "cv": {
+        "rdap": "https://rdap.nic.cv/"
+    },
     "cx": {
         "rdap": "https://rdap.nic.cx/"
     },
