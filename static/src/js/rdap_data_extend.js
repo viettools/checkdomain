@@ -30,9 +30,6 @@ var rdap_data_extend = `
     "pr": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "bm": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "ch": {
         "rdap": "https://rdap.nic.ch/"
     },
@@ -66,17 +63,8 @@ var rdap_data_extend = `
     "vu": {
         "rdap": "https://rdap.dnrs.vu/"
     },
-    "pn": {
-        "rdap": "https://rdap.nominet.uk/pn/"
-    },
-    "gs": {
-        "rdap": "https://rdap.nic.gs/"
-    },
     "ki": {
         "rdap": "https://rdap.nic.ki/"
-    },
-    "ht": {
-        "rdap": "https://rdap.nic.ht/"
     },
     "ht": {
         "rdap": "https://rdap.nic.ht/"
@@ -93,9 +81,6 @@ var rdap_data_extend = `
     "sb": {
         "rdap": "https://rdap.coccaregistry.org/"
     },
-    "nf": {
-        "rdap": "https://rdap.coccaregistry.org/"
-    },
     "af": {
         "rdap": "https://rdap.nic.af/"
     },
@@ -105,9 +90,6 @@ var rdap_data_extend = `
     "ye": {
         "rdap": "https://rdap.y.net.ye/"
     },
-    "vi": {
-        "rdap": "https://rdap.nic.vi/"
-    },
     "mr": {
         "rdap": "https://rdap.nic.mr/"
     },
@@ -116,18 +98,15 @@ var rdap_data_extend = `
     },
     "rw": {
         "rdap": "https://rdap.ricta.org.rw/"
-    },
-    "cx": {
-        "rdap": "https://rdap.coccaregistry.org/"
-    },
-    "ms": {
-        "rdap": "https://rdap.nic.ms/"
-    },
-    "lb": {
-        "rdap": "https://rdap.lbdr.org.lb/"
-    },
+    },,
     "kn": {
         "rdap": "https://rdap.nic.kn/"
+    },
+    "so": {
+        "rdap": "https://rdap.nic.so/"
+    },
+    "td": {
+        "rdap": "https://rdap.nic.td/"
     },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"

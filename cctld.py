@@ -31,7 +31,7 @@ class WhOISccTLD:
             'bh': 'whois.nic.bh',
             'bi': 'whois1.nic.bi',
             'bj': 'whois.nic.bj',
-            'bm': 'whois.afilias-srs.net',
+            'bm': 'whois.nic.bm',
             'bn': 'whois.bnnic.bn',
             'bo': 'whois.nic.bo',
             'br': 'whois.registro.br',
@@ -182,7 +182,7 @@ class WhOISccTLD:
             'pm': 'whois.nic.pm',
             'pn': 'whois.nic.pn',
             'pr': 'whois.afilias-srs.net',
-            'ps': '95.217.44.246',
+            'ps': 'registry.ps',
             'pt': 'whois.dns.pt',
             'pw': 'whois.nic.pw',
             # 'py': 'https://www.nic.py/',
@@ -195,7 +195,7 @@ class WhOISccTLD:
             'sa': 'whois.nic.net.sa',
             'sb': 'whois.nic.net.sb',
             'sc': 'whois.donuts.co',
-            'sd': 'whois.sdnic.sd',
+            'sd': 'whois.nic.sd',
             'se': 'whois.iis.se',
             'sg': 'whois.sgnic.sg',
             'sh': 'whois.nic.sh',
@@ -291,7 +291,11 @@ class WhOISccTLD:
             'net.za': 'net-whois.registry.net.za',
             'org.za': 'org-whois.registry.net.za',
             'web.za': 'web-whois.registry.net.za',
-            'gov.za': 'whois.gov.za'
+            'gov.za': 'whois.gov.za',
+            
+            # .living, .food
+            'living': 'whois.nic.living',
+            'food': 'whois.nic.food'
         }
         dict_extension.update(pseudo_sld)
         return dict_extension.get(extension, False)
