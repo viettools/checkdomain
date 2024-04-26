@@ -9,6 +9,12 @@ var rdap_data = `
     "cpa": {
         "rdap": "http://rdap.nic.cpa/"
     },
+    "merckmsd": {
+        "rdap": "http://rdap.nic.merckmsd/"
+    },
+    "msd": {
+        "rdap": "http://rdap.nic.msd/"
+    },
     "tattoo": {
         "rdap": "http://rdap.nic.tattoo/"
     },
@@ -77,9 +83,6 @@ var rdap_data = `
     },
     "baby": {
         "rdap": "https://rdap.centralnic.com/baby/"
-    },
-    "bar": {
-        "rdap": "https://rdap.centralnic.com/bar/"
     },
     "basketball": {
         "rdap": "https://rdap.centralnic.com/basketball/"
@@ -297,9 +300,6 @@ var rdap_data = `
     "rent": {
         "rdap": "https://rdap.centralnic.com/rent/"
     },
-    "rest": {
-        "rdap": "https://rdap.centralnic.com/rest/"
-    },
     "rugby": {
         "rdap": "https://rdap.centralnic.com/rugby/"
     },
@@ -401,9 +401,6 @@ var rdap_data = `
     },
     "crown": {
         "rdap": "https://rdap.crown.fury.ca/rdap/"
-    },
-    "global": {
-        "rdap": "https://rdap.donuts.co/rdap/"
     },
     "xn--5tzm5g": {
         "rdap": "https://rdap.donuts.co/rdap/"
@@ -576,6 +573,9 @@ var rdap_data = `
     "ua": {
         "rdap": "https://rdap.hostmaster.ua/"
     },
+    "int": {
+        "rdap": "https://rdap.iana.org/"
+    },
     "abb": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -583,6 +583,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "academy": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "accenture": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "accountants": {
@@ -633,6 +636,9 @@ var rdap_data = `
     "army": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "arte": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "asda": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -649,9 +655,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "audi": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "avianca": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "band": {
@@ -703,6 +706,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "blue": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "bm": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "bms": {
@@ -774,6 +780,9 @@ var rdap_data = `
     "cern": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "cfa": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "chanel": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -808,6 +817,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "clothing": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "clubmed": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "coach": {
@@ -1068,6 +1080,9 @@ var rdap_data = `
     "games": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "genting": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "george": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1075,6 +1090,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "glass": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "global": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "gmbh": {
@@ -1326,6 +1344,9 @@ var rdap_data = `
     "lundbeck": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "maif": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "maison": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1422,6 +1443,9 @@ var rdap_data = `
     "oracle": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "orange": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "organic": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1509,9 +1533,6 @@ var rdap_data = `
     "red": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "redstone": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "redumbrella": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1582,6 +1603,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "sarl": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "saxo": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "sbi": {
@@ -1708,6 +1732,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "theater": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "tiaa": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "tienda": {
@@ -1883,6 +1910,9 @@ var rdap_data = `
     },
     "kiwi": {
         "rdap": "https://rdap.kiwi.fury.ca/rdap/"
+    },
+    "lb": {
+        "rdap": "https://rdap.lbdr.org.lb/"
     },
     "mls": {
         "rdap": "https://rdap.mls.fury.ca/rdap/"
@@ -2211,6 +2241,9 @@ var rdap_data = `
     "grainger": {
         "rdap": "https://rdap.nic.grainger/"
     },
+    "gs": {
+        "rdap": "https://rdap.nic.gs/"
+    },
     "hamburg": {
         "rdap": "https://rdap.nic.hamburg/v1/"
     },
@@ -2361,6 +2394,9 @@ var rdap_data = `
     "moto": {
         "rdap": "https://rdap.nic.moto/"
     },
+    "ms": {
+        "rdap": "https://rdap.nic.ms/"
+    },
     "museum": {
         "rdap": "https://rdap.nic.museum/"
     },
@@ -2375,6 +2411,9 @@ var rdap_data = `
     },
     "neustar": {
         "rdap": "https://rdap.nic.neustar/"
+    },
+    "nf": {
+        "rdap": "https://rdap.nic.nf/"
     },
     "nfl": {
         "rdap": "https://rdap.nic.nfl/"
@@ -2490,9 +2529,6 @@ var rdap_data = `
     "sas": {
         "rdap": "https://rdap.nic.sas/"
     },
-    "saxo": {
-        "rdap": "https://rdap.nic.saxo/"
-    },
     "scb": {
         "rdap": "https://rdap.nic.scb/"
     },
@@ -2537,6 +2573,9 @@ var rdap_data = `
     },
     "sport": {
         "rdap": "https://rdap.nic.sport/"
+    },
+    "ss": {
+        "rdap": "https://rdap.nic.ss/"
     },
     "staples": {
         "rdap": "https://rdap.nic.staples/"
@@ -2606,6 +2645,9 @@ var rdap_data = `
     },
     "versicherung": {
         "rdap": "https://rdap.nic.versicherung/v1/"
+    },
+    "vi": {
+        "rdap": "https://rdap.nic.vi/"
     },
     "vip": {
         "rdap": "https://rdap.nic.vip/"
@@ -2747,6 +2789,9 @@ var rdap_data = `
     },
     "zero": {
         "rdap": "https://rdap.nic.zero/"
+    },
+    "zm": {
+        "rdap": "https://rdap.nic.zm/"
     },
     "abbvie": {
         "rdap": "https://rdap.nominet.uk/abbvie/"
@@ -3009,8 +3054,17 @@ var rdap_data = `
     "xn--nqv7fs00ema": {
         "rdap": "https://rdap.publicinterestregistry.org/rdap/"
     },
+    "si": {
+        "rdap": "https://rdap.register.si/"
+    },
     "br": {
         "rdap": "https://rdap.registro.br/"
+    },
+    "bar": {
+        "rdap": "https://rdap.registry.bar/rdap/"
+    },
+    "rest": {
+        "rdap": "https://rdap.registry.bar/rdap/"
     },
     "observer": {
         "rdap": "https://rdap.registry.click/rdap/"
@@ -3026,6 +3080,9 @@ var rdap_data = `
     },
     "creditunion": {
         "rdap": "https://rdap.registry.coop/rdap/"
+    },
+    "ec": {
+        "rdap": "https://rdap.registry.ec/"
     },
     "hiphop": {
         "rdap": "https://rdap.registry.hiphop/rdap/"
@@ -3084,6 +3141,9 @@ var rdap_data = `
     "net": {
         "rdap": "https://rdap.verisign.com/net/v1/"
     },
+    "ai": {
+        "rdap": "https://rdap.whois.ai/"
+    },
     "xn--45q11c": {
         "rdap": "https://rdap.zdnsgtld.com/XN--45Q11C/"
     },
@@ -3098,6 +3158,9 @@ var rdap_data = `
     },
     "icbc": {
         "rdap": "https://rdap.zdnsgtld.com/icbc/"
+    },
+    "redstone": {
+        "rdap": "https://rdap.zdnsgtld.com/redstone/"
     },
     "ren": {
         "rdap": "https://rdap.zdnsgtld.com/ren/"
@@ -3168,9 +3231,6 @@ var rdap_data = `
     "abc": {
         "rdap": "https://tld-rdap.verisign.com/abc/v1/"
     },
-    "accenture": {
-        "rdap": "https://tld-rdap.verisign.com/accenture/v1/"
-    },
     "airbus": {
         "rdap": "https://tld-rdap.verisign.com/airbus/v1/"
     },
@@ -3183,9 +3243,6 @@ var rdap_data = `
     "amfam": {
         "rdap": "https://tld-rdap.verisign.com/amfam/v1/"
     },
-    "arte": {
-        "rdap": "https://tld-rdap.verisign.com/arte/v1/"
-    },
     "bharti": {
         "rdap": "https://tld-rdap.verisign.com/bharti/v1/"
     },
@@ -3194,12 +3251,6 @@ var rdap_data = `
     },
     "cc": {
         "rdap": "https://tld-rdap.verisign.com/cc/v1/"
-    },
-    "cfa": {
-        "rdap": "https://tld-rdap.verisign.com/cfa/v1/"
-    },
-    "clubmed": {
-        "rdap": "https://tld-rdap.verisign.com/clubmed/v1/"
     },
     "comsec": {
         "rdap": "https://tld-rdap.verisign.com/comsec/v1/"
@@ -3213,12 +3264,6 @@ var rdap_data = `
     "food": {
         "rdap": "https://tld-rdap.verisign.com/food/v1/"
     },
-    "genting": {
-        "rdap": "https://tld-rdap.verisign.com/genting/v1/"
-    },
-    "guardian": {
-        "rdap": "https://tld-rdap.verisign.com/guardian/v1/"
-    },
     "lego": {
         "rdap": "https://tld-rdap.verisign.com/lego/v1/"
     },
@@ -3227,15 +3272,6 @@ var rdap_data = `
     },
     "living": {
         "rdap": "https://tld-rdap.verisign.com/living/v1/"
-    },
-    "maif": {
-        "rdap": "https://tld-rdap.verisign.com/maif/v1/"
-    },
-    "merckmsd": {
-        "rdap": "https://tld-rdap.verisign.com/merckmsd/v1/"
-    },
-    "msd": {
-        "rdap": "https://tld-rdap.verisign.com/msd/v1/"
     },
     "name": {
         "rdap": "https://tld-rdap.verisign.com/name/v1/"
@@ -3249,9 +3285,6 @@ var rdap_data = `
     "omega": {
         "rdap": "https://tld-rdap.verisign.com/omega/v1/"
     },
-    "orange": {
-        "rdap": "https://tld-rdap.verisign.com/orange/v1/"
-    },
     "rwe": {
         "rdap": "https://tld-rdap.verisign.com/rwe/v1/"
     },
@@ -3263,9 +3296,6 @@ var rdap_data = `
     },
     "swatch": {
         "rdap": "https://tld-rdap.verisign.com/swatch/v1/"
-    },
-    "tiaa": {
-        "rdap": "https://tld-rdap.verisign.com/tiaa/v1/"
     },
     "vana": {
         "rdap": "https://tld-rdap.verisign.com/vana/v1/"
