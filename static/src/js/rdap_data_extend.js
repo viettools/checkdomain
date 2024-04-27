@@ -98,7 +98,7 @@ var rdap_data_extend = `
     },
     "rw": {
         "rdap": "https://rdap.ricta.org.rw/"
-    },,
+    },
     "kn": {
         "rdap": "https://rdap.nic.kn/"
     },
