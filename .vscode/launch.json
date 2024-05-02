@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Python: Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "python": "${workspaceFolder}/venv/bin/python3.11",
             "program": "${workspaceFolder}/main.py",
