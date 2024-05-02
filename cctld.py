@@ -6,7 +6,7 @@ class WhOISccTLD:
     def get_whois_server(self, extension):
         dict_extension = {
             'ac': 'whois.nic.ac',
-            # 'ad': 'https://www.andorratelecom.ad/',
+            'ad': 'whois.nic.ad',
             'ae': 'whois.aeda.net.ae',
             'af': '185.17.239.201', #'whois.nic.af',
             'ag': 'whois.nic.ag',
