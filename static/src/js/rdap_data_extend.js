@@ -111,6 +111,9 @@ var rdap_data_extend = `
     "ad": {
         "rdap": "https://rdap.nic.ad/"
     },
+    "nf": {
+        "rdap": "https://rdap.nic.nf/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
