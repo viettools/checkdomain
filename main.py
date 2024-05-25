@@ -15,7 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 from bs4 import BeautifulSoup
 from tld import get_tld
-import re, os, requests, json, time, pathlib, sys, configparser
+import re, os, requests, json, time, pathlib, sys, configparser, csv
 
 app = FastAPI(docs_url=None, redoc_url=None) # Remove 'docs_url=None, redoc_url=None' to check api
 
@@ -29,6 +29,71 @@ current_path_dir = os.path.dirname(os.path.abspath(__file__))
 
 app.mount('/static', StaticFiles(directory='{0}/static/src'.format(current_path_dir)), name='static')
 templates = Jinja2Templates('{0}/templates'.format(current_path_dir))
+
+#region Copy code from module 'domain_management' - Odoo17
+
+def load_special_regex_data():
+    result = {}
+    path_csv = '{0}/data/domains.query.regex.csv'.format(current_path_dir)
+    with open(path_csv) as csv_file:
+        heading = next(csv_file)
+        csv_obj = csv.reader(csv_file)
+        for row in csv_obj:
+            if row:
+                domain_type = row[1]
+                if not domain_type:
+                    continue
+                
+                arr_replace = [['domain_management.domain_name_', ''], ['_whois', ''], ['_', '.']]
+                for item_rep in arr_replace:
+                    domain_type = domain_type.replace(item_rep[0], item_rep[1])
+                
+                dict_data = {
+                    'option': row[2],
+                    'dotall': False if row[3] == '0' else True,
+                    'ignore_case': False if row[4] == '0' else True
+                }
+                if domain_type in result:
+                    result[domain_type].append(dict_data)
+                else:
+                    result.update({domain_type: [dict_data]})
+        
+    return result
+
+def load_regex_data():
+    result = {}
+    
+    path_csv = '{0}/data/domains.query.csv'.format(current_path_dir)
+    with open(path_csv) as csv_file:
+        heading = next(csv_file)
+        csv_obj = csv.reader(csv_file)
+        for row in csv_obj:
+            if row and row[2] == 'whois':
+                domain_type = row[1]
+                if not domain_type:
+                    continue
+                
+                domain_type = domain_type.replace('domain_name_', '')
+                domain_type = domain_type.replace('_', '.')
+                
+                whois_dict = {
+                    'server': row[3],
+                    'registrar': row[4] or False,
+                    'registrar_url': row[5] or False,
+                    'domain_status': row[6] or False,
+                    'nameservers': row[7] or False,
+                    'creation_date': row[8] or False,
+                    'updated_date': row[9] or False,
+                    'expiry_date': row[10] or False
+                }
+                result.update({domain_type: whois_dict})
+    
+    return result
+
+regex_data = load_regex_data()
+special_regex_data = load_special_regex_data()
+
+#endregion
 
 @app.get('/', response_class=HTMLResponse)
 def main(request: Request):
@@ -175,10 +240,10 @@ def whois_data(domain: str = Body(..., embed=True)):
         result.update(whois_result)
         
         if whois_result.get('result', False):
-            parse_obj = ParseWhoisSocket()
+            parse_obj = ParseWhoisSocket(final_tld_domain, regex_data, special_regex_data)
             verified_obj = VerifiedRegistrar()
             
-            parse_raw = parse_obj.parse_socket_data(whois_result['result'], final_tld_domain)
+            parse_raw = parse_obj.parse_socket_data(whois_result['result'])
             verified_data = verified_obj.check_registrar(whois_result['result'])
             
             parse_raw.update({'verified': verified_data})
