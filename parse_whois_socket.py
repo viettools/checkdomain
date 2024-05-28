@@ -282,9 +282,14 @@ class ParseWhoisSocket:
             if pre_data.get('nameservers', False):
                 nameservers = pre_data['nameservers'].split('\n')
                 pre_data['nameservers'] = nameservers
+            else:
+                pre_data['nameservers'] = []
+            
             if pre_data.get('domain_status', False):
                 domain_status = pre_data['domain_status'].split('\n')
                 pre_data['domain_status'] = domain_status
+            else:
+                pre_data['domain_status'] = []
             
             if pre_data:
                 result.update(pre_data)
