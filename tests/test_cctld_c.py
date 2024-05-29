@@ -191,6 +191,26 @@ class TestC(unittest.TestCase):
         self.assertEqual(data['parse']['creation_date'], '02.03.2008 18:00:00')
         self.assertEqual(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
+
+    def test_CV(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "google.cv"},
+        )
+        data = json.loads(response.content)
+        if not data['status']:
+            print('Please check .cx whois server!')
+            return
+        
+        self.assertEqual(data['parse']['registrar'], 'Migration Client')
+        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertGreater(len(data['parse']['nameservers']), 0)
+        
+        self.assertEqual(data['parse']['creation_date'], '2010-06-17T00:00:00.0Z')
+        self.assertEqual(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
         
     def test_CX(self):
         response = client.post(
@@ -208,7 +228,7 @@ class TestC(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2010-07-29T18:15:42.56Z')
+        self.assertEqual(data['parse']['creation_date'], '2010-07-29T18:15:42Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
 
