@@ -1,403 +1,273 @@
 # -*- coding: utf-8 -*-
 # https://check.rs/
 
-import re
+import re, html
 
 class ParseWhoisSocket:
     
-    def remove_redundancy(self, raw_data):
+    def __init__(self, extension_name, regex_data, special_regex_data):
+        self.extension_name = extension_name
+        self.regex_data = regex_data
+        self.special_regex_data = special_regex_data
+    
+    def _get_query_regex_option(self, item_option, regex_query, raw_data):
+        if not item_option or not regex_query or not raw_data or not self:
+            return False
+        
         result = False
-        if raw_data:
-            result = raw_data.strip()
-            result = re.sub('\n|\r', '', result)
-        return result
-    
-    def parse_registrar(self, data, tld_domain):
-        def registrar_short_replace(data, regex_string, before_replace, after_replace):
-            result = str(data)
-            short_filtered = re.findall(regex_string, result, re.DOTALL | re.IGNORECASE)
-            if short_filtered:
-                result = short_filtered[-1]
-                result = result.replace(before_replace, after_replace)
-                del short_filtered
-            return result
+        regex_option = {}
+        arr_regex_option = self.special_regex_data.get(self.extension_name, {})
+        for item_regex_option in arr_regex_option:
+            if item_regex_option.get('option', False) == item_option:
+                regex_option = item_regex_option
+                break
         
-        result = ''
-        if not data:
-            return result
-        
-        raw_registrar = str(data)
-        if tld_domain in ['be', 'gh', 'sy', 'tg', 'tr', 'ua', 'ac.za']:
-            pre_raw_registrar = []
-            if tld_domain == 'be':
-                pre_raw_registrar = re.findall('Name:(.*?)Website:', raw_registrar, re.DOTALL | re.IGNORECASE)
-            elif tld_domain in ['gh', 'sy']:
-                pre_raw_registrar = re.findall('Sponsoring Registrar:(.*?)Sponsoring Registrar IANA ID:', raw_registrar, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'tg':
-                pre_raw_registrar = re.findall('Registrar:..........(.*?)Activation:.........', raw_registrar, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'tr':
-                pre_raw_registrar = re.findall('Organization Name	:(.*?)Address', raw_registrar, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'ua':
-                pre_raw_registrar = re.findall('% Registrar:(.*?)organization:', raw_registrar, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'ac.za':
-                pre_raw_registrar = re.findall('Registrar:(.*?)Registrar WHOIS Server:', raw_registrar, re.DOTALL | re.IGNORECASE)
-            
-            if pre_raw_registrar:
-                raw_registrar = self.remove_redundancy(pre_raw_registrar[-1])
-                result = raw_registrar
-                del pre_raw_registrar
-        elif tld_domain == 'ee':
-            '''
-                Registrar:
-                name:       Zone Media OÜ
-                url:        http://www.zone.ee
-                phone:      +372 6886886
-                changed:    2020-07-01 13:55:58 +03:00
-                --> Normal keyword --> Need to filter
-            '''
-            raw_registrar = registrar_short_replace(raw_registrar, 'Registrar:(.*?)url:', 'name:', 'registrar:')
-        elif tld_domain == 'it':
-            raw_registrar = registrar_short_replace(raw_registrar, 'Registrar(.*?)Name:', 'Organization:', 'registrar:')
-        elif tld_domain == 'lv':
-            raw_registrar = registrar_short_replace(raw_registrar, '\[Registrar\](.*?)\[Nservers\]', 'Name:', 'registrar:')
-
-        registrar = re.findall('(Registrar:|Registrar Name:|registrar:|'
-                                   'registrar............:|Referral URL:|'
-                                   'registrar..........:|Sponsoring Registrar:|'
-                                   'Sponsoring Registrar Organization:|'
-                                   'Authorized Agency           :|Current Registar:|'
-                                   'registrar-name:|Registrar                :|'
-                                   'Registrar Company Name :|Registrar...........:|'
-                                   'Registration Service Provider:)\s+(.+)', raw_registrar, re.IGNORECASE)
-        if registrar:
-            result = self.remove_redundancy(registrar[0][1])
-        return result
-    
-    def parse_registrar_url(self, data, tld_domain):
-        
-        def registrar_url_short_replace(data, regex_string, before_replace, after_replace):
-            result = str(data)
-            short_filtered = re.findall(regex_string, result, re.DOTALL | re.IGNORECASE)
-            if short_filtered:
-                result = short_filtered[-1]
-                result = result.replace(before_replace, after_replace)
-                del short_filtered
-            return result
-            
-        result = ''
-        if not data:
-            return result
-        
-        raw_registrar_url = str(data)
-        if tld_domain in ['be', 'gh', 'gi', 'gl', 'la', 'kw', 'ps',
-                          'rw', 'so', 'vg', 'bh', 'bm', 'do', 'fm',
-                          'gd', 'pw', 'ke', 'rw', 'sd']:
-            pre_raw_registrar_url = []
-            if tld_domain == 'be':
-                pre_raw_registrar_url = re.findall('Website:(.*?)Nameservers:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'gh':
-                pre_raw_registrar_url = re.findall('Sponsoring Registrar URL:(.*?)Sponsoring Registrar Country:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
-            # Related DONUTS, CoCCA, CNIC
-            elif tld_domain in ['gi', 'gl', 'la', 'kw', 'ps', 'rw',
-                                'so', 'vg', 'bh', 'bm', 'do', 'fm',
-                                'gd', 'pw', 'ke', 'rw', 'sd']:
-                pre_raw_registrar_url = re.findall('Registrar URL:(.*?)Updated Date:', raw_registrar_url, re.DOTALL | re.IGNORECASE)
-            
-            if pre_raw_registrar_url:
-                raw_registrar_url = self.remove_redundancy(pre_raw_registrar_url[-1])
-                result = raw_registrar_url
-                del pre_raw_registrar_url
-        elif tld_domain == 'ee':
-            raw_registrar_url = registrar_url_short_replace(data, 'Registrar:(.*?)phone:', 'url:', 'Registrar URL:')
-        elif tld_domain == 'it':
-            raw_registrar_url = registrar_url_short_replace(data, 'Registrar(.*?)DNSSEC:', 'Web:', 'Registrar URL:')
-        elif tld_domain == 'mx':
-            raw_registrar_url = registrar_url_short_replace(data, 'Registrar:(.*?)Registrant:', 'URL:', 'Registrar URL:')
-        elif tld_domain == 'no':
-            raw_registrar_url = ''
-        elif tld_domain == 'st':
-            raw_registrar_url = registrar_url_short_replace(data,
-                                                            'REGISTRATION-SERVICE-PROVIDER:(.*?)created-date:',
-                                                            'URL:',
-                                                            'Registrar URL:')
-        elif tld_domain == 'sy':
-            raw_registrar_url = registrar_url_short_replace(data, 'WHOIS Server:(.*?)Creation Date:', 'Referral URL:', 'Registrar URL:')
-        elif tld_domain == 'ua':
-            raw_registrar_url = registrar_url_short_replace(data, '% Registrar:(.*?)abuse-email:', 'url:', 'Registrar URL:')
-        elif tld_domain == 'uk':
-            raw_registrar_url = registrar_url_short_replace(data, 'Registrar:(.*?)Relevant dates:', 'URL:', 'Registrar URL:')
-        elif tld_domain == 'de':
-            raw_registrar_url = ''
-        elif tld_domain == 'ec':
-            # Bug no Registrar URL. Ex: google.ec
-            raw_registrar_url = registrar_url_short_replace(data, 'Registrar URL:(.*?)Creation Date:', ' ', 'Registrar URL: ')
-        elif tld_domain == 'fi':
-            # Bug no Registrar URL. Ex: 99.fi
-            raw_registrar_url = registrar_url_short_replace(data, 'www................:(.*?)>>> Last update of WHOIS database', ' ', 'Registrar URL: ')
-        
-        registrar_url = re.findall('(Registrar URL:|website:|www..................:|'
-                                   'Referral URL:|www................:|registrar info:|'
-                                   'registrar-url:|Registration Service URL:)\s+(.+)', raw_registrar_url, re.IGNORECASE)
-        if registrar_url:
-            result = self.remove_redundancy(registrar_url[0][1])
-        return result
-    
-    def parse_creation_date(self, data, tld_domain):
-        result = ''
-        if not data:
-            return result
-        
-        creation_date = re.findall('(Creation Date:|Registered:|\[Created on\]|created:|'
-                                       'Registered on|created..............:|Registered On:|Fecha de activación:|'
-                                       'Registration Time:|created............:|Date de création:|'
-                                       'Domain Name Commencement Date:|Created On:|'
-                                       'Registered Date             :|Record created on|'
-                                       'Created on               :|Created \(JJ/MM/AAAA\) :|'
-                                       'Registration date:|Created date:|Creation date.......:|'
-                                       'Created on..............:|Data Submissão:)\s+(.+)', data, re.IGNORECASE)
-        if creation_date:
-            result = self.remove_redundancy(creation_date[0][1])
-        return result
-    
-    def parse_updated_date(self, data, tld_domain):
-        result = ''
-        if not data:
-            return result
-        
-        if tld_domain in ['au', 'sk', 'tz', 'ac.ru']:
-            updated_date = []
-            if tld_domain == 'au':
-                updated_date = re.findall('Last Modified: (.+)', data, re.IGNORECASE)
-            elif tld_domain == 'sk':
-                updated_date = re.findall('Updated:(.+)', data, re.IGNORECASE)
-            elif tld_domain == 'tz':
-                updated_date = re.findall('changed:(.+)expire:', data, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'ac.ru':
-                arr_small_area = re.findall('created:(.+)organization', data, re.DOTALL | re.IGNORECASE)
-                if arr_small_area:
-                    updated_date = re.findall('updated:(.+)source:', arr_small_area[0], re.DOTALL | re.IGNORECASE)
-            
-            if updated_date:
-                result = self.remove_redundancy(updated_date[0])
+        if not regex_option or (regex_option and \
+                                    not regex_option.get('dotall', False) and \
+                                        not regex_option.get('ignore_case', False)):
+            if regex_option.get('option', False) in ['domain_status', 'nameservers']:
+                result = re.findall(regex_query, raw_data, re.IGNORECASE)
+            else:
+                result = re.findall(regex_query, raw_data, re.DOTALL | re.IGNORECASE)
         else:
-            updated_date = re.findall('(Updated Date:|Last modified:|\[Last Updated\]|Changed:|'
-                                        'modified.............:|Modified Date:|modified...........:|'
-                                        'Dernière modification:|Last Updated On:|Last Update:|'
-                                        'Last Updated Date           :|Last modified :|'
-                                        'Last updated on          :|modified:|Last renewed \(JJ/MM/AAAA\) :|'
-                                        'Modification date:|Last updated:|LastMod:|Entry updated:)\s+(.+)', data, re.IGNORECASE)
-            if updated_date:
-                result = self.remove_redundancy(updated_date[0][1])
-        return result
-    
-    def parse_expiry_date(self, data, tld_domain):
-        result = ''
-        if not data:
-            return result
-
-        expiry_date = re.findall('(Registry Expiry Date:|Expires:|\[Expires on\]|'
-                                    'option expiration date:|expiration date:|Registry fee due on|'
-                                    'available............:|Expires On:|Fecha de corte:|'
-                                    'Expiration Time:|expire:|available..........:|'
-                                    'Date d\'expiration:|Expiry Date:|validity:|Expire Date:|'
-                                    'Expiration Date             :|Expires    on:|Record expires on|'
-                                    'Expires on               :|Expire \(JJ/MM/AAAA\) :|'
-                                    'Expiration date:|free-date:|Valid Until:|Exp date:|'
-                                    'Expiry :|Expires on..............:|Expired    on:|Expiration:)\s+(.+)', data, re.IGNORECASE)
-        if expiry_date:
-            result = self.remove_redundancy(expiry_date[0][1])
-        else:
-            if tld_domain == 'tg':
-                expiry_date_tg = re.findall('Expiration:.........(.*?)Status:.............', data, re.DOTALL | re.IGNORECASE)
-                if expiry_date_tg:
-                    result = self.remove_redundancy(expiry_date_tg[0])
-        return result
-    
-    def parse_domain_status(self, data, tld_domain):
-        result = []
-        if not data:
-            return result
-
-        domain_status = []
-        raw_domain_status = str(data)
-        if tld_domain in ['fr', 'tf', 'wf', 'yt', 'pm', 're']:
-            pre_domain_status = re.findall('domain:(.*?)hold:', raw_domain_status, re.DOTALL | re.IGNORECASE)
-            if pre_domain_status:
-                raw_domain_status = pre_domain_status[0]
-                del pre_domain_status
-        elif tld_domain in ['as', 'je', 'gg']:
-            pre_domain_status = re.findall('Domain Status:(.*?)Registrant:', raw_domain_status, re.DOTALL | re.IGNORECASE)
-            if pre_domain_status:
-                # Format [..., ...] to [[..., ...], [..., ...]]
-                arr_reformat = re.findall('(.+)\n', pre_domain_status[0], re.IGNORECASE)
-                for item_reformat in arr_reformat:
-                    item_reformat = item_reformat.replace(' ', '')
-                    if item_reformat:
-                        domain_status.append([item_reformat, item_reformat])
-                    del item_reformat
-                del arr_reformat
-            del pre_domain_status
-        # Special BE, HK, TK
-        elif tld_domain in ['be', 'hk', 'tg', 'net.ru', 'org.ru', 'pp.ru']:
-            pre_domain_status = []
-            if tld_domain == 'be':
-                pre_domain_status = re.findall('Flags:\r\n\t(.*?)Please visit', raw_domain_status, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'hk':
-                pre_domain_status = re.findall('Domain Status:(.*?)DNSSEC:', raw_domain_status, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'tg':
-                pre_domain_status = re.findall('Status:.............(.*?)Contact Type:', raw_domain_status, re.DOTALL | re.IGNORECASE)
-            elif tld_domain in ['net.ru', 'org.ru', 'pp.ru']:
-                pre_domain_status = re.findall('state:(.+)', raw_domain_status, re.IGNORECASE)
+            if regex_option.get('dotall', False) and not regex_option.get('ignore_case', False):
+                result = re.findall(regex_query, raw_data, re.DOTALL)
+            elif not regex_option.get('dotall', False) and regex_option.get('ignore_case', False):
+                result = re.findall(regex_query, raw_data, re.IGNORECASE)
+            else:
+                result = re.findall(regex_query, raw_data, re.DOTALL | re.IGNORECASE)
             
-            if pre_domain_status:
-                raw_domain_status = pre_domain_status[-1]
-                redundancy = self.remove_redundancy(raw_domain_status)
-                result.append(redundancy)
-                del pre_domain_status
-                del redundancy
-        
-        if not domain_status:
-            domain_status = re.findall('(Domain Status:|Status:|\[Status\]|'
-                                        'eppstatus:|status...............:|status.............:|'
-                                        'Statut:|Domain status :|domaintype:|'
-                                        'Domain  state:|Status :|Status :|Domain status.......:|'
-                                        'Status.:|Estado:)\s+(.+)', raw_domain_status, re.IGNORECASE)
-        
-        if domain_status:
-            for item_status in domain_status:
-                if tld_domain in ['pt', 'am', 'bg', 'cr', 'il', 'lu', 'pk', 'sg', 'si', 'sk', 'st', 'tm', 'tr', 'uk', 'cy', 'tj']:
-                    # [('Domain Status:', 'Pending Delete')]
-                    result.append(self.remove_redundancy(item_status[1]))
-                else:
-                    # Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
-                    # Status: clientDeleteProhibited
-                    # spl_item_status = ['clientDeleteProhibited', 'https://icann.org/epp#clientDeleteProhibited\r']
-                    spl_item_status = item_status[1].split(' ')
-                    if spl_item_status:
-                        res_stt_rem_red = self.remove_redundancy(spl_item_status[0])
-                        if res_stt_rem_red:
-                            result.append(res_stt_rem_red)
-        
         return result
-    
-    def parse_nameservers(self, data, tld_domain):
-        result = []
-        if not data:
-            return result
 
-        nameservers = []
-        raw_nameservers = str(data)
-        if tld_domain in ['as', 'je', 'gg', 'aw', 'be', 'bg', 'hk', 'am', 'eu',
-                          'im', 'it', 'kg', 'mx', 'nc', 'nl', 'pf', 'pl', 'rs',
-                          'sa', 'sg', 'sm', 'tm', 'tn', 'tr', 'tw', 'uk', 'co.pl',
-                          'mo', 'tg', 'to']:
-            if tld_domain in ['as', 'je', 'gg']:
-                pre_nameservers = re.findall('Name servers:(.*?)WHOIS lookup made on', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'aw':
-                pre_nameservers = re.findall('Domain nameservers:(.*?)Record maintained by:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'be':
-                pre_nameservers = re.findall('Nameservers:(.*?)Keys:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'bg':
-                pre_nameservers = re.findall('NAME SERVER INFORMATION:(.*?)DNSSEC:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'hk':
-                pre_nameservers = re.findall('Name Servers Information:(.*?)Status Information:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'im':
-                pre_nameservers = re.findall('Name Server:(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'it':
-                pre_nameservers = re.findall('Nameservers(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'kg':
-                pre_nameservers = re.findall('Name servers in the listed order:(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'mx':
-                pre_nameservers = re.findall('Name Servers:(.+)DNSSEC DS Records:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'nc':
-                pre_nameservers = re.findall('Domain server(.+)Registrar', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'nl':
-                pre_nameservers = re.findall('Domain nameservers:(.+)Record maintained by:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'pf':
-                pre_nameservers = re.findall('Name server(.+)Registrant Company Name', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'pl':
-                pre_nameservers = re.findall('nameservers:(.+)last modified:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'rs':
-                pre_nameservers = re.findall('DNS:(.+)DNSSEC signed:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain in ['sa', 'sg']:
-                pre_nameservers = re.findall('Name Servers:(.+)DNSSEC:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'sm':
-                pre_nameservers = re.findall('DNS Servers:(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'tm':
-                pre_nameservers = re.findall('NS 1   :(.+)Owner Name', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'tn':
-                pre_nameservers = re.findall('DNS servers(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'tr':
-                pre_nameservers = re.findall('Domain Servers:(.+)\*\* Additional Info:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'tw':
-                pre_nameservers = re.findall('Domain servers in listed order:(.+)Registration Service Provider:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'uk':
-                pre_nameservers = re.findall('Name servers:(.+)WHOIS lookup made at', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'am':
-                pre_nameservers = re.findall('DNS servers:(.+)Registered:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'co.pl':
-                pre_nameservers = re.findall('Nameservers:(.+)Holder data:', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'eu':
-                pre_nameservers = re.findall('Name servers:(.+)Please visit', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'mo':
-                pre_nameservers = re.findall('-----------------------------------------------------\n(.+)', raw_nameservers, re.DOTALL | re.IGNORECASE)
-            elif tld_domain == 'tg':
-                pre_tg_nameservers = re.findall('Name Server \(DB\):\.\.\.(.+)', raw_nameservers, re.IGNORECASE)
-                # Remove duplicate ns server
-                if pre_tg_nameservers:
-                    pre_nameservers = ['\n'.join([ns_tg.strip() for ns_tg in list(set(pre_tg_nameservers))]) + '\n']
-            elif tld_domain == 'to':
-                # Example: ['Tonic whoisd V1.1', 'google ns2.google.com', 'google ns1.google.com', '']
-                spl_raw_ns = data.split('\n')
-                arr_ns_to = []
-                for ns_to in spl_raw_ns:
-                    if ns_to and ns_to.find('Tonic whoisd') == -1:
-                        spl_ns = ns_to.split(' ')
-                        if spl_ns and len(spl_ns) == 2:
-                            arr_ns_to.append(spl_ns[1])
+    def _parse_data(self, raw_data):
+        def spl_new_line(raw_regex_data):
+            result = []
+            for item in raw_regex_data:
+                arr_spl = item.split('\n')
+                if arr_spl:
+                    result.extend(arr_spl)
+            return result
+        
+        def remove_redundancy(raw_data):
+            result = False
+            if raw_data:
+                result = raw_data.strip()
+                result = re.sub('\n|\r', '', result)
+            return result
+        
+        def filter_domain_status(arr_status):
+            result = []
+            if not arr_status:
+                return result
+            
+            epp_status_codes = ['addPeriod', 'autoRenewPeriod', 'inactive', 'ok',
+                                'pendingCreate', 'pendingDelete', 'pendingRenew',
+                                'pendingRestore', 'pendingTransfer', 'pendingUpdate',
+                                'redemptionPeriod', 'renewPeriod', 'serverDeleteProhibited',
+                                'serverHold', 'serverRenewProhibited', 'serverTransferProhibited',
+                                'serverUpdateProhibited', 'transferPeriod', 'clientDeleteProhibited',
+                                'clientHold', 'clientRenewProhibited', 'clientTransferProhibited',
+                                'clientUpdateProhibited']
+            for item in arr_status:
+                # .fr, .tf, .wf, .yt, .pm, .re
+                if item == 'associated':
+                    continue
                 
-                if arr_ns_to:
-                    pre_nameservers = ['\n'.join(arr_ns_to) + '\n']
-            
-            if pre_nameservers:
-                arr_reformat = re.findall('(.+)\n', pre_nameservers[0], re.IGNORECASE)
-                for item_reformat in arr_reformat:
-                    item_reformat = item_reformat.replace(' ', '')
-                    if item_reformat:
-                        # 'im' ['ns1.google.com.', 'NameServer:ns2.google.com.', 'NameServer:ns3.google.com.', 'NameServer:ns4.google.com.']'
-                        if tld_domain == 'im':
-                            item_reformat = item_reformat.replace('NameServer:', '')
-                        elif tld_domain in ['mx', 'rs']:
-                            item_reformat = item_reformat.replace('DNS:', '')
-                        elif tld_domain in ['nc', 'pf', 'tm', 'tn', 'co.pl']:
-                            spl_irf = item_reformat.split(':')
-                            if len(spl_irf) == 2:
-                                item_reformat = spl_irf[1]
-                        elif tld_domain == 'pl':
-                            if item_reformat.find('created:') > -1:
-                                continue
-                        elif tld_domain == 'mo':
-                            item_reformat = item_reformat.strip()
-                        
-                        nameservers.append([item_reformat, item_reformat])
-                    del item_reformat
-                del arr_reformat
-            del pre_nameservers
+                # 'serverUpdateProhibited (Secured by CoCCA Premium Registry Lock)' --> serverUpdateProhibited
+                check = [epp for epp in epp_status_codes if item.find(epp) > -1]
+                if check:
+                    result.append(check[0])
+                else:
+                    result.append(item)
+            # Remove duplicate
+            if result:
+                result = list(set(result))
+            return result
         
-        if not nameservers:
-            nameservers = re.findall('(Name Server:|Nserver:|nserver:|Name servers:|'
-                                        'nserver..............:|Hostname:|nserver............:|'
-                                        'Serveur de noms:|nameserver:|\[Name Server\]|'
-                                        'Host Name                :)\s+(.+)', raw_nameservers, re.IGNORECASE)
-        if nameservers:
-            for item_ns in nameservers:
-                res_ns_rem_red = self.remove_redundancy(item_ns[1])
-                if res_ns_rem_red:
-                    result.append(res_ns_rem_red)
-                        
-        return result
+        def allow_c_array(c):
+            if (ord(c) >= 97 and ord(c) <= 122) or \
+                    (ord(c) >= 65 and ord(c) <= 90) or \
+                        (ord(c) >= 48 and ord(c) <= 57) or \
+                            ord(c) in [45, 46]:
+                return c
+            return False
+        
+        def filter_nserver(arr_nserver):
+            result = []
+            if not arr_nserver:
+                return result
+            for item in arr_nserver:
+                arr_char = [c for c in item if allow_c_array(c)]
+                if arr_char:
+                    result.append(''.join(arr_char))
+            return result
+        
+        def filter_nserver_opening_parenthesis(arr_nserver):
+            result = []
+            if not arr_nserver:
+                return result
+            for item in arr_nserver:
+                if item.find('(') > -1:
+                    result.append(item[:item.find('(')])
+                else:
+                    result.append(item)
+            return result
+        
+        vals = {}
+        if not raw_data:
+            return vals
+        
+        arr = ['registrar', 'registrar_url', 'domain_status',
+                'nameservers', 'creation_date', 'updated_date', 'expiry_date']
+        
+        for item in arr:
+            dict_regex_query = self.regex_data.get(self.extension_name, {})
+            if not dict_regex_query:
+                dict_regex_query = self.regex_data['iana']
+            
+            regex_query = dict_regex_query.get(item, False)
+            if regex_query:
+                regex_data = self._get_query_regex_option(item, regex_query, raw_data)
+                
+                if regex_data:
+                    # Special Case
+                    if self.extension_name in ['am', 'aw',
+                                            'be', 'bg', 'bn',
+                                            'cz', 'eu', 'hk',
+                                            'it', 'kg', 'ls',
+                                            'mo', 'nl', 'pl',
+                                            'sa', 'sg', 'sm',
+                                            'tr', 'tw', 'uk',
+                                            'uz', 'ac.uk', 'gov.uk',
+                                            'co.uz', 'com.uz', 'net.uz', 'org.uz']:
+                        if item == 'nameservers':
+                            regex_data = spl_new_line(regex_data)
+                            '''
+                                .kg
+                                    NS1.GOOGLE.COM 216.239.32.10
+                                .co.uz
+                                    Name Server: ns2.google.com. 216.239.34.10 
+                                    Name Server: not defined. not defined. 
+                            '''
+                            if self.extension_name in ['kg', 'co.uz', 'com.uz', 'net.uz', 'org.uz']:
+                                ns_ip_regex_data = []
+                                for item_ns_ip in regex_data:
+                                    item_ns_ip = item_ns_ip.strip()
+                                    if item_ns_ip.find('not defined') > -1:
+                                        continue
+                                    
+                                    spl_ns_ip = item_ns_ip.split(' ')
+                                    if spl_ns_ip:
+                                        ns_ip_regex_data.append(spl_ns_ip[0])
+                                if ns_ip_regex_data:
+                                    regex_data = list(ns_ip_regex_data)
+                                    del ns_ip_regex_data
+                                
+                        # Special .bn
+                        if regex_data and self.extension_name in ['bn', 'cz', 'ls']:
+                            regex_data = filter_nserver_opening_parenthesis(regex_data)
+                    if self.extension_name in ['as', 'gg', 'je', 'kz']:
+                        if item in ['nameservers', 'domain_status']:
+                            regex_data = spl_new_line(regex_data)
+                    if self.extension_name == 'im' and item == 'nameservers':
+                        # Filter 'ns1.google.com.' or 'ns1.google.com.\r' to 'ns1.google.com'
+                        regex_data_im = []
+                        for item_ns_im in regex_data:
+                            if item_ns_im:
+                                if item_ns_im.endswith('.\r'):
+                                    item_ns_im = item_ns_im[:-2]
+                                elif item_ns_im.endswith('.'):
+                                    item_ns_im = item_ns_im[:-1]
+                                
+                                regex_data_im.append(item_ns_im)
+                        if regex_data_im:
+                            regex_data = list(regex_data_im)
+                            del regex_data_im
+                    # ['clientTransferProhibited, clientUpdateProhibited, clientDeleteProhibited']
+                    if self.extension_name in ['am', 'bg', 'ru', 'sg', 'si',
+                                            'sk', 'st', 'su', 'tw', 'md',
+                                            'net.ru', 'org.ru', 'pp.ru'] \
+                            and item == 'domain_status':
+                        arr_status_one_line = []
+                        for item_ds in regex_data:
+                            if item_ds.find(',') > -1:
+                                arr_status_one_line.extend(item_ds.split(','))
+                            else:
+                                arr_status_one_line.append(item_ds)
+                        if arr_status_one_line:
+                            regex_data = list(arr_status_one_line)
+                            del arr_status_one_line
+                    # Decode France Status
+                    if self.extension_name == 'tg':
+                        arr_status_one_line = []
+                        for item_st in regex_data:
+                            arr_status_one_line.append(html.unescape(item_st))
+                        if arr_status_one_line:
+                            regex_data = list(set(arr_status_one_line))
+                    # Multi Regex
+                    if self.extension_name == 'tn':
+                        if item == 'nameservers':
+                            raw_ns_tn_data = regex_data[0]
+                            if raw_ns_tn_data:
+                                raw_ns_tn_data += '\n'
+                            
+                            regex_ns_tn = re.findall("Name\.{2,}:(.*?)\n", raw_ns_tn_data, re.DOTALL | re.IGNORECASE)
+                            arr_ns_data = []
+                            for item_ns_tn in regex_ns_tn:
+                                if item_ns_tn.endswith('.'):
+                                    item_ns_tn = item_ns_tn[:-1]
+                                item_ns_tn = item_ns_tn.replace(' ', '')
+                                arr_ns_data.append(item_ns_tn)
+                            if arr_ns_data:
+                                regex_data = list(set(arr_ns_data))
+                            del arr_ns_data
+                        elif item in ['creation_date', 'updated_date', 'expiry_date']:
+                            arr_dt_data = []
+                            for item_dt_tn in regex_data:
+                                item_dt_tn = item_dt_tn.strip() if item_dt_tn else False
+                                if item_dt_tn and item_dt_tn.find('GMT') > -1:
+                                    item_dt_tn = item_dt_tn[:item_dt_tn.find('GMT')]
+                                    arr_dt_data.append(item_dt_tn)
+                            if arr_dt_data:
+                                regex_data = list(arr_dt_data)
+                    
+                    if self.extension_name == 'cl' and item in ['creation_date', 'updated_date', 'expiry_date']:
+                        arr_rep = []
+                        for item_date in regex_data:
+                            item_date = item_date.replace('CLST', '')
+                            arr_rep.append(item_date)
+                        if arr_rep:
+                            regex_data = list(arr_rep)
+                            
+                    if self.extension_name == 'se' and item == 'nameservers':
+                        arr_rep = []
+                        for item_ns_se in regex_data:
+                            item_ns_se = item_ns_se.strip()
+                            if item_ns_se.find(' ') > -1:
+                                spl_item_ns_se = item_ns_se.split(' ')
+                                if spl_item_ns_se:
+                                    arr_rep.append(spl_item_ns_se[0])
+                            else:
+                                arr_rep.append(item_ns_se)
+                        if arr_rep:
+                            regex_data = list(arr_rep)
+                    
+                    if item in ['domain_status', 'nameservers']:
+                        arr_ns = [remove_redundancy(rr_item) for rr_item in regex_data if rr_item and remove_redundancy(rr_item)]
+                        if arr_ns:
+                            if item == 'domain_status':
+                                arr_ns = filter_domain_status(arr_ns)
+                            else:
+                                arr_ns = filter_nserver(arr_ns)
+                                # 'ns1.google.com.' --> 'ns1.google.com'
+                                arr_ns = [item[:-1] if item.endswith('.') else item for item in arr_ns]
+                        vals.update({item: '\n'.join(arr_ns) if arr_ns else False})
+                    else:
+                        vals.update({item: remove_redundancy(regex_data[0])})
+        
+        return vals
     
-    def parse_socket_data(self, data, tld_domain):
+    def parse_socket_data(self, raw_data):
         result = {
             'registrar': '',
             'registrar_url': '',
@@ -407,14 +277,21 @@ class ParseWhoisSocket:
             'updated_date': '',
             'expiry_date': '',
         }
-        if data:
-            result['registrar'] = self.parse_registrar(data, tld_domain)
-            result['registrar_url'] = self.parse_registrar_url(data, tld_domain)
-            result['creation_date'] = self.parse_creation_date(data, tld_domain)
-            result['updated_date'] = self.parse_updated_date(data, tld_domain)
-            result['expiry_date'] = self.parse_expiry_date(data, tld_domain)
-            result['domain_status'] = self.parse_domain_status( data, tld_domain)
-            result['nameservers'] = self.parse_nameservers( data, tld_domain)
+        if raw_data:
+            pre_data = self._parse_data(raw_data)
+            if pre_data.get('nameservers', False):
+                nameservers = pre_data['nameservers'].split('\n')
+                pre_data['nameservers'] = nameservers
+            else:
+                pre_data['nameservers'] = []
             
+            if pre_data.get('domain_status', False):
+                domain_status = pre_data['domain_status'].split('\n')
+                pre_data['domain_status'] = domain_status
+            else:
+                pre_data['domain_status'] = []
+            
+            if pre_data:
+                result.update(pre_data)
             # print(result) # Check Result
         return result
