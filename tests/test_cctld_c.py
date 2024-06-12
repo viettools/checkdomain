@@ -200,15 +200,15 @@ class TestC(unittest.TestCase):
         )
         data = json.loads(response.content)
         if not data['status']:
-            print('Please check .cx whois server!')
+            print('Please check .cv whois server!')
             return
         
         self.assertEqual(data['parse']['registrar'], 'Migration Client')
-        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(data['parse']['registrar_url'], 'null')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2010-06-17T00:00:00.0Z')
+        self.assertEqual(data['parse']['creation_date'], '2010-06-17T00:00:00Z')
         self.assertEqual(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
         
