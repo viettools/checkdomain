@@ -69,8 +69,8 @@ class ParseWhoisSocket:
                                 'clientHold', 'clientRenewProhibited', 'clientTransferProhibited',
                                 'clientUpdateProhibited']
             for item in arr_status:
-                # .fr, .tf, .wf, .yt, .pm, .re
-                if item == 'associated':
+                # .fr, .tf, .wf, .yt, .pm, .re or .mg
+                if item == 'associated' or item.find('No Object Found') > -1:
                     continue
                 
                 # 'serverUpdateProhibited (Secured by CoCCA Premium Registry Lock)' --> serverUpdateProhibited
