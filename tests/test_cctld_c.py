@@ -203,13 +203,13 @@ class TestC(unittest.TestCase):
             print('Please check .cv whois server!')
             return
         
-        self.assertEqual(data['parse']['registrar'], 'Migration Client')
+        self.assertEqual(data['parse']['registrar'], 'OlaCV Registrar')
         self.assertEqual(data['parse']['registrar_url'], 'null')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2010-06-17T00:00:00Z')
-        self.assertEqual(len(data['parse']['updated_date']), 0)
+        self.assertEqual(data['parse']['creation_date'], '2024-06-13T20:18:02Z')
+        self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
         
     def test_CX(self):
