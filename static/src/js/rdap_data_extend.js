@@ -70,7 +70,7 @@ var rdap_data_extend = `
         "rdap": "https://rdap.nic.ht/"
     },
     "gy": {
-        "rdap": "https://rdap.registry.gy/"
+        "rdap": "https://rdap.coccaregistry.org/"
     },
     "hn": {
         "rdap": "https://rdap.nic.hn/"
