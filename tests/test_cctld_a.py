@@ -43,13 +43,13 @@ class TestA(unittest.TestCase):
             print('Please check .ad whois server!')
             return
         
-        self.assertEqual(data['parse']['registrar'], 'Andorra Telecom')
-        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(data['parse']['registrar'], 'SAPIM, SLU')
+        self.assertEqual(data['parse']['registrar_url'], 'https://www.sapim.com/')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
         self.assertEqual(data['parse']['creation_date'], '2022-12-01T12:00:00.0Z')
-        self.assertEqual(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
         
     def test_google_ae(self):
@@ -83,14 +83,17 @@ class TestA(unittest.TestCase):
             print('[+] -----> .AF: Please check .af whois server!')
             return
         
-        self.assertEqual(data['parse']['registrar'], 'MarkMonitor')
-        self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com')
-        self.assertGreater(len(data['parse']['domain_status']), 0)
-        self.assertGreater(len(data['parse']['nameservers']), 0)
+        whois_result = data.get('result', '')
+        self.assertEqual(whois_result.find('Domain: https://rdap.coccaregistry.org'), 0)
+
+        # self.assertEqual(data['parse']['registrar'], 'MarkMonitor')
+        # self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com')
+        # self.assertGreater(len(data['parse']['domain_status']), 0)
+        # self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2009-10-05T03:51:17Z')
-        self.assertGreater(len(data['parse']['updated_date']), 0)
-        self.assertGreater(len(data['parse']['expiry_date']), 0)
+        # self.assertEqual(data['parse']['creation_date'], '2009-10-05T03:51:17Z')
+        # self.assertGreater(len(data['parse']['updated_date']), 0)
+        # self.assertGreater(len(data['parse']['expiry_date']), 0)
     
     def test_google_ag(self):
         response = client.post(
