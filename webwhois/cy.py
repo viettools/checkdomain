@@ -18,7 +18,7 @@ def get_cy_id(req, headers, domain, domain_type):
     }
     req_post = False
     try:
-        req_post = req.post('https://www.nic.cy/api/domains/_search', json=payload, headers=headers, verify=False)
+        req_post = req.post('https://registry.nic.cy/api/domains/_search', json=payload, headers=headers, verify=False)
     except:
         pass
     
