@@ -69,9 +69,6 @@ var rdap_data_extend = `
     "ht": {
         "rdap": "https://rdap.nic.ht/"
     },
-    "gy": {
-        "rdap": "https://rdap.coccaregistry.org/"
-    },
     "hn": {
         "rdap": "https://rdap.nic.hn/"
     },

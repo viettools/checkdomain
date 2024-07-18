@@ -3084,6 +3084,9 @@ var rdap_data = `
     "ec": {
         "rdap": "https://rdap.registry.ec/"
     },
+    "gy": {
+        "rdap": "https://rdap.registry.gy/"
+    },
     "hiphop": {
         "rdap": "https://rdap.registry.hiphop/rdap/"
     },
@@ -3101,6 +3104,9 @@ var rdap_data = `
     },
     "wien": {
         "rdap": "https://rdap.ryce-rsp.com/rdap/"
+    },
+    "nl": {
+        "rdap": "https://rdap.sidn.nl/"
     },
     "anquan": {
         "rdap": "https://rdap.teleinfo.cn/"
