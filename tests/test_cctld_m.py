@@ -302,8 +302,8 @@ class TestM(unittest.TestCase):
             print('Please check .my whois server!')
             return
 
-        self.assertEqual(data['parse']['registrar'], 'MYNIC Berhad')
-        self.assertEqual(data['parse']['registrar_url'], 'https://whois.mynic.my')
+        self.assertEqual(data['parse']['registrar'], 'Integricity Technology Sdn Bhd')
+        self.assertEqual(data['parse']['registrar_url'], 'https://integricity.com/')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
