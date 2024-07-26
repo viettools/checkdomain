@@ -82,17 +82,17 @@ class TestH(unittest.TestCase):
             print('Please check .ht whois server!')
             return
         
-        whois_result = data.get('result', '')
-        self.assertEqual(whois_result.find('Domain: https://rdap.coccaregistry.org'), 0)
+        # whois_result = data.get('result', '')
+        # self.assertEqual(whois_result.find('Domain: https://rdap.coccaregistry.org'), 0)
 
-        # self.assertEqual(data['parse']['registrar'], 'MarkMonitor')
-        # self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com')
-        # self.assertGreater(len(data['parse']['domain_status']), 0)
-        # self.assertGreater(len(data['parse']['nameservers']), 0)
+        self.assertEqual(data['parse']['registrar'], 'MarkMonitor')
+        self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com')
+        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertGreater(len(data['parse']['nameservers']), 0)
 
-        # self.assertEqual(data['parse']['creation_date'], '2004-06-17T23:00:00Z')
-        # self.assertGreater(len(data['parse']['updated_date']), 0)
-        # self.assertGreater(len(data['parse']['expiry_date']), 0)
+        self.assertEqual(data['parse']['creation_date'], '2004-06-17T23:00:00Z')
+        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
 
     def test_HU(self):
         response = client.post(

@@ -38,4 +38,10 @@ IPv6-Docker:
 
     ============== https://docs.docker.com/config/daemon/ipv6/ ==============
 
+Run all test cases: python -m unittest discover -s ./tests  -p 'test_*.py'
+
+Run a python test case - Example: python -m unittest ./tests/test_cctld_m.py
+
+Run a test case - Example: python ./tests/test_cctld_m.py TestM.test_MY
+
 
