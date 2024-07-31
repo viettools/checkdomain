@@ -274,7 +274,7 @@ def query_rdap_proxy(domain: str | None = None):
         elif spl_domain[-1] == 'kg':
             rdap_url = 'https://rdap.cctld.kg'
         elif spl_domain[-1] == 'ml':
-            rdap_url = 'https://rdap.ns.ml/rdap-api'
+            rdap_url = 'https://rdap.nic.ml'
         elif spl_domain[-1] == 'si':
             rdap_url = 'https://rdap.register.si'
     

@@ -9,7 +9,7 @@ class VerifiedRegistrar:
         domain_id = False
         
         raw_registrar = str(data)
-        regex_data = re.findall('Registry Domain ID:(.*?)Registrar WHOIS Server', raw_registrar, re.DOTALL|re.M)
+        regex_data = re.findall('Registry Domain ID:(.*?)\n', raw_registrar, re.DOTALL|re.M)
         if regex_data:
             domain_id = regex_data[0]
             if domain_id:
@@ -18,7 +18,8 @@ class VerifiedRegistrar:
         if domain_id in ['4013247_DOMAIN_COM-VRSN', '32797606_DOMAIN_COM-VRSN', '1566083588_DOMAIN_COM-VRSN',
                          '92496457_DOMAIN_COM-VRSN', '91721384_DOMAIN_COM-VRSN', '108966382_DOMAIN_COM-VRSN',
                          '16002259_DOMAIN_COM-VRSN', '2287435_DOMAIN_COM-VRSN', '6683836_DOMAIN_NET-VRSN',
-                         '1542998887_DOMAIN_COM-VRSN', '340491054_DOMAIN_COM-VRSN', '1477422972_DOMAIN_NET-VRSN'
+                         '1542998887_DOMAIN_COM-VRSN', '340491054_DOMAIN_COM-VRSN', '1477422972_DOMAIN_NET-VRSN',
+                         '126154408_DOMAIN_COM-VRSN', '999590542_DOMAIN_COM-VRSN', '5314977_DOMAIN_COM-VRSN', '105900-NIRA'
                          ]:
             result = True
         return result
@@ -71,4 +72,20 @@ class VerifiedRegistrar:
     Registrar: Internet Domain Service BS Corp
     Registrar IANA ID: 2487
     Registry Domain ID: 1477422972_DOMAIN_NET-VRSN
+    
+    Registrar: Web4Africa (Pty) Ltd
+    Registrar IANA ID: 664
+    Registry Domain ID: 126154408_DOMAIN_COM-VRSN
+    
+    Registrar: GO54 Limited (formerly Whogohost Limited)
+    Registrar IANA ID: 3954
+    Registry Domain ID: 999590542_DOMAIN_COM-VRSN
+
+    Registrar: Rebel Ltd
+    Registrar IANA ID: 600
+    Registry Domain ID: 5314977_DOMAIN_COM-VRSN
+    
+    Registrar: Upperlink Limited
+    Registrar IANA ID: 1749
+    Registry Domain ID: 105900-NIRA
 '''
