@@ -82,7 +82,7 @@ var rdap_data_extend = `
         "rdap": "https://rdap.nic.af/"
     },
     "ml": {
-        "rdap": "https://rdap.ns.ml/rdap-api/"
+        "rdap": "https://rdap.nic.ml/"
     },
     "ye": {
         "rdap": "https://rdap.y.net.ye/"
