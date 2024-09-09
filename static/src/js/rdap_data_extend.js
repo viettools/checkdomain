@@ -69,9 +69,6 @@ var rdap_data_extend = `
     "ht": {
         "rdap": "https://rdap.nic.ht/"
     },
-    "hn": {
-        "rdap": "https://rdap.nic.hn/"
-    },
     "tl": {
         "rdap": "https://rdap.nic.tl/"
     },
@@ -89,9 +86,6 @@ var rdap_data_extend = `
     },
     "mr": {
         "rdap": "https://rdap.nic.mr/"
-    },
-    "ke": {
-        "rdap": "https://rdap.kenic.or.ke/"
     },
     "rw": {
         "rdap": "https://rdap.ricta.org.rw/"
