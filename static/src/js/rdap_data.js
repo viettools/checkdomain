@@ -1908,6 +1908,9 @@ var rdap_data = `
     "is": {
         "rdap": "https://rdap.isnic.is/rdap/"
     },
+    "ke": {
+        "rdap": "https://rdap.kenic.or.ke/"
+    },
     "kiwi": {
         "rdap": "https://rdap.kiwi.fury.ca/rdap/"
     },
@@ -2252,6 +2255,9 @@ var rdap_data = `
     },
     "health": {
         "rdap": "https://rdap.nic.health/"
+    },
+    "hn": {
+        "rdap": "https://rdap.nic.hn/"
     },
     "homegoods": {
         "rdap": "https://rdap.nic.homegoods/"

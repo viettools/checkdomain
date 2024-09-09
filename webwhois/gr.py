@@ -68,13 +68,12 @@ def whois_via_web(USER_AGENT, domain, domain_type):
             json_data = req_post.json()
             if json_data.get('status', False) == 1 and json_data.get('html', False):
                 raw_data = json_data.get('html')
-                protocol_number_details = parse_gr_data('Protocol Number(.*?)Creation Date', raw_data)
-                creation_date_details = parse_gr_data('Creation Date(.*?)Expiration Date', raw_data)
-                expiration_date_details = parse_gr_data('Expiration Date(.*?)Updated Date', raw_data)
-                updated_date_details = parse_gr_data('Updated Date(.*?)Bundle Name', raw_data)
+                protocol_number_details = parse_gr_data('Αριθμός πρωτοκόλλου(.*?)Ημερομηνία δημιουργίας', raw_data)
+                creation_date_details = parse_gr_data('Ημερομηνία δημιουργίας(.*?)Ημερομηνία λήξης', raw_data)
+                expiration_date_details = parse_gr_data('Ημερομηνία λήξης(.*?)Δέσμη ονόματος', raw_data)
                 
-                registrar_details = parse_gr_data('<td>Name</td>(.*?)<td>URL</td>', raw_data)
-                registrar_url_details = parse_gr_data('<td>URL</td>(.*?)<td>Email</td>', raw_data)
+                registrar_details = parse_gr_data('<td>Επωνυμία</td>(.*?)<td>Ιστότοπος</td>', raw_data)
+                registrar_url_details = parse_gr_data('<td>Ιστότοπος</td>(.*?)<td>Email</td>', raw_data)
                 registrar_phone_details = parse_gr_data('<td>Telephone</td>(.*?)Whois Extra Info', raw_data)
                 registrar_email_details = parse_gr_data('<td>Email</td>(.*?)<td>Telephone</td>', raw_data)
                 
@@ -82,8 +81,6 @@ def whois_via_web(USER_AGENT, domain, domain_type):
                     result.append('Protocol Number: {0}'.format(protocol_number_details))
                 if creation_date_details:
                     result.append('Creation Date: {0}'.format(creation_date_details))
-                if updated_date_details:
-                    result.append('Updated Date: {0}'.format(updated_date_details))
                 if expiration_date_details:
                     result.append('Registry Expiry Date: {0}'.format(expiration_date_details))
                 
