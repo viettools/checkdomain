@@ -204,6 +204,10 @@ class TestT(unittest.TestCase):
         if not data['status']:
             print('Please check .tr whois server!')
             return
+        
+        if data['result'] and data['result'].find('Timeout') > -1:
+            print('Limit .tr whois server!')
+            return
 
         self.assertEqual(data['parse']['registrar'], 'ODTÜ GELİŞTİRME VAKFI BİLGİ TEKNOLOJİLERİ SAN. VE TİC. A.Ş.')
         self.assertEqual(data['parse']['registrar_url'], '')

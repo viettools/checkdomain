@@ -12,6 +12,7 @@ function remove_hide_btn_view(view_type)
         $('#multi_domain_area_input').addClass('d-none');
         $('#multi_domain_area_btn').addClass('d-none');
     }
+    $('.sheetjs_export_excel').addClass('d-none');
 }
 
 function rdap_custom_data()
@@ -516,6 +517,7 @@ $('#single_domain_input').keydown(function(event){
     if (event.which == 13) {
         $('#single_domain_btn').trigger('click');
     }
+    $('.sheetjs_export_excel').removeClass('d-none');
 });
 
 $(document).on('click', '#multi_domain_btn', function(){
@@ -531,6 +533,7 @@ $(document).on('click', '#multi_domain_btn', function(){
     {
         setTimeout(function(){ query_single_rdap_domain(domain, index, total_domain, 'multi'); }, index * timeout_value);
     });
+    $('.sheetjs_export_excel').removeClass('d-none');
 });
 
 $(window).scroll(function() {
@@ -571,4 +574,100 @@ new ClipboardJS('.btn_check_domain_clipboard', {
         });
         return result;
     }
+});
+
+$(document).on('click', '.sheetjs_export_excel', function(){
+    var data = [];
+    
+    var domain_area = $('.check_domain_result_area');
+    for(const area_item of domain_area.toArray()){
+        var label_domain = $(area_item).find('#label_domain').text();
+        var registrar = $(area_item).find('#input_registrar').attr('value');
+        var registrar_url = $(area_item).find('#input_registrar_url').attr('value');
+        var creation_date = $(area_item).find('#input_creation_date').attr('value');
+        var updated_date = $(area_item).find('#input_updated_date').attr('value');
+        var expiry_date = $(area_item).find('#input_expiry_date').attr('value');
+
+        var arr_status = [];
+        var status_obj = $(area_item).find('.check_domain_whois_status_area > input');
+        
+        for(const item_status of status_obj.toArray()) {
+            var raw_status = $(item_status).attr('value');
+            if(raw_status !== undefined && raw_status.length > 0){
+                arr_status.push(raw_status);
+            }
+        }
+        data.push([label_domain, registrar, registrar_url, creation_date, updated_date, expiry_date, arr_status.join('\r\n')]);
+    }
+
+    // Create workbook & add worksheet
+    var workbook = new ExcelJS.Workbook();
+    var worksheet = workbook.addWorksheet('Domains');
+
+    // add column headers
+    worksheet.columns = [
+        { header: 'Domain Name', width: 20},
+        { header: 'Registrar', width: 20},
+        { header: 'Registrar URL', width: 50},
+        { header: 'Creation Date', width: 30},
+        { header: 'Updated Date', width: 30},
+        { header: 'Expiry Date', width: 30},
+        { header: 'Status', width: 50}
+    ];
+
+    for(const item of data){
+        // Add rows as Array values
+        worksheet.addRow(item);
+    }
+
+    // Set Style
+    const font_size = 12;
+    const font = { name: 'Arial', size: font_size };
+    const header_alignment = { vertical: 'middle', horizontal: 'center' };
+    const normal_alignment = { vertical: 'middle', horizontal: 'left' };
+
+    var line_length = data.length;
+    line_length += 1; // Header
+
+    for(let i=1; i <= line_length; i++){
+        if(i === 1)
+        {
+            var header_font = {...font};
+            header_font.bold = true;
+            worksheet.getRow(i).font = header_font;
+            worksheet.getRow(i).alignment = header_alignment;
+        }
+        else
+        {
+            worksheet.getRow(i).font = font;
+            worksheet.getRow(i).alignment = normal_alignment;
+
+            var wrap_text = { ...normal_alignment };
+            wrap_text.wrapText = true;
+
+            if(worksheet.getRow(i).model.cells.length > 6)
+            {
+                // Status Cell
+                var status_cell = worksheet.getRow(i).model.cells[6].address;
+                worksheet.getCell(status_cell).alignment = wrap_text;
+                try {
+                    var status_height = Math.ceil((worksheet.getCell(status_cell).text.split('\r\n')).length * (font_size + 4));
+                    worksheet.getRow(i).height = status_height;
+                } catch (error) {
+                    
+                }
+            }
+        }
+    }
+
+    // Save workbook to disk
+    try {
+        workbook.xlsx.writeBuffer().then((buffer) => {
+            const blob = new Blob([buffer], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+            saveAs(blob, 'data.xlsx');
+        });
+    } catch (error) {
+        console.log('Error in excel');
+    }
+    
 });
