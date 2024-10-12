@@ -86,8 +86,8 @@ class TestZA(unittest.TestCase):
             print('Please check .org.za whois server!')
             return
         
-        self.assertEqual(data['parse']['registrar'], 'AmpleHosting')
-        self.assertEqual(data['parse']['registrar_url'], 'www.greycell.co.za')
+        self.assertEqual(data['parse']['registrar'], 'HOSTAFRICA')
+        self.assertEqual(data['parse']['registrar_url'], 'https://www.hostafrica.co.za')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         

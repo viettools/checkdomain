@@ -287,9 +287,9 @@ class TestS(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
-        self.assertEqual(data['parse']['creation_date'], '')
-        self.assertEqual(len(data['parse']['updated_date']), 0)
-        self.assertEqual(len(data['parse']['expiry_date']), 0)
+        self.assertEqual(data['parse']['creation_date'], '2020-07-06T08:29:03Z')
+        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
 
     def test_ST(self):
         response = client.post(
