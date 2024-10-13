@@ -108,6 +108,9 @@ var rdap_data_extend = `
     "om": {
         "rdap": "https://rdap.registry.om/"
     },
+    "na": {
+        "rdap": "https://keetmans.omadhina.co.na/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
