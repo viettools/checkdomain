@@ -170,7 +170,7 @@ def whois_data(domain: str = Body(..., embed=True)):
     # Web WHOIS
     arr_web_tld = ['ao', 'az',
                    'ba', 'bb', 'bd', 'bt',
-                   'cu', 'cv', 'cy',
+                   'cu', 'cv', 'cy', 'ni',
                    'dz', 'dj',
                    'es', 'eg', 'ec',
                    'gm', 'gr', 'gt', 'gw',
