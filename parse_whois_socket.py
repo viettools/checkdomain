@@ -159,6 +159,8 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'su' and whois_data.find('Domain can not be registered') > -1:
                 result = True
+            elif extension_name == 'sm' and whois_data.find('Reserved Domain') > -1:
+                result = True
             
             return result
         
