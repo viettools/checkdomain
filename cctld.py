@@ -292,10 +292,6 @@ class WhOISccTLD:
             'org.za': 'org-whois.registry.net.za',
             'web.za': 'web-whois.registry.net.za',
             'gov.za': 'whois.gov.za',
-            
-            # .living, .food
-            'living': 'whois.nic.living',
-            'food': 'whois.nic.food'
         }
         dict_extension.update(pseudo_sld)
         return dict_extension.get(extension, False)
