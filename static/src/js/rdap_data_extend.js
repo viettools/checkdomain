@@ -164,6 +164,22 @@ var rdap_data_extend = `
     },
     "jpn.com": {
         "rdap": "https://rdap.centralnic.com/jpn.com/"
+    },
+
+    "bot": {
+        "rdap": "https://rdap.nominet.uk/bot/"
+    },
+    "moi": {
+        "rdap": "https://rdap.nominet.uk/moi/"
+    },
+    "free": {
+        "rdap": "https://rdap.nominet.uk/free/"
+    },
+    "hot": {
+        "rdap": "https://rdap.nominet.uk/hot/"
+    },
+    "spot": {
+        "rdap": "https://rdap.nominet.uk/spot/"
     }
 }
 `;
