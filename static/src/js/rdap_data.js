@@ -3144,6 +3144,12 @@ var rdap_data = `
     "xn--rhqv96g": {
         "rdap": "https://rdap.teleinfo.cn/xn--rhqv96g/"
     },
+    "th": {
+        "rdap": "https://rdap.thains.co.th/"
+    },
+    "xn--o3cw4h": {
+        "rdap": "https://rdap.thains.co.th/"
+    },
     "xn--mxtq1m": {
         "rdap": "https://rdap.twnic.tw/rdap/"
     },
