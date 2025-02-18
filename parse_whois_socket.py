@@ -153,7 +153,7 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'kr' and whois_data.find('This request domain name is restricted') > -1:
                 result = True
-            elif extension_name == 'my' and whois_data.find('This name is not available for registration') > -1:
+            elif extension_name in ['my', 'ky'] and whois_data.find('This name is not available for registration') > -1:
                 result = True
             elif extension_name == 'tw' and whois_data.find('reserved name') > -1:
                 result = True
@@ -161,6 +161,15 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'sm' and whois_data.find('Reserved Domain') > -1:
                 result = True
+            elif extension_name == 'hk' and whois_data.find('This domain is currently not available for registration') > -1:
+                result = True
+            elif extension_name in ['ir', 'uz'] and whois_data.find('is not available for registration') > -1:
+                result = True
+            elif extension_name == 'pk' and whois_data.find('This domain cannot be registered') > -1:
+                result = True
+            elif extension_name == 'tm' and whois_data.find('Domain reserved') > -1:
+                result = True
+            # LK - web whois
             
             return result
         

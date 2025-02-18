@@ -1,0 +1,9 @@
+# WHOIS .PK Domains (PKNIC)
+
+    Domain: xxx.pk
+    Errors: Yes.
+
+    Issues: This domain cannot be registered because of the following domain naming rules issues
+    DomainErrors: 
+      - Invalid Domain name [Three or less characters without suffix e.g. COM.PK]
+      * Domain Naming Information: https://pknic.net.pk/domain-structure.html
