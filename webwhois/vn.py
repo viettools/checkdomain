@@ -59,7 +59,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
         if req_post and req_post.status_code == 200 and req_post.text:
             json_check_data = req_post.json()
             data_message = json_check_data.get('message', '')
-            if data_message.find('Domain is reserved'):
+            if data_message.find('Domain is reserved') > -1:
                 result.append('Domain Status: Reserved Domain https://icann.org/epp')
             
     if result:
