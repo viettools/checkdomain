@@ -27,6 +27,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     if req_get and req_get.status_code == 200 and req_get.text:
         raw_data = req_get.text
         if raw_data:
+            raw_data = raw_data.replace('Registrar Registration Expiration Date', 'Registry Expiry Date')
             filter_raw_data = re.findall('<pre>(.*?)</pre>', raw_data, re.DOTALL|re.M)
             if filter_raw_data:
                 result.extend(filter_raw_data)

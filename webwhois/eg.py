@@ -41,9 +41,9 @@ def whois_via_web(USER_AGENT, domain, domain_type):
             if json_data.get('status', False):
                 status = ''
                 if json_data.get('status') == 'registered':
-                    status = 'Already registered!'
+                    status = 'Already registered! https://icann.org'
                 elif json_data.get('status') == 'available_probably':
-                    status = 'This domain is probably available'
+                    status = 'This domain is probably available https://icann.org'
                 
                 result.append('Domain Status: {0}'.format(status))
             
