@@ -48,6 +48,20 @@ def whois_via_web(USER_AGENT, domain, domain_type):
         for item in json_data.get('status', []):
             result.append('Domain Status: {0} https://icann.org/epp'.format(item))
             
+    # Check "Reserved Domain"
+    if not result:
+        req_post = False
+        try:
+            req_post = req.post('https://whois.inet.vn/api/domain/checkavailable', json={'name': domain}, headers=headers, verify=False)
+        except:
+            pass
+        
+        if req_post and req_post.status_code == 200 and req_post.text:
+            json_check_data = req_post.json()
+            data_message = json_check_data.get('message', '')
+            if data_message.find('Domain is reserved'):
+                result.append('Domain Status: Reserved Domain https://icann.org/epp')
+            
     if result:
         result.append('Full WHOIS: https://tracuutenmien.gov.vn/ or https://vnnic.vn/en/whois-information?lang=en')
         final_result = {

@@ -67,6 +67,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     if req_get and req_get.status_code == 200 and req_get.text:
         raw_data = req_get.text
         if raw_data:
+            raw_data = raw_data.replace('Expiration Date', 'Registry Expiry Date')
             whois_details = parse_ph_data('<pre>(.*?)</pre>', raw_data)
             
             if whois_details:

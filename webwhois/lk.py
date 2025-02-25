@@ -31,8 +31,11 @@ def whois_via_web(USER_AGENT, domain, domain_type):
         raw_data = req_get.text
         json_data = json.loads(raw_data or '{}')
         
-        if json_data.get('Message', False):
-            result.append('Message: {0}'.format(json_data.get('Message')))
+        json_msg = json_data.get('Message', '')
+        if json_msg:
+            result.append('Message: {0}'.format(json_msg))
+            if json_msg.find('Domain name you searched is restricted') > -1:
+                result.append('Domain Status: Reserved Domain https://icann.org/epp')
         if json_data.get('ExpireDate', False):
             expiry_date = json_data.get('ExpireDate')
             if expiry_date:

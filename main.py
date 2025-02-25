@@ -208,7 +208,7 @@ def whois_data(domain: str = Body(..., embed=True)):
             whois_data.set_hostname(whois_server)
             whois_result = whois_data.get_data()
     elif final_tld_domain in arr_web_tld:
-        USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0'
+        USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36'
         dynamic_import = __import__('webwhois.{0}'.format(final_tld_domain))
         if hasattr(dynamic_import, '{0}'.format(final_tld_domain)):
             whois_result = getattr(dynamic_import, '{0}'.format(final_tld_domain)).whois_via_web(USER_AGENT, domain, tld_domain)
