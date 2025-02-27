@@ -117,7 +117,8 @@ class ParseWhoisSocket:
             result = False
             if extension_name in ['ac', 'bm', 'bz', 'sh'] and whois_data.find('This name is reserved by the Registry') > -1:
                 result = True
-            elif extension_name == 'rs' and whois_data.find('This domain is reserved') > -1:
+            elif extension_name == 'rs' and (whois_data.find('This domain is reserved') > -1 or \
+                    whois_data.find('Domain is not registered') > -1):
                 result = True
             elif extension_name == 'au' and (whois_data.find('Reserved by Registry') > -1 or whois_data.find('This domain name is on Priority Hold status') > -1):
                 result = True
