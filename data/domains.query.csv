@@ -106,7 +106,7 @@ domain_name_mo_whois,domain_name_mo,"whois","whois.monic.mo","","","","Domain na
 domain_name_mq_whois,domain_name_mq,"whois","whois.mediaserv.net","","","","nameserver:(.*?)\n","","changed:(.*?)nameserver",""
 domain_name_mr_whois,domain_name_mr,"whois","whois.nic.mr","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_ms_whois,domain_name_ms,"whois","production.epp.mninet.ms","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
-domain_name_mu_whois,domain_name_mu,"whois","whois.nic.mu","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
+domain_name_mu_whois,domain_name_mu,"whois","whois.tld.mu","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_mw_whois,domain_name_mw,"whois","whois.nic.mw","registrar:(.*?)\n","","status:(.*?)\n","nserver:(.*?)\n","registered:(.*?)\n","changed:(.*?)expire","expire:(.*?)\n"
 domain_name_mx_whois,domain_name_mx,"whois","whois.mx","Registrar:(.*?)\n","URL:(.*?)\n","","DNS:(.*?)\n","Created On:(.*?)\n","Last Updated On:(.*?)\n","Expiration Date:(.*?)\n"
 domain_name_my_whois,domain_name_my,"whois","rdap.mynic.my","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"

@@ -3162,6 +3162,9 @@ var rdap_data = `
     "ai": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "mu": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "xn--45q11c": {
         "rdap": "https://rdap.zdnsgtld.com/XN--45Q11C/"
     },
