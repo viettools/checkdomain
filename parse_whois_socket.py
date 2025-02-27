@@ -170,6 +170,8 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'tm' and whois_data.find('Domain reserved') > -1:
                 result = True
+            elif extension_name == 'mu' and whois_data.find('This name is reserved by the Registry') > -1:
+                result = True
             # LK - web whois
             
             return result
