@@ -19,7 +19,10 @@ class VerifiedRegistrar:
                          '92496457_DOMAIN_COM-VRSN', '91721384_DOMAIN_COM-VRSN', '108966382_DOMAIN_COM-VRSN',
                          '16002259_DOMAIN_COM-VRSN', '2287435_DOMAIN_COM-VRSN', '6683836_DOMAIN_NET-VRSN',
                          '1542998887_DOMAIN_COM-VRSN', '340491054_DOMAIN_COM-VRSN', '1477422972_DOMAIN_NET-VRSN',
-                         '126154408_DOMAIN_COM-VRSN', '999590542_DOMAIN_COM-VRSN', '5314977_DOMAIN_COM-VRSN', '105900-NIRA'
+                         '126154408_DOMAIN_COM-VRSN', '999590542_DOMAIN_COM-VRSN', '5314977_DOMAIN_COM-VRSN', '105900-NIRA',
+                         '22219585_DOMAIN_COM-VRSN', '1490734_DOMAIN_COM-VRSN', '81738987_DOMAIN_COM-VRSN', '115917968_DOMAIN_COM-VRSN',
+                         '1938925_DOMAIN_COM-VRSN', '1084182_DOMAIN_COM-VRSN', '108725895_DOMAIN_COM-VRSN', '6222216_DOMAIN_COM-VRSN',
+                         '121958814_DOMAIN_COM-VRSN', '1533858754_DOMAIN_COM-VRSN', '149835961_DOMAIN_COM-VRSN'
                          ]:
             result = True
         return result
@@ -80,6 +83,10 @@ class VerifiedRegistrar:
     Registrar: GO54 Limited (formerly Whogohost Limited)
     Registrar IANA ID: 3954
     Registry Domain ID: 999590542_DOMAIN_COM-VRSN
+    
+    Registrar: GO54 Limited
+    Registrar IANA ID: 3954
+    Registry Domain ID: 1533858754_DOMAIN_COM-VRSN
 
     Registrar: Rebel Ltd
     Registrar IANA ID: 600
@@ -88,4 +95,44 @@ class VerifiedRegistrar:
     Registrar: Upperlink Limited
     Registrar IANA ID: 1749
     Registry Domain ID: 105900-NIRA
+    
+    Registrar: NETIM SAS
+    Registrar IANA ID: 1519
+    Registry Domain ID: 22219585_DOMAIN_COM-VRSN
+    
+    Registrar: Spaceship, Inc.
+    Registrar IANA ID: 3862
+    Registry Domain ID: 1490734_DOMAIN_COM-VRSN
+    
+    Registrar: Gname.com Pte. Ltd.
+    Registrar IANA ID: 1923
+    Registry Domain ID: 81738987_DOMAIN_COM-VRSN
+    
+    Registrar: Cosmotown, Inc.
+    Registrar IANA ID: 1509
+    Registry Domain ID: 115917968_DOMAIN_COM-VRSN
+    
+    Registrar: OVH sas
+    Registrar IANA ID: 433
+    Registry Domain ID: 1938925_DOMAIN_COM-VRSN
+    
+    Registrar: EuroDNS S.A.
+    Registrar IANA ID: 1052
+    Registry Domain ID: 1084182_DOMAIN_COM-VRSN
+    
+    Registrar: INWX GmbH
+    Registrar IANA ID: 1420
+    Registry Domain ID: 108725895_DOMAIN_COM-VRSN
+    
+    Registrar: 101domain GRS Limited
+    Registrar IANA ID: 1011
+    Registry Domain ID: 6222216_DOMAIN_COM-VRSN
+    
+    Registrar: Nominus.com LLC
+    Registrar IANA ID: 4150
+    Registry Domain ID: 121958814_DOMAIN_COM-VRSN
+    
+    Registrar: TurnCommerce, Inc. DBA NameBright.com
+    Registrar IANA ID: 1441
+    Registry Domain ID: 149835961_DOMAIN_COM-VRSN
 '''
