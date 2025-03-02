@@ -1,0 +1,6 @@
+[Domain]
+Domain: root.lv
+Status: unavailable
+
+[Whois]
+Updated: 2025-03-02T12:12:30.580790+00:00
