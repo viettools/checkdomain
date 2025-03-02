@@ -64,7 +64,7 @@ var rdap_data_extend = `
         "rdap": "https://rdap.dnrs.vu/"
     },
     "ki": {
-        "rdap": "https://rdap.nic.ki/"
+        "rdap": "https://rdap.coccaregistry.org/"
     },
     "ht": {
         "rdap": "https://rdap.nic.ht/"
