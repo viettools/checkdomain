@@ -174,6 +174,8 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'pw' and whois_data.find('This domain has been reserved by the registry') > -1:
                 result = True
+            elif extension_name == 'lv' and whois_data.find('Status: unavailable') > -1:
+                result = True
             
             return result
         
