@@ -2355,6 +2355,9 @@ var rdap_data = `
     "luxe": {
         "rdap": "https://rdap.nic.luxe/"
     },
+    "ly": {
+        "rdap": "https://rdap.nic.ly/"
+    },
     "madrid": {
         "rdap": "https://rdap.nic.madrid/"
     },
@@ -2384,6 +2387,9 @@ var rdap_data = `
     },
     "mint": {
         "rdap": "https://rdap.nic.mint/"
+    },
+    "ml": {
+        "rdap": "https://rdap.nic.ml/"
     },
     "mlb": {
         "rdap": "https://rdap.nic.mlb/"
