@@ -3,36 +3,6 @@ var rdap_data = `
     "kg": {
         "rdap": "http://rdap.cctld.kg/"
     },
-    "music": {
-        "rdap": "http://rdap.centralnic.com/music/"
-    },
-    "cpa": {
-        "rdap": "http://rdap.nic.cpa/"
-    },
-    "merckmsd": {
-        "rdap": "http://rdap.nic.merckmsd/"
-    },
-    "msd": {
-        "rdap": "http://rdap.nic.msd/"
-    },
-    "tattoo": {
-        "rdap": "http://rdap.nic.tattoo/"
-    },
-    "nowruz": {
-        "rdap": "https://api.rdap.nic.nowruz/"
-    },
-    "pars": {
-        "rdap": "https://api.rdap.nic.pars/"
-    },
-    "shia": {
-        "rdap": "https://api.rdap.nic.shia/"
-    },
-    "tci": {
-        "rdap": "https://api.rdap.nic.tci/"
-    },
-    "xn--mgbt3dhd": {
-        "rdap": "https://api.rdap.nic.xn--mgbt3dhd/"
-    },
     "xn--p1acf": {
         "rdap": "https://api.rdap.nic.xn--p1acf/"
     },
@@ -42,23 +12,152 @@ var rdap_data = `
     "xn--80adxhks": {
         "rdap": "https://flexireg.net/xn--80adxhks/rdap/"
     },
+    "na": {
+        "rdap": "https://keetmans.omadhina.co.na/"
+    },
     "samsung": {
-        "rdap": "https://nic.samsung:8443/rdap/"
+        "rdap": "https://nic.samsung/rdap/"
     },
     "xn--cg4bki": {
-        "rdap": "https://nic.samsung:8443/rdap/"
+        "rdap": "https://nic.samsung/rdap/"
     },
-    "ally": {
-        "rdap": "https://rdap.afilias-srs.net/rdap/ally/"
+    "ads": {
+        "rdap": "https://pubapi.registry.google/rdap/"
     },
-    "shaw": {
-        "rdap": "https://rdap.afilias-srs.net/rdap/shaw/"
+    "android": {
+        "rdap": "https://pubapi.registry.google/rdap/"
     },
-    "star": {
-        "rdap": "https://rdap.afilias-srs.net/rdap/star/"
+    "app": {
+        "rdap": "https://pubapi.registry.google/rdap/"
     },
-    "tvs": {
-        "rdap": "https://rdap.afilias-srs.net/rdap/tvs/"
+    "boo": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "cal": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "channel": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "chrome": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "dad": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "day": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "dclk": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "dev": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "docs": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "drive": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "eat": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "esq": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "fly": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "foo": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "gbiz": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "gle": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "gmail": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "goog": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "google": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "guge": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "hangout": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "here": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "how": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "ing": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "map": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "meet": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "meme": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "mov": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "new": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "nexus": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "page": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "phd": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "play": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "prod": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "prof": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "rsvp": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "search": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "soy": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "xn--flw351e": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "xn--q9jyb4c": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "xn--qcka1pmc": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "youtube": {
+        "rdap": "https://pubapi.registry.google/rdap/"
+    },
+    "zip": {
+        "rdap": "https://pubapi.registry.google/rdap/"
     },
     "ca": {
         "rdap": "https://rdap.ca.fury.ca/rdap/"
@@ -83,9 +182,6 @@ var rdap_data = `
     },
     "baby": {
         "rdap": "https://rdap.centralnic.com/baby/"
-    },
-    "basketball": {
-        "rdap": "https://rdap.centralnic.com/basketball/"
     },
     "beauty": {
         "rdap": "https://rdap.centralnic.com/beauty/"
@@ -156,9 +252,6 @@ var rdap_data = `
     "fans": {
         "rdap": "https://rdap.centralnic.com/fans/"
     },
-    "feedback": {
-        "rdap": "https://rdap.centralnic.com/feedback/"
-    },
     "flowers": {
         "rdap": "https://rdap.centralnic.com/flowers/"
     },
@@ -167,9 +260,6 @@ var rdap_data = `
     },
     "fo": {
         "rdap": "https://rdap.centralnic.com/fo/"
-    },
-    "forum": {
-        "rdap": "https://rdap.centralnic.com/forum/"
     },
     "fresenius": {
         "rdap": "https://rdap.centralnic.com/fresenius/"
@@ -273,9 +363,6 @@ var rdap_data = `
     "pics": {
         "rdap": "https://rdap.centralnic.com/pics/"
     },
-    "pid": {
-        "rdap": "https://rdap.centralnic.com/pid/"
-    },
     "pohl": {
         "rdap": "https://rdap.centralnic.com/pohl/"
     },
@@ -299,9 +386,6 @@ var rdap_data = `
     },
     "rent": {
         "rdap": "https://rdap.centralnic.com/rent/"
-    },
-    "rugby": {
-        "rdap": "https://rdap.centralnic.com/rugby/"
     },
     "ruhr": {
         "rdap": "https://rdap.centralnic.com/ruhr/"
@@ -401,9 +485,6 @@ var rdap_data = `
     },
     "crown": {
         "rdap": "https://rdap.crown.fury.ca/rdap/"
-    },
-    "xn--5tzm5g": {
-        "rdap": "https://rdap.donuts.co/rdap/"
     },
     "eco": {
         "rdap": "https://rdap.eco.fury.ca/rdap/"
@@ -561,9 +642,6 @@ var rdap_data = `
     "globo": {
         "rdap": "https://rdap.gtlds.nic.br/"
     },
-    "natura": {
-        "rdap": "https://rdap.gtlds.nic.br/"
-    },
     "rio": {
         "rdap": "https://rdap.gtlds.nic.br/"
     },
@@ -580,6 +658,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "abbott": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "abc": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "academy": {
@@ -604,6 +685,12 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "agency": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "ai": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "airbus": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "airforce": {
@@ -876,9 +963,6 @@ var rdap_data = `
     "cruises": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "dabur": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "dance": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1083,9 +1167,6 @@ var rdap_data = `
     "genting": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "george": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "gifts": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1117,9 +1198,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "gripe": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "grocery": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "group": {
@@ -1248,9 +1326,6 @@ var rdap_data = `
     "kerryhotels": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "kerrylogistics": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "kerryproperties": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1302,6 +1377,9 @@ var rdap_data = `
     "legal": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "lego": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "lgbt": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1317,9 +1395,6 @@ var rdap_data = `
     "limo": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "lipsy": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "live": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1327,9 +1402,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "loans": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "locker": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "lotto": {
@@ -1399,6 +1471,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "movie": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "mu": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "nab": {
@@ -1590,13 +1665,13 @@ var rdap_data = `
     "run": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "rwe": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "sale": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "salon": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "samsclub": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "sanofi": {
@@ -1618,6 +1693,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "schule": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "sener": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "services": {
@@ -1675,6 +1753,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "stada": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "star": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "statebank": {
@@ -1782,6 +1863,9 @@ var rdap_data = `
     "trv": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "tvs": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "ubank": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1827,6 +1911,9 @@ var rdap_data = `
     "vin": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "visa": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "vision": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1840,9 +1927,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "voyage": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "walmart": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "watch": {
@@ -1875,6 +1959,9 @@ var rdap_data = `
     "xin": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "xn--5tzm5g": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "xn--6frz82g": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1897,6 +1984,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "xn--vhquv": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "yahoo": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "zara": {
@@ -1923,6 +2013,9 @@ var rdap_data = `
     "aaa": {
         "rdap": "https://rdap.nic.aaa/"
     },
+    "aarp": {
+        "rdap": "https://rdap.nic.aarp/"
+    },
     "able": {
         "rdap": "https://rdap.nic.able/"
     },
@@ -1937,6 +2030,9 @@ var rdap_data = `
     },
     "aco": {
         "rdap": "https://rdap.nic.aco/"
+    },
+    "ad": {
+        "rdap": "https://rdap.nic.ad/"
     },
     "adult": {
         "rdap": "https://rdap.nic.adult/"
@@ -1953,6 +2049,9 @@ var rdap_data = `
     "aig": {
         "rdap": "https://rdap.nic.aig/"
     },
+    "ally": {
+        "rdap": "https://rdap.nic.ally/"
+    },
     "alsace": {
         "rdap": "https://rdap.nic.alsace/"
     },
@@ -1962,8 +2061,14 @@ var rdap_data = `
     "americanexpress": {
         "rdap": "https://rdap.nic.americanexpress/"
     },
+    "americanfamily": {
+        "rdap": "https://rdap.nic.americanfamily/"
+    },
     "amex": {
         "rdap": "https://rdap.nic.amex/"
+    },
+    "amfam": {
+        "rdap": "https://rdap.nic.amfam/"
     },
     "amica": {
         "rdap": "https://rdap.nic.amica/"
@@ -2009,6 +2114,9 @@ var rdap_data = `
     },
     "baseball": {
         "rdap": "https://rdap.nic.baseball/"
+    },
+    "basketball": {
+        "rdap": "https://rdap.nic.basketball/"
     },
     "bauhaus": {
         "rdap": "https://rdap.nic.bauhaus/"
@@ -2115,6 +2223,9 @@ var rdap_data = `
     "courses": {
         "rdap": "https://rdap.nic.courses/"
     },
+    "cpa": {
+        "rdap": "https://rdap.nic.cpa/"
+    },
     "cr": {
         "rdap": "https://rdap.nic.cr/"
     },
@@ -2147,6 +2258,9 @@ var rdap_data = `
     },
     "discover": {
         "rdap": "https://rdap.nic.discover/"
+    },
+    "diy": {
+        "rdap": "https://rdap.nic.diy/rdap/"
     },
     "download": {
         "rdap": "https://rdap.nic.download/"
@@ -2181,6 +2295,9 @@ var rdap_data = `
     "fashion": {
         "rdap": "https://rdap.nic.fashion/"
     },
+    "feedback": {
+        "rdap": "https://rdap.nic.feedback/rdap/"
+    },
     "ferrero": {
         "rdap": "https://rdap.nic.ferrero/"
     },
@@ -2202,8 +2319,14 @@ var rdap_data = `
     "flir": {
         "rdap": "https://rdap.nic.flir/"
     },
+    "food": {
+        "rdap": "https://rdap.nic.food/rdap/"
+    },
     "ford": {
         "rdap": "https://rdap.nic.ford/"
+    },
+    "forum": {
+        "rdap": "https://rdap.nic.forum/rdap/"
     },
     "fox": {
         "rdap": "https://rdap.nic.fox/"
@@ -2235,6 +2358,9 @@ var rdap_data = `
     "gea": {
         "rdap": "https://rdap.nic.gea/"
     },
+    "george": {
+        "rdap": "https://rdap.nic.george/"
+    },
     "gmx": {
         "rdap": "https://rdap.nic.gmx/"
     },
@@ -2243,6 +2369,9 @@ var rdap_data = `
     },
     "grainger": {
         "rdap": "https://rdap.nic.grainger/"
+    },
+    "grocery": {
+        "rdap": "https://rdap.nic.grocery/"
     },
     "gs": {
         "rdap": "https://rdap.nic.gs/"
@@ -2343,14 +2472,23 @@ var rdap_data = `
     "lifeinsurance": {
         "rdap": "https://rdap.nic.lifeinsurance/"
     },
+    "lifestyle": {
+        "rdap": "https://rdap.nic.lifestyle/rdap/"
+    },
     "lilly": {
         "rdap": "https://rdap.nic.lilly/"
     },
     "lincoln": {
         "rdap": "https://rdap.nic.lincoln/"
     },
+    "living": {
+        "rdap": "https://rdap.nic.living/rdap/"
+    },
     "loan": {
         "rdap": "https://rdap.nic.loan/"
+    },
+    "locker": {
+        "rdap": "https://rdap.nic.locker/rdap/"
     },
     "luxe": {
         "rdap": "https://rdap.nic.luxe/"
@@ -2382,6 +2520,9 @@ var rdap_data = `
     "menu": {
         "rdap": "https://rdap.nic.menu/"
     },
+    "merckmsd": {
+        "rdap": "https://rdap.nic.merckmsd/"
+    },
     "miami": {
         "rdap": "https://rdap.nic.miami/"
     },
@@ -2408,6 +2549,9 @@ var rdap_data = `
     },
     "ms": {
         "rdap": "https://rdap.nic.ms/"
+    },
+    "msd": {
+        "rdap": "https://rdap.nic.msd/"
     },
     "museum": {
         "rdap": "https://rdap.nic.museum/"
@@ -2441,9 +2585,6 @@ var rdap_data = `
     },
     "nyc": {
         "rdap": "https://rdap.nic.nyc/"
-    },
-    "office": {
-        "rdap": "https://rdap.nic.office/"
     },
     "olayan": {
         "rdap": "https://rdap.nic.olayan/"
@@ -2480,6 +2621,9 @@ var rdap_data = `
     },
     "physio": {
         "rdap": "https://rdap.nic.physio/"
+    },
+    "pid": {
+        "rdap": "https://rdap.nic.pid/rdap/"
     },
     "ping": {
         "rdap": "https://rdap.nic.ping/"
@@ -2523,11 +2667,17 @@ var rdap_data = `
     "rodeo": {
         "rdap": "https://rdap.nic.rodeo/"
     },
+    "rugby": {
+        "rdap": "https://rdap.nic.rugby/"
+    },
     "safety": {
         "rdap": "https://rdap.nic.safety/"
     },
     "sakura": {
         "rdap": "https://rdap.nic.sakura/rdap/"
+    },
+    "samsclub": {
+        "rdap": "https://rdap.nic.samsclub/"
     },
     "sandvik": {
         "rdap": "https://rdap.nic.sandvik/"
@@ -2574,9 +2724,6 @@ var rdap_data = `
     "sex": {
         "rdap": "https://rdap.nic.sex/"
     },
-    "skype": {
-        "rdap": "https://rdap.nic.skype/"
-    },
     "sncf": {
         "rdap": "https://rdap.nic.sncf/"
     },
@@ -2622,6 +2769,9 @@ var rdap_data = `
     "target": {
         "rdap": "https://rdap.nic.target/"
     },
+    "tattoo": {
+        "rdap": "https://rdap.nic.tattoo/"
+    },
     "tdk": {
         "rdap": "https://rdap.nic.tdk/"
     },
@@ -2655,6 +2805,9 @@ var rdap_data = `
     "tv": {
         "rdap": "https://rdap.nic.tv/"
     },
+    "vana": {
+        "rdap": "https://rdap.nic.vana/rdap/"
+    },
     "versicherung": {
         "rdap": "https://rdap.nic.versicherung/v1/"
     },
@@ -2675,6 +2828,9 @@ var rdap_data = `
     },
     "voting": {
         "rdap": "https://rdap.nic.voting/"
+    },
+    "walmart": {
+        "rdap": "https://rdap.nic.walmart/"
     },
     "walter": {
         "rdap": "https://rdap.nic.walter/"
@@ -2791,7 +2947,7 @@ var rdap_data = `
         "rdap": "https://rdap.nic.xxx/"
     },
     "yandex": {
-        "rdap": "https://rdap.nic.yandex/"
+        "rdap": "https://rdap.nic.yandex/rdap/"
     },
     "yoga": {
         "rdap": "https://rdap.nic.yoga/"
@@ -2865,6 +3021,9 @@ var rdap_data = `
     "desi": {
         "rdap": "https://rdap.nominet.uk/desi/"
     },
+    "fairwinds": {
+        "rdap": "https://rdap.nominet.uk/fairwinds/"
+    },
     "fast": {
         "rdap": "https://rdap.nominet.uk/fast/"
     },
@@ -2928,6 +3087,18 @@ var rdap_data = `
     "now": {
         "rdap": "https://rdap.nominet.uk/now/"
     },
+    "nowruz": {
+        "rdap": "https://rdap.nominet.uk/nowruz/"
+    },
+    "office": {
+        "rdap": "https://rdap.nominet.uk/office/"
+    },
+    "omega": {
+        "rdap": "https://rdap.nominet.uk/omega/"
+    },
+    "pars": {
+        "rdap": "https://rdap.nominet.uk/pars/"
+    },
     "pay": {
         "rdap": "https://rdap.nominet.uk/pay/"
     },
@@ -2967,11 +3138,20 @@ var rdap_data = `
     "secure": {
         "rdap": "https://rdap.nominet.uk/secure/"
     },
+    "shell": {
+        "rdap": "https://rdap.nominet.uk/shell/"
+    },
+    "shia": {
+        "rdap": "https://rdap.nominet.uk/shia/"
+    },
     "silk": {
         "rdap": "https://rdap.nominet.uk/silk/"
     },
     "sky": {
         "rdap": "https://rdap.nominet.uk/sky/"
+    },
+    "skype": {
+        "rdap": "https://rdap.nominet.uk/skype/"
     },
     "smile": {
         "rdap": "https://rdap.nominet.uk/smile/"
@@ -2979,8 +3159,14 @@ var rdap_data = `
     "spot": {
         "rdap": "https://rdap.nominet.uk/spot/"
     },
+    "swatch": {
+        "rdap": "https://rdap.nominet.uk/swatch/"
+    },
     "talk": {
         "rdap": "https://rdap.nominet.uk/talk/"
+    },
+    "tci": {
+        "rdap": "https://rdap.nominet.uk/tci/"
     },
     "tunes": {
         "rdap": "https://rdap.nominet.uk/tunes/"
@@ -3017,6 +3203,9 @@ var rdap_data = `
     },
     "xn--jlq480n2rg": {
         "rdap": "https://rdap.nominet.uk/xn--jlq480n2rg/"
+    },
+    "xn--mgbt3dhd": {
+        "rdap": "https://rdap.nominet.uk/xn--mgbt3dhd/"
     },
     "yamaxun": {
         "rdap": "https://rdap.nominet.uk/yamaxun/"
@@ -3105,6 +3294,12 @@ var rdap_data = `
     "love": {
         "rdap": "https://rdap.registry.love/rdap/"
     },
+    "music": {
+        "rdap": "https://rdap.registryservices.music/rdap/"
+    },
+    "rw": {
+        "rdap": "https://rdap.ricta.org.rw/"
+    },
     "cologne": {
         "rdap": "https://rdap.ryce-rsp.com/rdap/"
     },
@@ -3164,12 +3359,6 @@ var rdap_data = `
     },
     "net": {
         "rdap": "https://rdap.verisign.com/net/v1/"
-    },
-    "ai": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "mu": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "xn--45q11c": {
         "rdap": "https://rdap.zdnsgtld.com/XN--45Q11C/"
@@ -3252,23 +3441,8 @@ var rdap_data = `
     "xn--xhq521b": {
         "rdap": "https://restwhois.ngtld.cn/"
     },
-    "aarp": {
-        "rdap": "https://tld-rdap.verisign.com/aarp/v1/"
-    },
-    "abc": {
-        "rdap": "https://tld-rdap.verisign.com/abc/v1/"
-    },
-    "airbus": {
-        "rdap": "https://tld-rdap.verisign.com/airbus/v1/"
-    },
     "airtel": {
         "rdap": "https://tld-rdap.verisign.com/airtel/v1/"
-    },
-    "americanfamily": {
-        "rdap": "https://tld-rdap.verisign.com/americanfamily/v1/"
-    },
-    "amfam": {
-        "rdap": "https://tld-rdap.verisign.com/amfam/v1/"
     },
     "bharti": {
         "rdap": "https://tld-rdap.verisign.com/bharti/v1/"
@@ -3282,24 +3456,6 @@ var rdap_data = `
     "comsec": {
         "rdap": "https://tld-rdap.verisign.com/comsec/v1/"
     },
-    "diy": {
-        "rdap": "https://tld-rdap.verisign.com/diy/v1/"
-    },
-    "fairwinds": {
-        "rdap": "https://tld-rdap.verisign.com/fairwinds/v1/"
-    },
-    "food": {
-        "rdap": "https://tld-rdap.verisign.com/food/v1/"
-    },
-    "lego": {
-        "rdap": "https://tld-rdap.verisign.com/lego/v1/"
-    },
-    "lifestyle": {
-        "rdap": "https://tld-rdap.verisign.com/lifestyle/v1/"
-    },
-    "living": {
-        "rdap": "https://tld-rdap.verisign.com/living/v1/"
-    },
     "name": {
         "rdap": "https://tld-rdap.verisign.com/name/v1/"
     },
@@ -3309,29 +3465,8 @@ var rdap_data = `
     "norton": {
         "rdap": "https://tld-rdap.verisign.com/norton/v1/"
     },
-    "omega": {
-        "rdap": "https://tld-rdap.verisign.com/omega/v1/"
-    },
-    "rwe": {
-        "rdap": "https://tld-rdap.verisign.com/rwe/v1/"
-    },
-    "sener": {
-        "rdap": "https://tld-rdap.verisign.com/sener/v1/"
-    },
-    "shell": {
-        "rdap": "https://tld-rdap.verisign.com/shell/v1/"
-    },
-    "swatch": {
-        "rdap": "https://tld-rdap.verisign.com/swatch/v1/"
-    },
-    "vana": {
-        "rdap": "https://tld-rdap.verisign.com/vana/v1/"
-    },
     "verisign": {
         "rdap": "https://tld-rdap.verisign.com/verisign/v1/"
-    },
-    "visa": {
-        "rdap": "https://tld-rdap.verisign.com/visa/v1/"
     },
     "weber": {
         "rdap": "https://tld-rdap.verisign.com/weber/v1/"
@@ -3378,9 +3513,6 @@ var rdap_data = `
     "xn--w4rs40l": {
         "rdap": "https://tld-rdap.verisign.com/xn--w4rs40l/v1/"
     },
-    "yahoo": {
-        "rdap": "https://tld-rdap.verisign.com/yahoo/v1/"
-    },
     "ky": {
         "rdap": "https://whois.kyregistry.ky/rdap/"
     },
@@ -3422,144 +3554,6 @@ var rdap_data = `
     },
     "trust": {
         "rdap": "https://whois.uniregistry.net/rdap/"
-    },
-    "ads": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "android": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "app": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "boo": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "cal": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "channel": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "chrome": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "dad": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "day": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "dclk": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "dev": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "docs": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "drive": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "eat": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "esq": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "fly": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "foo": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "gbiz": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "gle": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "gmail": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "goog": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "google": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "guge": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "hangout": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "here": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "how": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "ing": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "map": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "meet": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "meme": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "mov": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "new": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "nexus": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "page": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "phd": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "play": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "prod": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "prof": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "rsvp": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "search": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "soy": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "xn--flw351e": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "xn--q9jyb4c": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "xn--qcka1pmc": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "youtube": {
-        "rdap": "https://www.registry.google/rdap/"
-    },
-    "zip": {
-        "rdap": "https://www.registry.google/rdap/"
     }
 }
 `;
