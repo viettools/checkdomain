@@ -84,9 +84,6 @@ var rdap_data_extend = `
     "mr": {
         "rdap": "https://rdap.nic.mr/"
     },
-    "rw": {
-        "rdap": "https://rdap.ricta.org.rw/"
-    },
     "kn": {
         "rdap": "https://rdap.nic.kn/"
     },
@@ -96,17 +93,8 @@ var rdap_data_extend = `
     "td": {
         "rdap": "https://rdap.nic.td/"
     },
-    "ad": {
-        "rdap": "https://rdap.nic.ad/"
-    },
-    "nf": {
-        "rdap": "https://rdap.nic.nf/"
-    },
     "om": {
         "rdap": "https://rdap.registry.om/"
-    },
-    "na": {
-        "rdap": "https://keetmans.omadhina.co.na/"
     },
     "ng": {
         "rdap": "https://whois.nic.net.ng/"
@@ -161,22 +149,6 @@ var rdap_data_extend = `
     },
     "jpn.com": {
         "rdap": "https://rdap.centralnic.com/jpn.com/"
-    },
-
-    "bot": {
-        "rdap": "https://rdap.nominet.uk/bot/"
-    },
-    "moi": {
-        "rdap": "https://rdap.nominet.uk/moi/"
-    },
-    "free": {
-        "rdap": "https://rdap.nominet.uk/free/"
-    },
-    "hot": {
-        "rdap": "https://rdap.nominet.uk/hot/"
-    },
-    "spot": {
-        "rdap": "https://rdap.nominet.uk/spot/"
     }
 }
 `;
