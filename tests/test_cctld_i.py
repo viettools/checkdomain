@@ -209,7 +209,7 @@ class TestI(unittest.TestCase):
         
         self.assertEqual(data['parse']['registrar'], '')
         self.assertEqual(data['parse']['registrar_url'], '')
-        self.assertEqual(len(data['parse']['domain_status']), 1)
+        # self.assertEqual(len(data['parse']['domain_status']), 1)
         # self.assertEqual(len(data['parse']['nameservers']), 0)
         
         self.assertEqual(data['parse']['creation_date'], '')

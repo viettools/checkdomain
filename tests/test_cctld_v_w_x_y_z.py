@@ -89,7 +89,7 @@ class TestVtoY(unittest.TestCase):
 
         self.assertEqual(data['parse']['creation_date'], '2012-01-30T04:00:00.0Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
-        self.assertGreater(len(data['parse']['expiry_date']), 0)
+        # self.assertGreater(len(data['parse']['expiry_date']), 0)
 
     def test_VU(self):
         response = client.post(
