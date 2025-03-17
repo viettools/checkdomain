@@ -130,6 +130,26 @@ class TestM(unittest.TestCase):
         self.assertEqual(data['parse']['creation_date'], '2023-07-17T00:00:00Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
+        
+    def test_MM(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "google.com.mm"},
+        )
+        data = json.loads(response.content)
+        if not data['status']:
+            print('Please check .mm whois server!')
+            return
+
+        self.assertEqual(data['parse']['registrar'], 'Myanmar Technology Gateway')
+        self.assertEqual(data['parse']['registrar_url'], 'http://www.mtg.com.mm/')
+        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertGreater(len(data['parse']['nameservers']), 0)
+
+        self.assertEqual(data['parse']['creation_date'], '2018-09-30T00:00:00.0Z')
+        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
     
     def test_MN(self):
         response = client.post(
