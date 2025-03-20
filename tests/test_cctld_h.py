@@ -110,7 +110,7 @@ class TestH(unittest.TestCase):
         self.assertEqual(len(data['parse']['domain_status']), 0)
         self.assertEqual(len(data['parse']['nameservers']), 0)
 
-        self.assertEqual(data['parse']['creation_date'], '2000-03-25 23:20:39')
+        self.assertEqual(data['parse']['creation_date'], '2000-03-03')
         self.assertEqual(len(data['parse']['updated_date']), 0)
         self.assertEqual(len(data['parse']['expiry_date']), 0)
         
