@@ -1,8 +1,8 @@
 Domain Name: xxx.ps
-Domain Status: Prohibited String - Object Cannot Be Registered
-Notes: This name is not allowed by the policy of this registry, and can not be registered
+Domain Status: No Object Found
+Notes: This string is on a restricted list, if registered, it will require approval
 URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
->>> Last update of WHOIS database: 2025-01-15T12:31:29.316Z <<<
+>>> Last update of WHOIS database: 2025-03-20T13:30:20.504Z <<<
 
 For more information on Whois status codes, please visit https://icann.org/epp
 
