@@ -1,0 +1,2 @@
+Domain:             ai.it
+Status:             UNASSIGNABLE

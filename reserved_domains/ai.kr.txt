@@ -1,0 +1,15 @@
+query : ai.kr
+
+
+# KOREAN(UTF8)
+
+상기 도메인이름은 도메인이름 등록기준에 부합하지 않아 현재 등록이 
+제한되어 있습니다.
+
+
+# ENGLISH
+
+The requested domain name is restricted because of public interest.
+
+
+- KISA/KRNIC WHOIS Service -
