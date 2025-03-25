@@ -187,6 +187,8 @@ class ParseWhoisSocket:
             elif extension_name == 'do' and (whois_data.find('This domain is not allowed under registry policy') > -1 or \
                         whois_data.find('Prohibited String - Domain Cannot Be Registered') > -1):
                 result = True
+            elif extension_name == 'name' and whois_data.find('Not available for second level registration') > -1:
+                result = True
             
             return result
         
@@ -336,6 +338,18 @@ class ParseWhoisSocket:
                                 arr_rep.append(item_ns_se)
                         if arr_rep:
                             regex_data = list(arr_rep)
+                    
+                    # Status:             pendingDelete / redemptionPeriod      
+                    if self.extension_name == 'it' and item == 'domain_status':
+                        arr_ds_it = []
+                        for item_ds_it in regex_data:
+                            if item_ds_it.find('/') > -1:
+                                spl_ds_it = item_ds_it.split('/')
+                                arr_ds_it.extend(spl_ds_it)
+                            else:
+                                arr_ds_it.append(item_ds_it)
+                        if arr_ds_it:
+                            regex_data = list(arr_ds_it)
                     
                     if item in ['domain_status', 'nameservers']:
                         arr_ns = [remove_redundancy(rr_item) for rr_item in regex_data if rr_item and remove_redundancy(rr_item)]
