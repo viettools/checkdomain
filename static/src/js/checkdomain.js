@@ -153,7 +153,8 @@ function render_status_view(data)
         {
             item_status = item_status.toLowerCase()
             if((item_status.indexOf('pending') > -1 && item_status.indexOf('delete') > -1 && item_status.indexOf('delete') > item_status.indexOf('pending'))
-                || (item_status.indexOf('autorenewperiod') > -1) || (item_status.indexOf('auto renew period') > -1))
+                || (item_status.indexOf('autorenewperiod') > -1) || (item_status.indexOf('auto renew period') > -1)
+                    || (item_status.indexOf('redemptionperiod') > -1) || (item_status.indexOf('redemption period') > -1))
             {
                 class_input_red = ' is-invalid';
             }
