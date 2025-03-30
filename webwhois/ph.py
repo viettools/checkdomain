@@ -37,13 +37,30 @@ def parse_ph_data(regex_input, raw_data):
             if expiry_date:
                 pre_clean_data = pre_clean_data.replace('<span id="expiry-date"></span>', expiry_date)
             clean_data = BeautifulSoup(pre_clean_data, features='html.parser').get_text()
+            # Fix domain status
+            re_status = re.search('Status:(.*?)Registrar', clean_data or '', re.DOTALL|re.M)
+            if re_status:
+                str_status = re_status.group(1)
+                spl_status = str_status.split(',')
+                arr_status = []
+                for item_status in spl_status:
+                    arr_status.append('Domain Status: ' + item_status.strip() + ' https://icann.org/epp')
+                
+                new_status = ''
+                if arr_status:
+                    new_status = '\n'.join(arr_status)
+                
+                pos_status = clean_data.find('Status:')
+                pos_registrar = clean_data.find('Registrar')
+                if pos_status > -1 and pos_registrar > -1 and pos_status < pos_registrar:
+                    clean_data = '{0}{1}\n{2}'.format(clean_data[:pos_status], new_status, clean_data[pos_registrar:])
             if clean_data:
                 result = clean_data.strip()
                 del clean_data
     
     if result:
         result = re.sub(r'\n(?=\n)', '', result)
-        result = re.sub('\s{2,}', ' ', result)
+        # result = re.sub('\s{2,}', ' ', result)
     return result
 
 def whois_via_web(USER_AGENT, domain, domain_type):
