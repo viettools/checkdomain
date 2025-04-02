@@ -105,6 +105,9 @@ var rdap_data_extend = `
     "mg": {
         "rdap": "https://rdap.nic.mg/"
     },
+    "pg": {
+        "rdap": "https://rdap.nic.pg/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },

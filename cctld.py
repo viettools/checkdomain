@@ -175,7 +175,7 @@ class WhOISccTLD:
             # 'pa': 'http://www.nic.pa/',
             'pe': 'kero.yachay.pe',
             'pf': 'whois.registry.pf',
-            # 'pg': 'https://www.unitech.ac.pg/',
+            'pg': 'whois.nic.pg',
             # 'ph': 'https://whois.dot.ph/',
             'pk': 'whois.pknic.net.pk',
             'pl': 'whois.dns.pl',
