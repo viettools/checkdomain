@@ -192,6 +192,12 @@ class ParseWhoisSocket:
             
             return result
         
+        def check_dropzone_domain(whois_data):
+            if whois_data.find('This domain is currently available for application via the Identity Digital Dropzone service') > -1:
+                return True
+            
+            return False
+        
         vals = {}
         if not raw_data:
             return vals
@@ -205,6 +211,11 @@ class ParseWhoisSocket:
                 is_reserved = check_reserved_domain(self.extension_name, raw_data)
                 if is_reserved:
                     vals.update({'domain_status': 'Reserved Domain'})
+                    continue
+                
+                is_dropzone = check_dropzone_domain(raw_data)
+                if is_dropzone:
+                    vals.update({'domain_status': 'Dropzone'})
                     continue
             # End 'Reserved Domain'
             
