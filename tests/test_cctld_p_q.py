@@ -31,6 +31,46 @@ class TestPQ(unittest.TestCase):
         self.assertEqual(data['parse']['creation_date'], '')
         self.assertEqual(len(data['parse']['updated_date']), 0)
         self.assertEqual(len(data['parse']['expiry_date']), 0)
+        
+    def test_PF(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "google.pf"},
+        )
+        data = json.loads(response.content)
+        if not data['status']:
+            print('Please check .pf whois server!')
+            return
+
+        self.assertEqual(data['parse']['registrar'], 'ONATI SAS')
+        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertGreater(len(data['parse']['nameservers']), 0)
+
+        self.assertEqual(data['parse']['creation_date'], '16/11/2010')
+        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
+        
+    def test_PG(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "google.com.pg"},
+        )
+        data = json.loads(response.content)
+        if not data['status']:
+            print('Please check .pg whois server!')
+            return
+
+        self.assertEqual(data['parse']['registrar'], 'Migration Client')
+        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertGreater(len(data['parse']['nameservers']), 0)
+
+        self.assertEqual(data['parse']['creation_date'], '2012-04-22T00:00:00Z')
+        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
 
     def test_PK(self):
         response = client.post(
