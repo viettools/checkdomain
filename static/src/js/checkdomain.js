@@ -158,6 +158,10 @@ function render_status_view(data)
             {
                 class_input_red = ' is-invalid';
             }
+            else if(item_status.indexOf('dropzone') > -1)
+            {
+                class_input_red = ' border-warning';
+            }
         }
         render_status = render_status + `<input type="text" class="form-control${class_input_red}" value="${data.domain_status[i]}">`;
     }
