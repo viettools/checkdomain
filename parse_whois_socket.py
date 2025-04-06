@@ -187,6 +187,8 @@ class ParseWhoisSocket:
             elif extension_name == 'do' and (whois_data.find('This domain is not allowed under registry policy') > -1 or \
                         whois_data.find('Prohibited String - Domain Cannot Be Registered') > -1):
                 result = True
+            elif extension_name == 'et' and whois_data.find('The queried object does not exist: \r\nlimited') > -1:
+                result = True
             elif extension_name == 'name' and whois_data.find('Not available for second level registration') > -1:
                 result = True
             
