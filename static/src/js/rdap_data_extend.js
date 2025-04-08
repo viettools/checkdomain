@@ -108,6 +108,9 @@ var rdap_data_extend = `
     "pg": {
         "rdap": "https://rdap.nic.pg/"
     },
+    "et": {
+        "rdap": "https://rdap.ethiotelecom.et/rdap/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
