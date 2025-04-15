@@ -486,6 +486,9 @@ var rdap_data = `
     "crown": {
         "rdap": "https://rdap.crown.fury.ca/rdap/"
     },
+    "pl": {
+        "rdap": "https://rdap.dns.pl/"
+    },
     "eco": {
         "rdap": "https://rdap.eco.fury.ca/rdap/"
     },
