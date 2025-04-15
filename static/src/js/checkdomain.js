@@ -34,6 +34,12 @@ function rdap_parse_data(data)
     var result = rdap_custom_data();
     if(!jQuery.isEmptyObject(data))
     {
+        // .si response data is a string
+        if(typeof data === 'string' || data instanceof String)
+        {
+            data = JSON.parse(data);
+        }
+
         if('status' in data && data.status && data.status.length > 0)
         {
             result.domain_status = data.status;
@@ -381,7 +387,7 @@ function identify_domain(domain)
 
     if(result.extension in rdap_data)
     {
-        if(['de', 've', 'tz', 'uz', 'kg', "ml", "si", "ye", "ch", "li"].includes(result.extension))
+        if(['de', 've', 'tz', 'uz', 'kg', "ye", "ch", "li"].includes(result.extension))
         {
             // Bypass: Response body is not available to scripts (Reason: CORS Missing Allow Origin)
             result.rdap_url = '/api/v1/proxy/rdap?domain=' + parse_domain;
