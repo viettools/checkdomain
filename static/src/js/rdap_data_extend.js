@@ -111,6 +111,9 @@ var rdap_data_extend = `
     "et": {
         "rdap": "https://rdap.ethiotelecom.et/rdap/"
     },
+    "fj": {
+        "rdap": "https://www.whois.fj/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
