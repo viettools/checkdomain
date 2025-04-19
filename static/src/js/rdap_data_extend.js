@@ -114,6 +114,9 @@ var rdap_data_extend = `
     "fj": {
         "rdap": "https://www.whois.fj/"
     },
+    "in": {
+        "rdap": "https://rdap.registry.in/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
