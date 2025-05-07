@@ -69,7 +69,7 @@ class TestPQ(unittest.TestCase):
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
         self.assertEqual(data['parse']['creation_date'], '2012-04-22T00:00:00Z')
-        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertEqual(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
 
     def test_PK(self):

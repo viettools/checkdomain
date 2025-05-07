@@ -23,7 +23,7 @@ class TestM(unittest.TestCase):
             return
 
         self.assertEqual(data['parse']['registrar'], 'GENIOUS COMMUNICATIONS')
-        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(data['parse']['registrar_url'], 'http://www.genious.net')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
