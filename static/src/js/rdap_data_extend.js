@@ -117,6 +117,9 @@ var rdap_data_extend = `
     "in": {
         "rdap": "https://rdap.registry.in/"
     },
+    "ci": {
+        "rdap": "https://rdap.nic.ci/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
