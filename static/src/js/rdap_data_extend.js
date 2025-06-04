@@ -66,9 +66,6 @@ var rdap_data_extend = `
     "ki": {
         "rdap": "https://rdap.coccaregistry.org/"
     },
-    "ht": {
-        "rdap": "https://rdap.nic.ht/"
-    },
     "tl": {
         "rdap": "https://rdap.nic.tl/"
     },
@@ -77,9 +74,6 @@ var rdap_data_extend = `
     },
     "af": {
         "rdap": "https://rdap.nic.af/"
-    },
-    "ye": {
-        "rdap": "https://rdap.y.net.ye/"
     },
     "mr": {
         "rdap": "https://rdap.nic.mr/"
@@ -105,17 +99,8 @@ var rdap_data_extend = `
     "mg": {
         "rdap": "https://rdap.nic.mg/"
     },
-    "pg": {
-        "rdap": "https://rdap.nic.pg/"
-    },
     "et": {
         "rdap": "https://rdap.ethiotelecom.et/rdap/"
-    },
-    "fj": {
-        "rdap": "https://www.whois.fj/"
-    },
-    "in": {
-        "rdap": "https://rdap.registry.in/"
     },
     "ci": {
         "rdap": "https://rdap.nic.ci/"
