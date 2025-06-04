@@ -71,7 +71,7 @@ domain_name_id_whois,domain_name_id,"whois","whois.id","Registrar:(.*?)\n","Regi
 domain_name_ie_whois,domain_name_ie,"whois","whois.weare.ie","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_il_whois,domain_name_il,"whois","whois.isoc.org.il","registrar name:(.*?)\n","registrar info:(.*?)\n","status:(.*?)\n","nserver:(.*?)(?:\(|\n)","registrar\s+AT\s+\w+[(?:\.\w+)]{2,}(.*?)\(Assigned\)","","validity:(.*?)\n"
 domain_name_im_whois,domain_name_im,"whois","whois.nic.im","","","","Name Server:(.*?)\n","","","Expiry Date:(.*?)\n"
-domain_name_in_whois,domain_name_in,"whois","whois.registry.in","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)http","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
+domain_name_in_whois,domain_name_in,"whois","whois.nixiregistry.in","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)http","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_io_whois,domain_name_io,"whois","whois.nic.io","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_ir_whois,domain_name_ir,"whois","whois.nic.ir","","","","nserver:(.*?)\n","","",""
 domain_name_is_whois,domain_name_is,"whois","whois.isnic.is","","","remarks:(.*?)\n","nserver:(.*?)\n","created:(.*?)\n","","expires:(.*?)\n"

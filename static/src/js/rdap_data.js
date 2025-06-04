@@ -6,12 +6,6 @@ var rdap_data = `
     "xn--p1acf": {
         "rdap": "https://api.rdap.nic.xn--p1acf/"
     },
-    "moscow": {
-        "rdap": "https://flexireg.net/moscow/rdap/"
-    },
-    "xn--80adxhks": {
-        "rdap": "https://flexireg.net/xn--80adxhks/rdap/"
-    },
     "na": {
         "rdap": "https://keetmans.omadhina.co.na/"
     },
@@ -159,6 +153,9 @@ var rdap_data = `
     "zip": {
         "rdap": "https://pubapi.registry.google/rdap/"
     },
+    "blog": {
+        "rdap": "https://rdap.blog.fury.ca/rdap/"
+    },
     "ca": {
         "rdap": "https://rdap.ca.fury.ca/rdap/"
     },
@@ -188,9 +185,6 @@ var rdap_data = `
     },
     "best": {
         "rdap": "https://rdap.centralnic.com/best/"
-    },
-    "blog": {
-        "rdap": "https://rdap.centralnic.com/blog/"
     },
     "bmw": {
         "rdap": "https://rdap.centralnic.com/bmw/"
@@ -477,6 +471,9 @@ var rdap_data = `
     "zuerich": {
         "rdap": "https://rdap.centralnic.com/zuerich/"
     },
+    "jnj": {
+        "rdap": "https://rdap.centralnicregistry.com/jnj/"
+    },
     "xn--55qw42g": {
         "rdap": "https://rdap.conac.cn/"
     },
@@ -494,6 +491,12 @@ var rdap_data = `
     },
     "fi": {
         "rdap": "https://rdap.fi/rdap/rdap/"
+    },
+    "moscow": {
+        "rdap": "https://rdap.flexireg.net/"
+    },
+    "xn--80adxhks": {
+        "rdap": "https://rdap.flexireg.net/"
     },
     "bridgestone": {
         "rdap": "https://rdap.gmoregistry.net/rdap/"
@@ -1009,6 +1012,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "discount": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "discover": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "dish": {
@@ -1938,6 +1944,9 @@ var rdap_data = `
     "watches": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "weber": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "weibo": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -2259,9 +2268,6 @@ var rdap_data = `
     "design": {
         "rdap": "https://rdap.nic.design/"
     },
-    "discover": {
-        "rdap": "https://rdap.nic.discover/"
-    },
     "diy": {
         "rdap": "https://rdap.nic.diy/rdap/"
     },
@@ -2406,6 +2412,9 @@ var rdap_data = `
     "hsbc": {
         "rdap": "https://rdap.nic.hsbc/"
     },
+    "ht": {
+        "rdap": "https://rdap.nic.ht/"
+    },
     "hyatt": {
         "rdap": "https://rdap.nic.hyatt/"
     },
@@ -2436,9 +2445,6 @@ var rdap_data = `
     "jmp": {
         "rdap": "https://rdap.nic.jmp/"
     },
-    "jnj": {
-        "rdap": "https://rdap.nic.jnj/"
-    },
     "joburg": {
         "rdap": "https://rdap.nic.joburg/rdap/"
     },
@@ -2456,9 +2462,6 @@ var rdap_data = `
     },
     "lacaixa": {
         "rdap": "https://rdap.nic.lacaixa/"
-    },
-    "lancaster": {
-        "rdap": "https://rdap.nic.lancaster/"
     },
     "lanxess": {
         "rdap": "https://rdap.nic.lanxess/"
@@ -2616,6 +2619,9 @@ var rdap_data = `
     "pfizer": {
         "rdap": "https://rdap.nic.pfizer/"
     },
+    "pg": {
+        "rdap": "https://rdap.nic.pg/"
+    },
     "philips": {
         "rdap": "https://rdap.nic.philips/"
     },
@@ -2639,9 +2645,6 @@ var rdap_data = `
     },
     "porn": {
         "rdap": "https://rdap.nic.porn/"
-    },
-    "pramerica": {
-        "rdap": "https://rdap.nic.pramerica/"
     },
     "praxi": {
         "rdap": "https://rdap.nic.praxi/"
@@ -2964,6 +2967,9 @@ var rdap_data = `
     "zm": {
         "rdap": "https://rdap.nic.zm/"
     },
+    "in": {
+        "rdap": "https://rdap.nixiregistry.in/rdap/"
+    },
     "abbvie": {
         "rdap": "https://rdap.nominet.uk/abbvie/"
     },
@@ -2987,9 +2993,6 @@ var rdap_data = `
     },
     "bbva": {
         "rdap": "https://rdap.nominet.uk/bbva/"
-    },
-    "bentley": {
-        "rdap": "https://rdap.nominet.uk/bentley/"
     },
     "bing": {
         "rdap": "https://rdap.nominet.uk/bing/"
@@ -3363,6 +3366,9 @@ var rdap_data = `
     "net": {
         "rdap": "https://rdap.verisign.com/net/v1/"
     },
+    "ye": {
+        "rdap": "https://rdap.y.net.ye/"
+    },
     "xn--45q11c": {
         "rdap": "https://rdap.zdnsgtld.com/XN--45Q11C/"
     },
@@ -3471,9 +3477,6 @@ var rdap_data = `
     "verisign": {
         "rdap": "https://tld-rdap.verisign.com/verisign/v1/"
     },
-    "weber": {
-        "rdap": "https://tld-rdap.verisign.com/weber/v1/"
-    },
     "xn--11b4c3d": {
         "rdap": "https://tld-rdap.verisign.com/xn--11b4c3d/v1/"
     },
@@ -3557,6 +3560,9 @@ var rdap_data = `
     },
     "trust": {
         "rdap": "https://whois.uniregistry.net/rdap/"
+    },
+    "fj": {
+        "rdap": "https://www.rdap.fj/"
     }
 }
 `;

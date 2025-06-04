@@ -105,7 +105,7 @@ class WhOISccTLD:
             'ie': 'whois.weare.ie',
             'il': 'whois.isoc.org.il',
             'im': 'whois.nic.im',
-            'in': 'whois.registry.in',
+            'in': 'whois.nixiregistry.in',
             'io': 'whois.nic.io',
             # 'iq': 'whois.cmc.iq',
             'ir': 'whois.nic.ir',
