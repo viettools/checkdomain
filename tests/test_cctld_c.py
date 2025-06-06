@@ -203,7 +203,7 @@ class TestC(unittest.TestCase):
             print('Please check .cv whois server!')
             return
         
-        self.assertEqual(data['parse']['registrar'], 'OlaCV Registrar')
+        self.assertEqual(data['parse']['registrar'], 'Mark Monitor')
         self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
