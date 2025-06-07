@@ -182,6 +182,11 @@ class TestVtoY(unittest.TestCase):
         if not data['status']:
             print('Please check .zm whois server!')
             return
+        
+        resp_data = data.get('result', '')
+        if resp_data.find('Server can\'t process your request at the moment') > -1:
+            print('The .zm whois server was busy!')
+            return
 
         self.assertEqual(data['parse']['registrar'], 'Zamnet')
         self.assertEqual(data['parse']['registrar_url'], '')
