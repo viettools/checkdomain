@@ -62,6 +62,11 @@ class TestPQ(unittest.TestCase):
         if not data['status']:
             print('Please check .pg whois server!')
             return
+        
+        resp_data = data.get('result', '')
+        if resp_data.find('Server can\'t process your request at the moment') > -1:
+            print('The .pg whois server was busy!')
+            return
 
         self.assertEqual(data['parse']['registrar'], 'Migration Client')
         self.assertEqual(data['parse']['registrar_url'], '')

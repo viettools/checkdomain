@@ -203,6 +203,11 @@ class TestC(unittest.TestCase):
             print('Please check .cv whois server!')
             return
         
+        resp_data = data.get('result', '')
+        if resp_data.find('Server can\'t process your request at the moment') > -1:
+            print('The .cv whois server was busy!')
+            return
+        
         self.assertEqual(data['parse']['registrar'], 'Mark Monitor')
         self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
@@ -341,6 +346,11 @@ class TestC(unittest.TestCase):
         
         if not data['status']:
             print('Please check .cv whois server - Reserved Domains!')
+            return
+        
+        resp_data = data.get('result', '')
+        if resp_data.find('Server can\'t process your request at the moment') > -1:
+            print('The .cv whois server was busy!')
             return
         
         self.assertEqual(data['parse']['registrar'], '')
