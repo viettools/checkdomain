@@ -22,7 +22,9 @@ class VerifiedRegistrar:
                          '126154408_DOMAIN_COM-VRSN', '999590542_DOMAIN_COM-VRSN', '5314977_DOMAIN_COM-VRSN', '105900-NIRA',
                          '22219585_DOMAIN_COM-VRSN', '1490734_DOMAIN_COM-VRSN', '81738987_DOMAIN_COM-VRSN', '115917968_DOMAIN_COM-VRSN',
                          '1938925_DOMAIN_COM-VRSN', '1084182_DOMAIN_COM-VRSN', '108725895_DOMAIN_COM-VRSN', '6222216_DOMAIN_COM-VRSN',
-                         '121958814_DOMAIN_COM-VRSN', '1533858754_DOMAIN_COM-VRSN', '149835961_DOMAIN_COM-VRSN'
+                         '121958814_DOMAIN_COM-VRSN', '1533858754_DOMAIN_COM-VRSN', '149835961_DOMAIN_COM-VRSN', '5555202_DOMAIN_COM-VRSN',
+                         '2122865_DOMAIN_COM-VRSN', '2089952122_DOMAIN_COM-VRSN', '58397_DOMAIN_COM-VRSN', '94523481_DOMAIN_COM-VRSN',
+                         '85456945_DOMAIN_COM-VRSN'
                          ]:
             result = True
         return result
@@ -135,4 +137,28 @@ class VerifiedRegistrar:
     Registrar: TurnCommerce, Inc. DBA NameBright.com
     Registrar IANA ID: 1441
     Registry Domain ID: 149835961_DOMAIN_COM-VRSN
+
+    Registrar: NICNAMES, INC.
+    Registrar IANA ID: 4156
+    Registry Domain ID: 5555202_DOMAIN_COM-VRSN
+    
+    Registrar: Above.com Pty Ltd.
+    Registrar IANA ID: 940
+    Registry Domain ID: 2122865_DOMAIN_COM-VRSN
+    
+    Registrar: Devexpanse Ltd
+    Registrar IANA ID: 4342
+    Registry Domain ID: 2089952122_DOMAIN_COM-VRSN
+    
+    Registrar: Atom.com Domains LLC
+    Registrar IANA ID: 4547
+    Registry Domain ID: 58397_DOMAIN_COM-VRSN
+    
+    Registrar: Nhan Hoa Software Company Ltd.
+    Registrar IANA ID: 1710
+    Registry Domain ID: 94523481_DOMAIN_COM-VRSN
+    
+    Registrar: MAT BAO CORPORATION
+    Registrar IANA ID: 1586
+    Registry Domain ID: 85456945_DOMAIN_COM-VRSN
 '''
