@@ -3,6 +3,9 @@ var rdap_data = `
     "kg": {
         "rdap": "http://rdap.cctld.kg/"
     },
+    "mg": {
+        "rdap": "http://rdap.nic.mg/"
+    },
     "xn--p1acf": {
         "rdap": "https://api.rdap.nic.xn--p1acf/"
     },
@@ -951,6 +954,9 @@ var rdap_data = `
     "cool": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "coupon": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "coupons": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1755,6 +1761,9 @@ var rdap_data = `
     "solutions": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "song": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "spa": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1971,6 +1980,9 @@ var rdap_data = `
     "xin": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "xn--1ck2e1b": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "xn--5tzm5g": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1983,13 +1995,37 @@ var rdap_data = `
     "xn--b4w605ferd": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "xn--bck1b9a5dre4c": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--cck2b3b": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "xn--czrs0t": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--eckvdtc9d": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--fct429k": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "xn--fjq720a": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "xn--fzys8d69uvgm": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--gckr3f0f": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--gk3at1e": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--jvr189m": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--rovu88b": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "xn--unup4y": {
@@ -2002,6 +2038,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "zara": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "zero": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "zone": {
@@ -2228,9 +2267,6 @@ var rdap_data = `
     },
     "corsica": {
         "rdap": "https://rdap.nic.corsica/"
-    },
-    "coupon": {
-        "rdap": "https://rdap.nic.coupon/"
     },
     "courses": {
         "rdap": "https://rdap.nic.courses/"
@@ -2733,9 +2769,6 @@ var rdap_data = `
     "sncf": {
         "rdap": "https://rdap.nic.sncf/"
     },
-    "song": {
-        "rdap": "https://rdap.nic.song/"
-    },
     "sport": {
         "rdap": "https://rdap.nic.sport/"
     },
@@ -2883,9 +2916,6 @@ var rdap_data = `
     "xerox": {
         "rdap": "https://rdap.nic.xerox/"
     },
-    "xn--1ck2e1b": {
-        "rdap": "https://rdap.nic.xn--1ck2e1b/"
-    },
     "xn--80aqecdr1a": {
         "rdap": "https://rdap.nic.xn--80aqecdr1a/"
     },
@@ -2895,29 +2925,8 @@ var rdap_data = `
     "xn--80aswg": {
         "rdap": "https://rdap.nic.xn--80aswg/"
     },
-    "xn--bck1b9a5dre4c": {
-        "rdap": "https://rdap.nic.xn--bck1b9a5dre4c/"
-    },
-    "xn--cck2b3b": {
-        "rdap": "https://rdap.nic.xn--cck2b3b/"
-    },
-    "xn--eckvdtc9d": {
-        "rdap": "https://rdap.nic.xn--eckvdtc9d/"
-    },
-    "xn--fct429k": {
-        "rdap": "https://rdap.nic.xn--fct429k/"
-    },
     "xn--g2xx48c": {
         "rdap": "https://rdap.nic.xn--g2xx48c/"
-    },
-    "xn--gckr3f0f": {
-        "rdap": "https://rdap.nic.xn--gckr3f0f/"
-    },
-    "xn--gk3at1e": {
-        "rdap": "https://rdap.nic.xn--gk3at1e/"
-    },
-    "xn--jvr189m": {
-        "rdap": "https://rdap.nic.xn--jvr189m/"
     },
     "xn--kcrx77d1x4a": {
         "rdap": "https://rdap.nic.xn--kcrx77d1x4a/"
@@ -2943,9 +2952,6 @@ var rdap_data = `
     "xn--ngbrx": {
         "rdap": "https://rdap.nic.xn--ngbrx/"
     },
-    "xn--rovu88b": {
-        "rdap": "https://rdap.nic.xn--rovu88b/"
-    },
     "xn--tiq49xqyj": {
         "rdap": "https://rdap.nic.xn--tiq49xqyj/"
     },
@@ -2960,9 +2966,6 @@ var rdap_data = `
     },
     "yt": {
         "rdap": "https://rdap.nic.yt/"
-    },
-    "zero": {
-        "rdap": "https://rdap.nic.zero/"
     },
     "zm": {
         "rdap": "https://rdap.nic.zm/"
