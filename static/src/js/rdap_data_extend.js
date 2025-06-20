@@ -96,9 +96,6 @@ var rdap_data_extend = `
     "gn": {
         "rdap": "https://rdap.ande.gov.gn/"
     },
-    "mg": {
-        "rdap": "https://rdap.nic.mg/"
-    },
     "et": {
         "rdap": "https://rdap.ethiotelecom.et/rdap/"
     },
