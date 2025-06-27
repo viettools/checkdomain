@@ -126,6 +126,11 @@ class TestM(unittest.TestCase):
         if not data['status']:
             print('Please check .ml whois server!')
             return
+        
+        resp_data = data.get('result', '')
+        if resp_data.find('Server can\'t process your request at the moment') > -1:
+            print('The .ml whois server was busy!')
+            return
 
         self.assertEqual(data['parse']['registrar'], 'Markmonitor, Inc.')
         self.assertEqual(data['parse']['registrar_url'], 'null')

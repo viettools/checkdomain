@@ -123,7 +123,7 @@ class ParseWhoisSocket:
             elif extension_name == 'au' and (whois_data.find('Reserved by Registry') > -1 or whois_data.find('This domain name is on Priority Hold status') > -1):
                 result = True
             elif extension_name in ['bj', 'cm', 'cx', 'cv', 'rw', 'ss', 'ng', 'nf', 'gy', 'hn',
-                                    'ke', 'ki', 'kw', 'ms', 'ma', 'ly', 'kn', 'sb', 'tl', 'mg', 'so'] and \
+                                    'ke', 'ki', 'ms', 'ma', 'ly', 'kn', 'sb', 'tl', 'mg', 'so'] and \
                     whois_data.find('Prohibited String - Domain Cannot Be Registered') > -1:
                 result = True
             elif extension_name in ['pe', 'tc', 'sl'] and whois_data.find('Prohibited String - Object Cannot Be Registered') > -1:
@@ -154,7 +154,7 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'kr' and (whois_data.find('This request domain name is restricted') > -1 or whois_data.find('The requested domain name is restricted') > -1):
                 result = True
-            elif extension_name in ['my', 'ky'] and whois_data.find('This name is not available for registration') > -1:
+            elif extension_name in ['my', 'ky', 'kw'] and whois_data.find('This name is not available for registration') > -1:
                 result = True
             elif extension_name == 'tw' and (whois_data.find('reserved name') > -1 or whois_data.find('網域名稱不合規定') > -1):
                 result = True
