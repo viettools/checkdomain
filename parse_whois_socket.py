@@ -204,6 +204,18 @@ class ParseWhoisSocket:
         if not raw_data:
             return vals
         
+        '''
+            .SR:
+                Domain: data.sr
+                Message: No Object Found
+                Sponsoring Registrar: Caribbean Communication Services N.V. (Datasur)
+                Sponsoring Registrar URL: https://isp.datasur.sr/
+                Sponsoring Registrar Country: SR
+                Sponsoring Registrar Abuse Email: abuse@datasur.sr
+        '''
+        if self.extension_name == 'sr' and raw_data.find('Message: No Object Found') > -1:
+            return vals
+        
         arr = ['registrar', 'registrar_url', 'domain_status',
                 'nameservers', 'creation_date', 'updated_date', 'expiry_date']
         
