@@ -3534,6 +3534,9 @@ var rdap_data = `
     "xn--d1acj3b": {
         "rdap": "https://whois.nic.xn--d1acj3b/rdap/"
     },
+    "sr": {
+        "rdap": "https://whois.sr/rdap/"
+    },
     "tz": {
         "rdap": "https://whois.tznic.or.tz/rdap/"
     },

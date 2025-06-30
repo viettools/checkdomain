@@ -205,7 +205,7 @@ class WhOISccTLD:
             'sm': 'whois.nic.sm',
             'sn': 'whois.nic.sn',
             'so': 'whois.nic.so',
-            # 'sr': 'https://isp.datasur.sr/',
+            'sr': 'whois.sr',
             'ss': 'whois.nic.ss',
             'st': 'whois.nic.st',
             'su': 'whois.tcinet.ru',

@@ -270,6 +270,26 @@ class TestS(unittest.TestCase):
         self.assertEqual(data['parse']['creation_date'], '2011-01-24T00:00:00Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
+        
+    def test_SR(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "google.sr"},
+        )
+        data = json.loads(response.content)
+        if not data['status']:
+            print('Please check .sr whois server!')
+            return
+
+        self.assertEqual(data['parse']['registrar'], 'Caribbean Communication Services N.V. (Datasur)')
+        self.assertEqual(data['parse']['registrar_url'], 'https://isp.datasur.sr/')
+        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertGreater(len(data['parse']['nameservers']), 0)
+
+        self.assertEqual(data['parse']['creation_date'], '2005-10-24')
+        self.assertEqual(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
 
     def test_SS(self):
         response = client.post(
