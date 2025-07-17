@@ -205,7 +205,7 @@ class TestM(unittest.TestCase):
         response = client.post(
             '/api/v1/whois',
             headers={'X-Requested-With': 'XMLHttpRequest'},
-            json={"domain": "google.mq"},
+            json={"domain": "apple.mq"},
         )
         data = json.loads(response.content)
         if not data['status']:
