@@ -36,7 +36,7 @@ class TestSLD(unittest.TestCase):
         response = client.post(
             '/api/v1/whois',
             headers={'X-Requested-With': 'XMLHttpRequest'},
-            json={"domain": "ankor.co.pl"},
+            json={"domain": "control.co.pl"},
         )
         data = json.loads(response.content)
         if not data['status']:
@@ -48,7 +48,7 @@ class TestSLD(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2012.02.23 16:50:02')
+        self.assertEqual(data['parse']['creation_date'], '2021.06.17 18:54:24')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
         
