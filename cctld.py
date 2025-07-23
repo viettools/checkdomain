@@ -47,7 +47,7 @@ class WhOISccTLD:
             'ci': 'whois.nic.ci',
             # 'ck': 'http://www.vodafone.co.ck',
             'cl': 'whois.nic.cl',
-            'cm': 'whois.netcom.cm',
+            'cm': 'whois.nic.cm',
             'cn': 'whois.cnnic.cn',
             'co': 'whois.nic.co',
             'cr': 'whois.nic.cr',
