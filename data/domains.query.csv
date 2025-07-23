@@ -31,7 +31,7 @@ domain_name_cd_whois,domain_name_cd,"whois","whois.nic.cd","Registrar:(.*?)\n","
 
 domain_name_ci_whois,domain_name_ci,"whois","whois.nic.ci","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_cl_whois,domain_name_cl,"whois","whois.nic.cl","Registrar name:(.*?)\n","Registrar URL:(.*?)\n","Status:(.*?)\n","Name server:(.*?)\n","Creation date:(.*?)\n","Updated date:(.*?)\n","Expiration date:(.*?)\n"
-domain_name_cm_whois,domain_name_cm,"whois","whois.netcom.cm","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
+domain_name_cm_whois,domain_name_cm,"whois","whois.nic.cm","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_cn_whois,domain_name_cn,"whois","whois.cnnic.cn","Sponsoring Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)\n","Name Server:(.*?)\n","Registration Time:(.*?)\n","","Expiration Time:(.*?)\n"
 domain_name_co_whois,domain_name_co,"whois","whois.nic.co","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_cr_whois,domain_name_cr,"whois","whois.nic.cr","registrar:(.*?)\n","","status:(.*?)\n","nserver:(.*?)\n","registered:(.*?)\n","changed:(.*?)expire","expire:(.*?)\n"
