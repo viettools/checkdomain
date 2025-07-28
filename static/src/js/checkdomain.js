@@ -29,6 +29,36 @@ function rdap_custom_data()
     }
 }
 
+function rdap_check_reserved_domain(jsonData)
+{
+    let result = false;
+
+    if (jsonData && jsonData.notices && Array.isArray(jsonData.notices))
+    {
+        for (const notice of jsonData.notices)
+        {
+            if (notice.title === 'Prohibited String - Domain Cannot Be Registered')
+            {
+                result = true;
+                break;
+            }
+            
+            if (notice.description && Array.isArray(notice.description))
+            {
+                for (const desc of notice.description)
+                {
+                    if (desc.includes('Prohibited String - Domain Cannot Be Registered'))
+                    {
+                        result = true;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    return result;
+}
+
 function rdap_parse_data(data)
 {
     var result = rdap_custom_data();
@@ -38,6 +68,14 @@ function rdap_parse_data(data)
         if(typeof data === 'string' || data instanceof String)
         {
             data = JSON.parse(data);
+        }
+
+        // Check reserved domains
+        let reserved_domain = rdap_check_reserved_domain(data);
+        if(reserved_domain)
+        {
+            result.domain_status = ['Reserved Domain'];
+            return result;
         }
 
         if('status' in data && data.status && data.status.length > 0)
@@ -90,9 +128,21 @@ function rdap_parse_data(data)
                 if('objectClassName' in entities && 'roles' in entities &&
                     entities.roles.length >= 1 && entities.roles[0] === 'registrar')
                 {
+                    let raw_vcard;
                     if('vcardArray' in entities && entities.vcardArray.length == 2)
                     {
-                        let vcardArray = entities.vcardArray[1];
+                        raw_vcard = entities.vcardArray;
+                    }
+                    else if ('entities' in entities && entities.entities.length === 1 && 
+                            'vcardArray' in entities.entities[0] && entities.entities[0].vcardArray.length === 2)
+                    {
+                        raw_vcard = entities.entities[0].vcardArray;
+                    }
+
+
+                    if(raw_vcard !== undefined)
+                    {
+                        let vcardArray = raw_vcard[1];
                         for (let j = 0; j < vcardArray.length; ++j)
                         {
                             if(vcardArray[j].length == 4)

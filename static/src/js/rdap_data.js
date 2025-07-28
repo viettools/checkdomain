@@ -1,13 +1,19 @@
 var rdap_data = `
 {
     "kg": {
-        "rdap": "http://rdap.cctld.kg/"
+        "rdap": "https://rdap.cctld.kg/"
     },
     "mg": {
-        "rdap": "http://rdap.nic.mg/"
+        "rdap": "https://rdap.nic.mg/"
     },
     "xn--p1acf": {
         "rdap": "https://api.rdap.nic.xn--p1acf/"
+    },
+    "xn--kpry57d": {
+        "rdap": "https://ccrdap.twnic.tw/taiwan/"
+    },
+    "tw": {
+        "rdap": "https://ccrdap.twnic.tw/tw/"
     },
     "na": {
         "rdap": "https://keetmans.omadhina.co.na/"
@@ -795,9 +801,6 @@ var rdap_data = `
     "black": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "blockbuster": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "bloomberg": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -978,9 +981,6 @@ var rdap_data = `
     "dance": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "data": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "dating": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1023,9 +1023,6 @@ var rdap_data = `
     "discover": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "dish": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "doctor": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1035,16 +1032,7 @@ var rdap_data = `
     "domains": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "dot": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "dtv": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "dunlop": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "dvr": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "edeka": {
@@ -1374,9 +1362,6 @@ var rdap_data = `
     "lasalle": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "latino": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "lawyer": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1470,9 +1455,6 @@ var rdap_data = `
     "mobi": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "mobile": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "moda": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1524,9 +1506,6 @@ var rdap_data = `
     "obi": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "ollo": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "onl": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1542,9 +1521,6 @@ var rdap_data = `
     "origins": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "ott": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "partners": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1555,9 +1531,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "pet": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "phone": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "photography": {
@@ -1741,9 +1714,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "ski": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "sling": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "soccer": {
@@ -2061,6 +2031,42 @@ var rdap_data = `
     "mls": {
         "rdap": "https://rdap.mls.fury.ca/rdap/"
     },
+    "blockbuster": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "data": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "dish": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "dot": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "dtv": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "dvr": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "latino": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "mobile": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "ollo": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "ott": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "phone": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "sling": {
+        "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
     "aaa": {
         "rdap": "https://rdap.nic.aaa/"
     },
@@ -2255,6 +2261,9 @@ var rdap_data = `
     },
     "club": {
         "rdap": "https://rdap.nic.club/"
+    },
+    "cm": {
+        "rdap": "https://rdap.nic.cm/"
     },
     "commbank": {
         "rdap": "https://rdap.nic.commbank/"
