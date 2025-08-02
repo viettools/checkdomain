@@ -3366,6 +3366,9 @@ var rdap_data = `
     "th": {
         "rdap": "https://rdap.thains.co.th/"
     },
+    "to": {
+        "rdap": "https://rdap.tonicregistry.to/rdap/"
+    },
     "xn--o3cw4h": {
         "rdap": "https://rdap.thains.co.th/"
     },

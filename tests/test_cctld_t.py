@@ -185,14 +185,14 @@ class TestT(unittest.TestCase):
             print('Please check .to whois server!')
             return
 
-        self.assertEqual(data['parse']['registrar'], '')
-        self.assertEqual(data['parse']['registrar_url'], '')
-        self.assertEqual(len(data['parse']['domain_status']), 0)
+        self.assertEqual(data['parse']['registrar'], 'Government of Kingdom of Tonga')
+        self.assertEqual(data['parse']['registrar_url'], 'http://tonicregistry.to/')
+        self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
-        self.assertEqual(data['parse']['creation_date'], '')
-        self.assertEqual(len(data['parse']['updated_date']), 0)
-        self.assertEqual(len(data['parse']['expiry_date']), 0)
+        self.assertEqual(data['parse']['creation_date'], '2018-11-30T07:38:29.000Z')
+        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
 
     def test_TR(self):
         response = client.post(

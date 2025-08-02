@@ -166,7 +166,7 @@ domain_name_th_whois,domain_name_th,"whois","whois.thnic.co.th","Registrar:(.*?)
 domain_name_tl_whois,domain_name_tl,"whois","whois.nic.tl","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_tm_whois,domain_name_tm,"whois","whois.nic.tm","","","Status :(.*?)\n","NS\s\d\s{2,}(.*?)\n","","","Expiry :(.*?)\n"
 domain_name_tn_whois,domain_name_tn,"whois","whois.ati.tn","Registrar\.{2,}:(.*?)\n","","Domain status\.{2,}:(.*?)\n","DNS servers(.*?)\n\n","Creation date\.{2,}:(.*?)\n","",""
-
+domain_name_to_whois,domain_name_to,"whois","whois.tonicregistry.to","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_tr_whois,domain_name_tr,"whois","whois.trabis.gov.tr","Organization Name\s+:(.*?)\n","","Domain Status:(.*?)\n","Domain Servers:(.*?)\*\* Additional Info:","Created on\.{2,}:(.*?)(?:\.|\n)","","Expires on\.{2,}:(.*?)(?:\.|\n)"
 domain_name_tv_whois,domain_name_tv,"whois","whois.nic.tv","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_tw_whois,domain_name_tw,"whois","whois.twnic.net.tw","Registration Service Provider:(.*?)\n","Registration Service URL:(.*?)\n","Domain Status:(.*?)\n","Domain servers in listed order:(.*?)Registration Service Provider","Record created on(.*?)(?:\(|\n)",""," Record expires on(.*?)(?:\(|\n)"

@@ -223,7 +223,7 @@ class WhOISccTLD:
             'tl': 'whois.nic.tl',
             'tm': 'whois.nic.tm',
             'tn': 'whois.ati.tn',
-            'to': 'whois.tonic.to',
+            'to': 'whois.tonicregistry.to',
             'tr': 'whois.trabis.gov.tr',
             # 'tt': 'https://www.nic.tt/cgi-bin/search.pl',
             'tv': 'whois.nic.tv',
