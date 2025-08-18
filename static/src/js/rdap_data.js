@@ -2226,6 +2226,9 @@ var rdap_data = `
     "capetown": {
         "rdap": "https://rdap.nic.capetown/rdap/"
     },
+    "capitalone": {
+        "rdap": "https://rdap.nic.capitalone/"
+    },
     "caravan": {
         "rdap": "https://rdap.nic.caravan/"
     },
@@ -2627,6 +2630,9 @@ var rdap_data = `
     },
     "nike": {
         "rdap": "https://rdap.nic.nike/"
+    },
+    "norton": {
+        "rdap": "https://rdap.nic.norton/"
     },
     "nrw": {
         "rdap": "https://rdap.nic.nrw/"
@@ -3366,11 +3372,11 @@ var rdap_data = `
     "th": {
         "rdap": "https://rdap.thains.co.th/"
     },
-    "to": {
-        "rdap": "https://rdap.tonicregistry.to/rdap/"
-    },
     "xn--o3cw4h": {
         "rdap": "https://rdap.thains.co.th/"
+    },
+    "to": {
+        "rdap": "https://rdap.tonicregistry.to/rdap/"
     },
     "xn--mxtq1m": {
         "rdap": "https://rdap.twnic.tw/rdap/"
@@ -3471,9 +3477,6 @@ var rdap_data = `
     "bharti": {
         "rdap": "https://tld-rdap.verisign.com/bharti/v1/"
     },
-    "capitalone": {
-        "rdap": "https://tld-rdap.verisign.com/capitalone/v1/"
-    },
     "cc": {
         "rdap": "https://tld-rdap.verisign.com/cc/v1/"
     },
@@ -3485,9 +3488,6 @@ var rdap_data = `
     },
     "nissay": {
         "rdap": "https://tld-rdap.verisign.com/nissay/v1/"
-    },
-    "norton": {
-        "rdap": "https://tld-rdap.verisign.com/norton/v1/"
     },
     "verisign": {
         "rdap": "https://tld-rdap.verisign.com/verisign/v1/"
