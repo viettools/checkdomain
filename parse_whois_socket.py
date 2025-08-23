@@ -189,6 +189,9 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'et' and whois_data.find('The queried object does not exist: \r\nlimited') > -1:
                 result = True
+            elif extension_name == 'hu' and (whois_data.find(' Restricted domain name') > -1 or \
+                    whois_data.find(' Restricted domain name') > -1):
+                result = True
             elif extension_name == 'name' and whois_data.find('Not available for second level registration') > -1:
                 result = True
             
