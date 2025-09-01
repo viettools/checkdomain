@@ -78,7 +78,7 @@ class TestZA(unittest.TestCase):
         response = client.post(
             '/api/v1/whois',
             headers={'X-Requested-With': 'XMLHttpRequest'},
-            json={"domain": "icrc.org.za"},
+            json={"domain": "gbv.org.za"},
         )
         data = json.loads(response.content)
         
@@ -86,12 +86,12 @@ class TestZA(unittest.TestCase):
             print('Please check .org.za whois server!')
             return
         
-        self.assertEqual(data['parse']['registrar'], 'HOSTAFRICA')
-        self.assertEqual(data['parse']['registrar_url'], 'https://www.hostafrica.co.za')
+        self.assertEqual(data['parse']['registrar'], 'Afrihost')
+        self.assertEqual(data['parse']['registrar_url'], 'http://www.afrihost.com')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2011-04-05T09:59:46Z')
+        self.assertEqual(data['parse']['creation_date'], '2017-04-05T09:42:31Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
 
