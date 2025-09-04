@@ -185,8 +185,8 @@ class TestT(unittest.TestCase):
             print('Please check .to whois server!')
             return
 
-        self.assertEqual(data['parse']['registrar'], 'Government of Kingdom of Tonga')
-        self.assertEqual(data['parse']['registrar_url'], 'http://tonicregistry.to/')
+        self.assertEqual(data['parse']['registrar'], 'MarkMonitor Inc.')
+        self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
