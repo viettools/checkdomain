@@ -2316,9 +2316,6 @@ var rdap_data = `
     "design": {
         "rdap": "https://rdap.nic.design/"
     },
-    "diy": {
-        "rdap": "https://rdap.nic.diy/rdap/"
-    },
     "download": {
         "rdap": "https://rdap.nic.download/"
     },
@@ -2352,9 +2349,6 @@ var rdap_data = `
     "fashion": {
         "rdap": "https://rdap.nic.fashion/"
     },
-    "feedback": {
-        "rdap": "https://rdap.nic.feedback/rdap/"
-    },
     "ferrero": {
         "rdap": "https://rdap.nic.ferrero/"
     },
@@ -2376,14 +2370,8 @@ var rdap_data = `
     "flir": {
         "rdap": "https://rdap.nic.flir/"
     },
-    "food": {
-        "rdap": "https://rdap.nic.food/rdap/"
-    },
     "ford": {
         "rdap": "https://rdap.nic.ford/"
-    },
-    "forum": {
-        "rdap": "https://rdap.nic.forum/rdap/"
     },
     "fox": {
         "rdap": "https://rdap.nic.fox/"
@@ -2526,17 +2514,11 @@ var rdap_data = `
     "lifeinsurance": {
         "rdap": "https://rdap.nic.lifeinsurance/"
     },
-    "lifestyle": {
-        "rdap": "https://rdap.nic.lifestyle/rdap/"
-    },
     "lilly": {
         "rdap": "https://rdap.nic.lilly/"
     },
     "lincoln": {
         "rdap": "https://rdap.nic.lincoln/"
-    },
-    "living": {
-        "rdap": "https://rdap.nic.living/rdap/"
     },
     "loan": {
         "rdap": "https://rdap.nic.loan/"
@@ -2681,9 +2663,6 @@ var rdap_data = `
     },
     "physio": {
         "rdap": "https://rdap.nic.physio/"
-    },
-    "pid": {
-        "rdap": "https://rdap.nic.pid/rdap/"
     },
     "ping": {
         "rdap": "https://rdap.nic.ping/"
@@ -2858,9 +2837,6 @@ var rdap_data = `
     },
     "tv": {
         "rdap": "https://rdap.nic.tv/"
-    },
-    "vana": {
-        "rdap": "https://rdap.nic.vana/rdap/"
     },
     "versicherung": {
         "rdap": "https://rdap.nic.versicherung/v1/"
@@ -3291,7 +3267,16 @@ var rdap_data = `
     "rest": {
         "rdap": "https://rdap.registry.bar/rdap/"
     },
+    "feedback": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "forum": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
     "observer": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "pid": {
         "rdap": "https://rdap.registry.click/rdap/"
     },
     "realty": {
@@ -3378,6 +3363,45 @@ var rdap_data = `
     "to": {
         "rdap": "https://rdap.tonicregistry.to/rdap/"
     },
+    "click": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "country": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "diy": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "food": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "gift": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "hiv": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "lifestyle": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "link": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "living": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "property": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "sexy": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "trust": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
+    "vana": {
+        "rdap": "https://rdap.tucowsregistry.net/rdap/"
+    },
     "xn--mxtq1m": {
         "rdap": "https://rdap.twnic.tw/rdap/"
     },
@@ -3404,9 +3428,6 @@ var rdap_data = `
     },
     "icbc": {
         "rdap": "https://rdap.zdnsgtld.com/icbc/"
-    },
-    "redstone": {
-        "rdap": "https://rdap.zdnsgtld.com/redstone/"
     },
     "ren": {
         "rdap": "https://rdap.zdnsgtld.com/ren/"
@@ -3552,31 +3573,7 @@ var rdap_data = `
     "tz": {
         "rdap": "https://whois.tznic.or.tz/rdap/"
     },
-    "click": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
-    },
-    "country": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
-    },
-    "gift": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
-    },
-    "hiv": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
-    },
     "juegos": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
-    },
-    "link": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
-    },
-    "property": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
-    },
-    "sexy": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
-    },
-    "trust": {
         "rdap": "https://whois.uniregistry.net/rdap/"
     },
     "fj": {
