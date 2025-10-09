@@ -49,7 +49,7 @@ class WhOISccTLD:
             'cl': 'whois.nic.cl',
             'cm': 'whois.nic.cm',
             'cn': 'whois.cnnic.cn',
-            'co': 'whois.nic.co',
+            'co': 'whois.registry.co',
             'cr': 'whois.nic.cr',
             # 'cu': 'http://www.nic.cu',
             'cv': 'whois.nic.cv',
