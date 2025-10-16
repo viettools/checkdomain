@@ -94,7 +94,7 @@ var rdap_data_extend = `
         "rdap": "https://whois.nic.net.ng/"
     },
     "gn": {
-        "rdap": "https://rdap.ande.gov.gn/"
+        "rdap": "https://whois.nic.gn/"
     },
     "et": {
         "rdap": "https://rdap.ethiotelecom.et/rdap/"
