@@ -1320,6 +1320,9 @@ var rdap_data = `
     "jll": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "juegos": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "juniper": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -3572,9 +3575,6 @@ var rdap_data = `
     },
     "tz": {
         "rdap": "https://whois.tznic.or.tz/rdap/"
-    },
-    "juegos": {
-        "rdap": "https://whois.uniregistry.net/rdap/"
     },
     "fj": {
         "rdap": "https://www.rdap.fj/"
