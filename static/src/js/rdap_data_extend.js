@@ -109,7 +109,7 @@ var rdap_data_extend = `
         "rdap": "https://rdap.nic.net.bw/"
     },
     "co": {
-        "rdap": "https://rdap.nic.co/"
+        "rdap": "https://rdap.registry.co/co/"
     },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
