@@ -182,8 +182,8 @@ class TestG(unittest.TestCase):
             print('Please check .gn whois server!')
             return
 
-        self.assertEqual(data['parse']['registrar'], 'Internal Registrars')
-        self.assertEqual(data['parse']['registrar_url'], 'https://nic.gn')
+        self.assertEqual(data['parse']['registrar'], 'registrar-ande')
+        self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
