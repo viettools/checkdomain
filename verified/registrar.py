@@ -24,7 +24,7 @@ class VerifiedRegistrar:
                          '1938925_DOMAIN_COM-VRSN', '1084182_DOMAIN_COM-VRSN', '108725895_DOMAIN_COM-VRSN', '6222216_DOMAIN_COM-VRSN',
                          '121958814_DOMAIN_COM-VRSN', '1533858754_DOMAIN_COM-VRSN', '149835961_DOMAIN_COM-VRSN', '5555202_DOMAIN_COM-VRSN',
                          '2122865_DOMAIN_COM-VRSN', '2089952122_DOMAIN_COM-VRSN', '58397_DOMAIN_COM-VRSN', '94523481_DOMAIN_COM-VRSN',
-                         '85456945_DOMAIN_COM-VRSN'
+                         '85456945_DOMAIN_COM-VRSN', '635749194_DOMAIN_COM-VRSN', '82778142_DOMAIN_COM-VRSN'
                          ]:
             result = True
         return result
@@ -161,4 +161,12 @@ class VerifiedRegistrar:
     Registrar: MAT BAO CORPORATION
     Registrar IANA ID: 1586
     Registry Domain ID: 85456945_DOMAIN_COM-VRSN
+    
+    Registrar: PlanetHoster Inc.
+    Registrar IANA ID: 2476
+    Registry Domain ID: 635749194_DOMAIN_COM-VRSN
+    
+    Registrar: Blacknight Internet Solutions Ltd.
+    Registrar IANA ID: 1448
+    Registry Domain ID: 82778142_DOMAIN_COM-VRSN
 '''
