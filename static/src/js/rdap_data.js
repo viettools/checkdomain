@@ -6,9 +6,6 @@ var rdap_data = `
     "mg": {
         "rdap": "https://rdap.nic.mg/"
     },
-    "xn--p1acf": {
-        "rdap": "https://api.rdap.nic.xn--p1acf/"
-    },
     "xn--kpry57d": {
         "rdap": "https://ccrdap.twnic.tw/taiwan/"
     },
@@ -729,9 +726,6 @@ var rdap_data = `
     "apartments": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "apple": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "archi": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1030,9 +1024,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "domains": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "dunlop": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "edeka": {
@@ -1500,6 +1491,9 @@ var rdap_data = `
     "ninja": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "nissay": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "nowtv": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1956,6 +1950,9 @@ var rdap_data = `
     "xn--1ck2e1b": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "xn--5su34j936bgsg": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "xn--5tzm5g": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -2005,6 +2002,12 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "xn--vhquv": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--w4r85el8fhu5dnra": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "xn--w4rs40l": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "yahoo": {
@@ -2109,6 +2112,9 @@ var rdap_data = `
     "aig": {
         "rdap": "https://rdap.nic.aig/"
     },
+    "airtel": {
+        "rdap": "https://rdap.nic.airtel/"
+    },
     "ally": {
         "rdap": "https://rdap.nic.ally/"
     },
@@ -2142,6 +2148,9 @@ var rdap_data = `
     "anz": {
         "rdap": "https://rdap.nic.anz/"
     },
+    "apple": {
+        "rdap": "https://rdap.nic.apple/"
+    },
     "aquarelle": {
         "rdap": "https://rdap.nic.aquarelle/"
     },
@@ -2153,6 +2162,9 @@ var rdap_data = `
     },
     "aramco": {
         "rdap": "https://rdap.nic.aramco/"
+    },
+    "as": {
+        "rdap": "https://rdap.nic.as/"
     },
     "athleta": {
         "rdap": "https://rdap.nic.athleta/"
@@ -2192,6 +2204,9 @@ var rdap_data = `
     },
     "berlin": {
         "rdap": "https://rdap.nic.berlin/v1/"
+    },
+    "bharti": {
+        "rdap": "https://rdap.nic.bharti/"
     },
     "bible": {
         "rdap": "https://rdap.nic.bible/"
@@ -2946,6 +2961,9 @@ var rdap_data = `
     "xn--ngbrx": {
         "rdap": "https://rdap.nic.xn--ngbrx/"
     },
+    "xn--p1acf": {
+        "rdap": "https://rdap.nic.xn--p1acf/"
+    },
     "xn--tiq49xqyj": {
         "rdap": "https://rdap.nic.xn--tiq49xqyj/"
     },
@@ -3495,12 +3513,6 @@ var rdap_data = `
     "xn--xhq521b": {
         "rdap": "https://restwhois.ngtld.cn/"
     },
-    "airtel": {
-        "rdap": "https://tld-rdap.verisign.com/airtel/v1/"
-    },
-    "bharti": {
-        "rdap": "https://tld-rdap.verisign.com/bharti/v1/"
-    },
     "cc": {
         "rdap": "https://tld-rdap.verisign.com/cc/v1/"
     },
@@ -3509,9 +3521,6 @@ var rdap_data = `
     },
     "name": {
         "rdap": "https://tld-rdap.verisign.com/name/v1/"
-    },
-    "nissay": {
-        "rdap": "https://tld-rdap.verisign.com/nissay/v1/"
     },
     "verisign": {
         "rdap": "https://tld-rdap.verisign.com/verisign/v1/"
@@ -3524,9 +3533,6 @@ var rdap_data = `
     },
     "xn--42c2d9a": {
         "rdap": "https://tld-rdap.verisign.com/xn--42c2d9a/v1/"
-    },
-    "xn--5su34j936bgsg": {
-        "rdap": "https://tld-rdap.verisign.com/xn--5su34j936bgsg/v1/"
     },
     "xn--9dbq2a": {
         "rdap": "https://tld-rdap.verisign.com/xn--9dbq2a/v1/"
@@ -3551,12 +3557,6 @@ var rdap_data = `
     },
     "xn--tckwe": {
         "rdap": "https://tld-rdap.verisign.com/xn--tckwe/v1/"
-    },
-    "xn--w4r85el8fhu5dnra": {
-        "rdap": "https://tld-rdap.verisign.com/xn--w4r85el8fhu5dnra/v1/"
-    },
-    "xn--w4rs40l": {
-        "rdap": "https://tld-rdap.verisign.com/xn--w4rs40l/v1/"
     },
     "ky": {
         "rdap": "https://whois.kyregistry.ky/rdap/"
