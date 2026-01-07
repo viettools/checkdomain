@@ -138,7 +138,7 @@ class WhOISccTLD:
             'lv': 'whois.nic.lv',
             'ly': 'whois.nic.ly',
             'ma': 'whois.registre.ma',
-            # 'mc': 'https://www.nic.mc/',
+            'mc': 'whois.nic.mc',
             'md': 'whois.nic.md',
             'me': 'whois.nic.me',
             # 'mf': '',
