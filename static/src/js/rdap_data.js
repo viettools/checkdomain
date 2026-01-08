@@ -2430,6 +2430,9 @@ var rdap_data = `
     "godaddy": {
         "rdap": "https://rdap.nic.godaddy/"
     },
+    "gov": {
+        "rdap": "https://rdap.nic.gov/rdap/"
+    },
     "grainger": {
         "rdap": "https://rdap.nic.grainger/"
     },
@@ -2437,7 +2440,7 @@ var rdap_data = `
         "rdap": "https://rdap.nic.grocery/"
     },
     "gs": {
-        "rdap": "https://rdap.nic.gs/"
+        "rdap": "https://rdap.coccaregistry.org/"
     },
     "hamburg": {
         "rdap": "https://rdap.nic.hamburg/v1/"
