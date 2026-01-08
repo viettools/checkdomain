@@ -2440,7 +2440,7 @@ var rdap_data = `
         "rdap": "https://rdap.nic.grocery/"
     },
     "gs": {
-        "rdap": "https://rdap.nic.gs/"
+        "rdap": "https://rdap.coccaregistry.org/"
     },
     "hamburg": {
         "rdap": "https://rdap.nic.hamburg/v1/"
