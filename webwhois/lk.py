@@ -19,7 +19,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     req = requests.Session()
     req_get = False
     try:
-        req_get = req.get('https://www.domains.lk/wp-content/themes/bridge-child/getDomainData.php?domainname={0}'.format(domain),
+        req_get = req.get('https://register.domains.lk/proxy/domains/single-search?keyword={0}'.format(domain),
                           headers=headers,
                           verify=False)
     except:
@@ -32,16 +32,17 @@ def whois_via_web(USER_AGENT, domain, domain_type):
         json_data = json.loads(raw_data or '{}')
         
         json_msg = json_data.get('Message', '')
-        if json_msg:
-            result.append('Message: {0}'.format(json_msg))
-            if json_msg.find('Domain name you searched is restricted') > -1:
-                result.append('Domain Status: Reserved Domain https://icann.org/epp')
-        if json_data.get('ExpireDate', False):
-            expiry_date = json_data.get('ExpireDate')
-            if expiry_date:
-                expiry_date = expiry_date.replace('Expiration Date -', '')
-                expiry_date = expiry_date.strip()
-                result.append('Registry Expiry Date: {0}'.format(expiry_date))
+        if raw_data.find('Domain name you searched is restricted') > -1:
+            result.append('Domain Status: Reserved Domain https://icann.org/epp')
+        if json_data.get('result', {}):
+            domainAvailability = json_data['result'].get('domainAvailability', {})
+            if domainAvailability.get('message', False):
+                result.append('Message: {0}'.format(domainAvailability['message']))
+
+            if 'isAvailable' in domainAvailability and not domainAvailability['isAvailable']:
+                domainInfo = domainAvailability.get('domainInfo', {})
+                if domainInfo is not None and domainInfo.get('expireDate', False):
+                    result.append('Registry Expiry Date: {0}'.format(domainInfo['expireDate']))
             
     if result:
         result.append('Full WHOIS: https://www.domains.lk')
