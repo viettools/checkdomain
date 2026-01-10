@@ -45,24 +45,19 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     req = requests.Session()
     req_get = False
     try:
-        req_get = req.get('https://apiecommercenic.uni.edu.ni/api/v1/dominios/disponibilidadDominio?dominio={0}&zona={1}&idZona={2}'.format(domain, domain_type, idZona), headers=headers, verify=False)
+        req_get = req.get('https://apiecommercenic.uni.edu.ni/api/v1/dominios/whois?dominio={0}.{1}'.format(domain, domain_type), headers=headers, verify=False)
     except:
         pass
     
     result = []
     if req_get and req_get.status_code == 200 and req_get.text:
         json_data = req_get.json()
-        if json_data and json_data.get('disponibilidadDominios', False):
-            disponibilidadDominios = {}
-            try:
-                disponibilidadDominios = json_data['disponibilidadDominios'][0]
-            except:
-                pass
-            
-            if disponibilidadDominios.get('nombreCliente', False):
-                result.append('Registrant Name: {0}'.format(disponibilidadDominios['nombreCliente']))
-            if disponibilidadDominios.get('fechaExpiracion', False):
-                result.append('Registry Expiry Date: {0}'.format(disponibilidadDominios['fechaExpiracion']))
+        if json_data and json_data.get('datos', {}):
+            datos = json_data.get('datos', {})
+            if datos.get('cliente', False):
+                result.append('Registrant Name: {0}'.format(datos['cliente']))
+            if datos.get('fechaExpiracion', False):
+                result.append('Registry Expiry Date: {0}'.format(datos['fechaExpiracion']))
             
     if result:
         result.append('Full WHOIS: https://nic.ni/')
