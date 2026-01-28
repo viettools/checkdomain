@@ -196,6 +196,8 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name in ['cy'] and whois_data.find('Reserved Domain') > -1: # Special --> Web WHOIS
                 result = True
+            elif extension_name in ['bd'] and whois_data.find('Domain contains reserved word') > -1:
+                result = True
             
             return result
         
