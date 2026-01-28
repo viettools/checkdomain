@@ -115,7 +115,7 @@ class ParseWhoisSocket:
         
         def check_reserved_domain(extension_name, whois_data):
             result = False
-            if extension_name in ['ac', 'bm', 'bz', 'sh'] and whois_data.find('This name is reserved by the Registry') > -1:
+            if extension_name in ['ac', 'bm', 'bz', 'sh', 'mu', 'mn'] and whois_data.find('This name is reserved by the Registry') > -1:
                 result = True
             elif extension_name == 'rs' and (whois_data.find('This domain is reserved') > -1 or \
                     whois_data.find('Domain is not registered') > -1):
@@ -169,8 +169,6 @@ class ParseWhoisSocket:
             elif extension_name == 'pk' and whois_data.find('This domain cannot be registered') > -1:
                 result = True
             elif extension_name == 'tm' and whois_data.find('Domain reserved') > -1:
-                result = True
-            elif extension_name == 'mu' and whois_data.find('This name is reserved by the Registry') > -1:
                 result = True
             elif extension_name == 'pw' and whois_data.find('This domain has been reserved by the registry') > -1:
                 result = True
