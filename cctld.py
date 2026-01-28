@@ -24,7 +24,7 @@ class WhOISccTLD:
             # 'az': 'http://whois.az/',
             # 'ba': 'https://nic.ba/?culture=en',
             # 'bb': 'https://whois.telecoms.gov.bb/search/',
-            'bd': '123.49.12.200',
+            'bd': 'whois.get.bd', # From Resellers
             'be': 'whois.dns.be',
             'bf': 'whois.registre.bf',
             'bg': 'whois.register.bg',

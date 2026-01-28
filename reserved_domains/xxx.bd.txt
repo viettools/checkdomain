@@ -1,0 +1,4 @@
+Domain Name: xxx.bd
+Domain Status: Error
+Whois Server: whois.get.bd
+Message: Domain contains reserved word
