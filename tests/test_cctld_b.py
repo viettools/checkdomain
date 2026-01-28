@@ -12,6 +12,26 @@ client = TestClient(app)
 
 class TestB(unittest.TestCase):
     
+    def test_BD(self):
+        response = client.post(
+            '/api/v1/whois',
+            headers={'X-Requested-With': 'XMLHttpRequest'},
+            json={"domain": "google.bd"},
+        )
+        data = json.loads(response.content)
+        if not data['status']:
+            print('Please check .bd whois server!')
+            return
+        
+        self.assertEqual(data['parse']['registrar'], '')
+        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertGreater(len(data['parse']['nameservers']), 0)
+        
+        self.assertEqual(data['parse']['creation_date'], '20/01/2026')
+        self.assertEqual(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['expiry_date']), 0)
+    
     def test_BE(self):
         response = client.post(
             '/api/v1/whois',

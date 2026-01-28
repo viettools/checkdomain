@@ -169,7 +169,7 @@ def whois_data(domain: str = Body(..., embed=True)):
                        'ac.za', 'co.za', 'net.za', 'org.za', 'web.za', 'gov.za']
     # Web WHOIS
     arr_web_tld = ['ao', 'az',
-                   'ba', 'bb', 'bd', 'bt',
+                   'ba', 'bb', 'bt', # 'bd',
                    'cu', 'cv', 'cy', 'ni',
                    'dz', 'dj',
                    'es', 'eg', 'ec',
