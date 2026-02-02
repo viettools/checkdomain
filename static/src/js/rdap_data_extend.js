@@ -108,6 +108,9 @@ var rdap_data_extend = `
     "bw": {
         "rdap": "https://rdap.nic.net.bw/"
     },
+    "iq": {
+        "rdap": "https://rdap.reg.iq/rdap/"
+    },
     "co": {
         "rdap": "https://rdap.registry.co/co/"
     },
