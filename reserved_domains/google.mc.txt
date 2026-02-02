@@ -23,3 +23,41 @@
 >> as is. The NIC Monaco cannot be held responsible for any
 >> errors. For more information about a domain, please contact
 >> the responsible registrar.
+
+
+
+
+
+
+
+
+
+
+
+>>
+>> Welcome to the NIC Monaco Whois server.
+>>
+>> Complete date format : YYYY-MM-DDThh:mm:ssZ
+>>
+>> You are not allowed to duplicate these information without
+>> authorization of NIC Monaco.
+>> See https://www.nic.mc for informations about .mc domains.
+>> Please contact nic@gouv.mc for any question.
+>>
+>>
+--------------------------------------------------------------
+
+>> Domain             : GOOGLE.MC
+
+>> This domain is reserved. As this term may infringe
+>> an intellectual property right, please contact your
+>> registrar or NIC Monaco for more information regarding
+>> its registration.
+
+
+>>>> Last update of WHOIS Database : 2026-01-30T11:09:08Z <<<<
+
+>> The information contained in the WHOIS database is provided
+>> as is. The NIC Monaco cannot be held responsible for any
+>> errors. For more information about a domain, please contact
+>> the responsible registrar.
