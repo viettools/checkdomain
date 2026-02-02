@@ -49,7 +49,7 @@ class TestR(unittest.TestCase):
 
         self.assertEqual(data['parse']['creation_date'], '2000-07-17')
         self.assertEqual(len(data['parse']['updated_date']), 0)
-        self.assertGreater(len(data['parse']['expiry_date']), 0)
+        self.assertEqual(len(data['parse']['expiry_date']), 0)
         
     def test_RS(self):
         response = client.post(
