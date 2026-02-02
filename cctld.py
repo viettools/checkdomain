@@ -107,7 +107,7 @@ class WhOISccTLD:
             'im': 'whois.nic.im',
             'in': 'whois.nixiregistry.in',
             'io': 'whois.nic.io',
-            # 'iq': 'whois.cmc.iq',
+            'iq': 'whois.reg.iq',
             'ir': 'whois.nic.ir',
             'is': 'whois.isnic.is',
             'it': 'whois.nic.it',
