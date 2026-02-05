@@ -90,9 +90,6 @@ var rdap_data_extend = `
     "om": {
         "rdap": "https://rdap.registry.om/"
     },
-    "ng": {
-        "rdap": "https://whois.nic.net.ng/"
-    },
     "gn": {
         "rdap": "https://whois.nic.gn/"
     },

@@ -6,6 +6,9 @@ var rdap_data = `
     "mg": {
         "rdap": "https://rdap.nic.mg/"
     },
+    "ng": {
+        "rdap": "https://rdap.nic.net.ng/"
+    },
     "xn--kpry57d": {
         "rdap": "https://ccrdap.twnic.tw/taiwan/"
     },
@@ -3344,6 +3347,9 @@ var rdap_data = `
     },
     "wien": {
         "rdap": "https://rdap.ryce-rsp.com/rdap/"
+    },
+    "sg": {
+        "rdap": "https://rdap.sgnic.sg/rdap/"
     },
     "nl": {
         "rdap": "https://rdap.sidn.nl/"
