@@ -168,6 +168,9 @@ var rdap_data = `
     "ca": {
         "rdap": "https://rdap.ca.fury.ca/rdap/"
     },
+    "au": {
+        "rdap": "https://rdap.cctld.au/rdap/"
+    },
     "uz": {
         "rdap": "https://rdap.cctld.uz/"
     },
@@ -538,9 +541,6 @@ var rdap_data = `
         "rdap": "https://rdap.gmoregistry.net/rdap/"
     },
     "goldpoint": {
-        "rdap": "https://rdap.gmoregistry.net/rdap/"
-    },
-    "goo": {
         "rdap": "https://rdap.gmoregistry.net/rdap/"
     },
     "hisamitsu": {
