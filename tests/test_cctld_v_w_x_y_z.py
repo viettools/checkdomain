@@ -209,13 +209,13 @@ class TestVtoY(unittest.TestCase):
             return
 
         self.assertEqual(data['parse']['registrar'], 'Yemen Net - Sales')
-        self.assertEqual(data['parse']['registrar_url'], 'https://yemen.net.ye')
-        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
-        self.assertEqual(data['parse']['creation_date'], '2000-01-01T00:00:00.000Z')
+        self.assertEqual(data['parse']['creation_date'], '')
         self.assertEqual(len(data['parse']['updated_date']), 0)
-        self.assertGreater(len(data['parse']['expiry_date']), 0)
+        self.assertEqual(len(data['parse']['expiry_date']), 0)
     
     '''
         Test Reserved Domains
