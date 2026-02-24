@@ -188,7 +188,7 @@ domain_name_wf_whois,domain_name_wf,"whois","whois.nic.wf","registrar:(.*?)\n","
 domain_name_ws_whois,domain_name_ws,"whois","whois.website.ws","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)\n","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","(?:Registry Expiry Date|Expiration Date):(.*?)\n"
 domain_name_yt_whois,domain_name_yt,"whois","whois.nic.yt","registrar:(.*?)\n","website:(.*?)\n","eppstatus:(.*?)\n","nserver:(.*?)\n","created:(.*?)\n","last-update:(.*?)\n","Expiry Date:(.*?)\n"
 domain_name_zm_whois,domain_name_zm,"whois","whois.zicta.zm","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
-domain_name_ye_whois,domain_name_ye,"whois","whois.y.net.ye","(?:Registrar|Registrar Name):(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
+domain_name_ye_whois,domain_name_ye,"whois","whois.y.net.ye","(?:Registrar|Registrar Name):(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)(?:\(|\n)","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 
 
 

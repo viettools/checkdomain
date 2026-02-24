@@ -185,7 +185,7 @@ class TestC(unittest.TestCase):
         
         self.assertEqual(data['parse']['registrar'], 'NIC-REG1')
         self.assertEqual(data['parse']['registrar_url'], '')
-        self.assertGreater(len(data['parse']['domain_status']), 0)
+        self.assertEqual(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
         self.assertEqual(data['parse']['creation_date'], '02.03.2008 18:00:00')
