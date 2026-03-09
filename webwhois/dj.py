@@ -38,7 +38,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     req = requests.Session()
     req_get = False
     try:
-        req_get = req.get('http://www.dj/cgi-bin/quiest.cgi?dn={0}'.format(domain), headers=headers, verify=False)
+        req_get = req.get('https://dot.dj/cgi-bin/quiest.cgi?dn={0}'.format(domain), headers=headers, verify=False)
     except:
         pass
     
@@ -51,7 +51,7 @@ def whois_via_web(USER_AGENT, domain, domain_type):
                 result.append('Registry Expiry Date: {0}'.format(expiry_date))
             
     if result:
-        result.append('Full WHOIS: http://www.dj')
+        result.append('Full WHOIS: https://dot.dj')
         final_result = {
             'status': True,
             'result': '\n'.join(result)
