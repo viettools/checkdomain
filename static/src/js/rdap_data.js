@@ -1935,9 +1935,6 @@ var rdap_data = `
     "wine": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "wolterskluwer": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "works": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -3354,6 +3351,9 @@ var rdap_data = `
     "nl": {
         "rdap": "https://rdap.sidn.nl/"
     },
+    "xn--clchc0ea0b2g2a9gcd": {
+        "rdap": "https://rdap.ta.sgnic.sg/rdap/"
+    },
     "anquan": {
         "rdap": "https://rdap.teleinfo.cn/"
     },
@@ -3509,6 +3509,9 @@ var rdap_data = `
     },
     "xn--ses554g": {
         "rdap": "https://rdap.zdnsgtld.com/xn--ses554g/"
+    },
+    "xn--yfro4i67o": {
+        "rdap": "https://rdap.zh.sgnic.sg/rdap/"
     },
     "xn--1qqw23a": {
         "rdap": "https://restwhois.ngtld.cn/"
