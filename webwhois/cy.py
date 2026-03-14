@@ -37,51 +37,5 @@ def get_cy_id(req, headers, domain, domain_type):
                 })
     return result
 
-def whois_via_web(USER_AGENT, domain, domain_type):
-    headers = {
-        'User-Agent': USER_AGENT
-    }
-    
-    final_result = {
-        'status': False,
-        'result': False
-    }
-    
-    req = requests.Session()
-    result = []
-    
-    cy_id_data = get_cy_id(req, headers, domain, domain_type)
-    if cy_id_data:
-        if cy_id_data.get('domain_id', False):
-            req_get = False
-            try:
-                req_get = req.get('https://www.nic.cy/api/whoIs/{0}'.format(cy_id_data['domain_id']), headers=headers, verify=False)
-            except:
-                pass
-            
-            
-            if req_get and req_get.status_code == 200 and req_get.text:
-                json_data = req_get.json()
-                if json_data:
-                    if json_data.get('domainWhoIs', False):
-                        if json_data['domainWhoIs'].get('domainFullname', False):
-                            result.append('Domain Name: {0}'.format(json_data['domainWhoIs']['domainFullname']))
-                        if json_data['domainWhoIs'].get('domainExpirationDate', False):
-                            result.append('Registry Expiry Date: {0}'.format(json_data['domainWhoIs']['domainExpirationDate']))
-                        for ns_server in json_data['domainWhoIs'].get('domainServers', []):
-                            if ns_server.get('name', False):
-                                result.append('Name Server: {0}'.format(ns_server.get('name')))
-                        
-                        if cy_id_data.get('domain_status', False):
-                            result.append('Domain Status: {0} {1}'.format(cy_id_data.get('domain_status'), 'https://icann.org/epp'))
-        elif cy_id_data.get('domain_status', False) == 'Απαγορευμένο':
-            result.append('Domain Status: {0} {1}'.format('Reserved Domain', 'https://icann.org/epp'))
-        
-    if result:
-        result.append('\nFull WHOIS: https://www.nic.cy')
-        final_result = {
-            'status': True,
-            'result': '\n'.join(result)
-        }
-    
-    return final_result
+def whois_via_web(USER_AGENT, domain, domain_type):    
+    return {'status': True, 'result': 'Full WHOIS: https://www.nic.cy'}

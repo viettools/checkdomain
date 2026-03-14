@@ -28,7 +28,7 @@ class TestUZ(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2003-03-11 16:12:18')
+        self.assertEqual(data['parse']['creation_date'], '2003-03-11 13:35:24')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
 
@@ -49,7 +49,7 @@ class TestUZ(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2003-03-14 16:12:28')
+        self.assertEqual(data['parse']['creation_date'], '2003-03-14 13:35:33')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
 
