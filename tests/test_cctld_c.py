@@ -183,7 +183,7 @@ class TestC(unittest.TestCase):
             print('Please check .cr whois server!')
             return
         
-        self.assertEqual(data['parse']['registrar'], 'NIC-REG1')
+        self.assertEqual(data['parse']['registrar'], 'MARKMONITOR')
         self.assertEqual(data['parse']['registrar_url'], '')
         self.assertEqual(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
