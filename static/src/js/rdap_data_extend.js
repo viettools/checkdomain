@@ -111,6 +111,9 @@ var rdap_data_extend = `
     "co": {
         "rdap": "https://rdap.registry.co/co/"
     },
+    "sk": {
+        "rdap": "https://rdap.sk-nic.sk/sk/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
