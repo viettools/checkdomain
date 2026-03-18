@@ -273,9 +273,6 @@ var rdap_data = `
     "frl": {
         "rdap": "https://rdap.centralnic.com/frl/"
     },
-    "fun": {
-        "rdap": "https://rdap.centralnic.com/fun/"
-    },
     "game": {
         "rdap": "https://rdap.centralnic.com/game/"
     },
@@ -296,9 +293,6 @@ var rdap_data = `
     },
     "homes": {
         "rdap": "https://rdap.centralnic.com/homes/"
-    },
-    "host": {
-        "rdap": "https://rdap.centralnic.com/host/"
     },
     "hosting": {
         "rdap": "https://rdap.centralnic.com/hosting/"
@@ -360,9 +354,6 @@ var rdap_data = `
     "nokia": {
         "rdap": "https://rdap.centralnic.com/nokia/"
     },
-    "online": {
-        "rdap": "https://rdap.centralnic.com/online/"
-    },
     "ooo": {
         "rdap": "https://rdap.centralnic.com/ooo/"
     },
@@ -372,14 +363,8 @@ var rdap_data = `
     "pohl": {
         "rdap": "https://rdap.centralnic.com/pohl/"
     },
-    "press": {
-        "rdap": "https://rdap.centralnic.com/press/"
-    },
     "protection": {
         "rdap": "https://rdap.centralnic.com/protection/"
-    },
-    "pw": {
-        "rdap": "https://rdap.centralnic.com/pw/"
     },
     "qpon": {
         "rdap": "https://rdap.centralnic.com/qpon/"
@@ -411,17 +396,11 @@ var rdap_data = `
     "sfr": {
         "rdap": "https://rdap.centralnic.com/sfr/"
     },
-    "site": {
-        "rdap": "https://rdap.centralnic.com/site/"
-    },
     "skin": {
         "rdap": "https://rdap.centralnic.com/skin/"
     },
     "smart": {
         "rdap": "https://rdap.centralnic.com/smart/"
-    },
-    "space": {
-        "rdap": "https://rdap.centralnic.com/space/"
     },
     "stc": {
         "rdap": "https://rdap.centralnic.com/stc/"
@@ -432,12 +411,6 @@ var rdap_data = `
     "storage": {
         "rdap": "https://rdap.centralnic.com/storage/"
     },
-    "store": {
-        "rdap": "https://rdap.centralnic.com/store/"
-    },
-    "tech": {
-        "rdap": "https://rdap.centralnic.com/tech/"
-    },
     "theatre": {
         "rdap": "https://rdap.centralnic.com/theatre/"
     },
@@ -447,17 +420,11 @@ var rdap_data = `
     "tui": {
         "rdap": "https://rdap.centralnic.com/tui/"
     },
-    "uno": {
-        "rdap": "https://rdap.centralnic.com/uno/"
-    },
     "vg": {
         "rdap": "https://rdap.centralnic.com/vg/"
     },
     "viva": {
         "rdap": "https://rdap.centralnic.com/viva/"
-    },
-    "website": {
-        "rdap": "https://rdap.centralnic.com/website/"
     },
     "wme": {
         "rdap": "https://rdap.centralnic.com/wme/"
@@ -2781,6 +2748,9 @@ var rdap_data = `
     "sex": {
         "rdap": "https://rdap.nic.sex/"
     },
+    "sn": {
+        "rdap": "https://rdap.nic.sn/"
+    },
     "sncf": {
         "rdap": "https://rdap.nic.sncf/"
     },
@@ -3278,6 +3248,39 @@ var rdap_data = `
     },
     "xn--nqv7fs00ema": {
         "rdap": "https://rdap.publicinterestregistry.org/rdap/"
+    },
+    "fun": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "host": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "online": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "press": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "pw": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "site": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "space": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "store": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "tech": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "uno": {
+        "rdap": "https://rdap.radix.host/rdap/"
+    },
+    "website": {
+        "rdap": "https://rdap.radix.host/rdap/"
     },
     "si": {
         "rdap": "https://rdap.register.si/"
