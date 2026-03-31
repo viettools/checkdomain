@@ -303,9 +303,6 @@ var rdap_data = `
     "inc": {
         "rdap": "https://rdap.centralnic.com/inc/"
     },
-    "kfh": {
-        "rdap": "https://rdap.centralnic.com/kfh/"
-    },
     "kpn": {
         "rdap": "https://rdap.centralnic.com/kpn/"
     },
@@ -431,9 +428,6 @@ var rdap_data = `
     },
     "xn--4gbrim": {
         "rdap": "https://rdap.centralnic.com/xn--4gbrim/"
-    },
-    "xn--ngbe9e0a": {
-        "rdap": "https://rdap.centralnic.com/xn--ngbe9e0a/"
     },
     "xn--vermgensberater-ctb": {
         "rdap": "https://rdap.centralnic.com/xn--vermgensberater-ctb/"
@@ -3326,6 +3320,12 @@ var rdap_data = `
     },
     "hiphop": {
         "rdap": "https://rdap.registry.hiphop/rdap/"
+    },
+    "kfh": {
+        "rdap": "https://rdap.registry.kfh/rdap/"
+    },
+    "xn--ngbe9e0a": {
+        "rdap": "https://rdap.registry.kfh/rdap/"
     },
     "love": {
         "rdap": "https://rdap.registry.love/rdap/"
