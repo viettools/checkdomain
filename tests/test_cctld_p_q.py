@@ -208,12 +208,12 @@ class TestPQ(unittest.TestCase):
             print('Please check .pw whois server!')
             return
 
-        self.assertEqual(data['parse']['registrar'], 'MarkMonitor, Inc.')
-        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(data['parse']['registrar'], 'MarkMonitor Inc.')
+        self.assertEqual(data['parse']['registrar_url'], 'https://www.markmonitor.com/')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertEqual(len(data['parse']['nameservers']), 0)
 
-        self.assertEqual(data['parse']['creation_date'], '2012-10-12T10:19:46.0Z')
+        self.assertEqual(data['parse']['creation_date'], '2012-10-12T10:19:46.000Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
     
