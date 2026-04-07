@@ -8,7 +8,7 @@
             "name": "Python: Current File",
             "type": "debugpy",
             "request": "launch",
-            "python": "${workspaceFolder}/venv/bin/python3.11",
+            "python": "${workspaceFolder}/venv/bin/python3.14",
             "program": "${workspaceFolder}/main.py",
             "console": "integratedTerminal",
             "justMyCode": true

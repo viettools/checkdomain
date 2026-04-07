@@ -1,14 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
-    {{ header_template | safe }}
+{{ header_template | safe }}
 
-    <body data-bs-theme="dark">
-        <div class="page">
+<body>
+    <div class="page">
         <!-- Navbar -->
         <header class="navbar navbar-expand-md d-print-none">
             <div class="container-xl">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
+                    aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal check_domain_logo">
@@ -20,44 +21,75 @@
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <div class="navbar">
                     <div class="container-xl">
-                        <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="./">
-                                <span
-                                    class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                        <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-                                    </svg>
-                                </span>
-                                <span class="nav-link-title">
-                                    Home
-                                </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-show-generate-box">
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-align-box-center-stretch"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 19v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M11 17h2" /><path d="M9 12h6" /><path d="M10 7h4" /></svg>
-                                    </span>
-                                    <span class="nav-link-title">
-                                        Generate
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modal-show-about-me">
-                                    <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/lifebuoy -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M15 15l3.35 3.35" /><path d="M9 15l-3.35 3.35" /><path d="M5.65 5.65l3.35 3.35" /><path d="M18.35 5.65l-3.35 3.35" /></svg>
-                                    </span>
-                                    <span class="nav-link-title">
-                                        About
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="row flex-column flex-md-row flex-fill align-items-center">
+                            <div class="col">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="./">
+                                            <span
+                                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
+                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                                </svg>
+                                            </span>
+                                            <span class="nav-link-title">
+                                                Home
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#modal-show-generate-box">
+                                            <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="icon icon-tabler icons-tabler-outline icon-tabler-align-box-center-stretch">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path
+                                                        d="M3 19v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+                                                    <path d="M11 17h2" />
+                                                    <path d="M9 12h6" />
+                                                    <path d="M10 7h4" />
+                                                </svg>
+                                            </span>
+                                            <span class="nav-link-title">
+                                                Generate
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#modal-show-about-me">
+                                            <span
+                                                class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/lifebuoy -->
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
+                                                    height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                                                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                                                    <path d="M15 15l3.35 3.35" />
+                                                    <path d="M9 15l-3.35 3.35" />
+                                                    <path d="M5.65 5.65l3.35 3.35" />
+                                                    <path d="M18.35 5.65l-3.35 3.35" />
+                                                </svg>
+                                            </span>
+                                            <span class="nav-link-title">
+                                                About
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -68,14 +100,17 @@
             <div class="page-body">
                 <div class="container-xl">
                     {% if dict_config['alert']['enable'] %}
-                        <div id="whois_ai_alert">
-                            <div class="alert alert-info col-sm-12 col-md-12 col-lg-6 offset-lg-3 whois_ai_alert_inaccurate" role="alert">
-                                <marquee direction="left">
-                                    <b style="color: green;">The WHOIS and RDAP of the .sr, .pg, .iq domain were updated.</b>
-                                    <b style="color: yellow;">Amazon Registry Services and Google Domain Registry do not provide the WHOIS service (RDAP is ok)</b>!!!
-                                </marquee>
-                            </div>
+                    <div id="whois_ai_alert">
+                        <div class="alert alert-info col-sm-12 col-md-12 col-lg-6 offset-lg-3 whois_ai_alert_inaccurate"
+                            role="alert">
+                            <marquee direction="left">
+                                <b style="color: green;">The WHOIS and RDAP of the .sr, .pg, .iq domain were
+                                    updated.</b>
+                                <b style="color: yellow;">Amazon Registry Services and Google Domain Registry do not
+                                    provide the WHOIS service (RDAP is ok)</b>!!!
+                            </marquee>
                         </div>
+                    </div>
                     {% endif %}
                     <div class="row row-deck row-cards">
 
@@ -83,25 +118,40 @@
                             <div class="card">
                                 <div class="row g-2" id="single_domain_area">
                                     <div class="col">
-                                    <input id="single_domain_input" type="text" class="form-control" placeholder="Domain…">
+                                        <input id="single_domain_input" type="text" class="form-control"
+                                            placeholder="Domain…">
                                     </div>
                                     <div class="col-auto">
                                         <a class="btn btn-icon btn-primary" aria-label="Button" id="single_domain_btn">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/search -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                                <path d="M21 21l-6 -6" />
+                                            </svg>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="row g-2" id="multi_domain_area_input">
                                     <div class="col input-group">
-                                        <textarea id="multi_domain_input" class="form-control" data-bs-toggle="autosize" placeholder="Multi Domain…" rows="10"></textarea>
+                                        <textarea id="multi_domain_input" class="form-control" data-bs-toggle="autosize"
+                                            placeholder="Multi Domain…" rows="10"></textarea>
                                     </div>
                                 </div>
-                                <div class="row g-2" style="display: flex;justify-content: center; margin-top: 0.05rem;" id="multi_domain_area_btn">
+                                <div class="row g-2" style="display: flex;justify-content: center; margin-top: 0.05rem;"
+                                    id="multi_domain_area_btn">
                                     <div class="col-auto">
                                         <a class="btn btn-icon btn-primary" aria-label="Button" id="multi_domain_btn">
                                             <!-- Download SVG icon from http://tabler-icons.io/i/search -->
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round">
+                                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                                <path d="M21 21l-6 -6" />
+                                            </svg>
                                         </a>
                                     </div>
                                 </div>
@@ -109,13 +159,15 @@
                                     <div class="progress-bar progress-bar-indeterminate bg-green"></div>
                                 </div>
                                 <div class="row g-2" style="margin-top: 0.25rem;">
-                                    <div class="offset-lg-3 offset-md-4">
+                                    <div class="col-12 d-flex justify-content-center">
                                         <label class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio_inline_multi_domain" checked value="single">
+                                            <input class="form-check-input" type="radio"
+                                                name="radio_inline_multi_domain" checked value="single">
                                             <span class="form-check-label">Single Domain</span>
                                         </label>
                                         <label class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="radio_inline_multi_domain" value="multi">
+                                            <input class="form-check-input" type="radio"
+                                                name="radio_inline_multi_domain" value="multi">
                                             <span class="form-check-label">Multi Domain</span>
                                         </label>
                                     </div>
@@ -146,13 +198,13 @@
                             Creation Date: 15/08/2023
                         </p>
                         <p>
-                            Updated Date: 31/03/2026
+                            Updated Date: 07/04/2026
                         </p>
                         <p>
                             Author: MAI TIẾN DŨNG
                         </p>
                         <p>
-                            Version: 3.3.94
+                            Version: 4.0.0
                         </p>
                         <p>
                             Support: https://check.rs
@@ -176,9 +228,10 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-1 row">
-                            <label class="col-3 col-form-label">Keyword:</label>
-                            <div class="col input-group">
-                                <input id="generate_domain_keyword_input" type="text" class="form-control" placeholder="Your Keyword">
+                            <label class="col-12 col-md-3 col-form-label">Keyword:</label>
+                            <div class="col-12 col-md-9 input-group">
+                                <input id="generate_domain_keyword_input" type="text" class="form-control"
+                                    placeholder="Your Keyword">
                             </div>
                         </div>
                         <div class="row">
@@ -186,15 +239,19 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn me-auto" data-bs-dismiss="modal" id="generate_domain_cut_cc_sld">Close</button>
-                        <button type="button" class="btn btn-primary" id="generate_domain_keyword_cc_sld">Generate ccSLDs</button>
+                        <button type="button" class="btn me-auto" data-bs-dismiss="modal"
+                            id="generate_domain_cut_cc_sld">Close</button>
+                        <button type="button" class="btn btn-primary" id="generate_domain_keyword_cc_sld">Generate
+                            ccSLDs</button>
                     </div>
                 </div>
             </div>
         </div>
         <footer class="footer footer-transparent d-print-none">
             <a href="#" data-toggle="scroll-to-top" class="btn-scroll-top fade">
-                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-circle-chevrons-up" width="24" height="24" viewBox="0 0 24 24" stroke-width={2} stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-circle-chevrons-up"
+                    width="24" height="24" viewBox="0 0 24 24" stroke-width={2} stroke="currentColor" fill="none"
+                    strokeLinecap="round" strokeLinejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M9 15l3 -3l3 3"></path>
                     <path d="M9 11l3 -3l3 3"></path>
@@ -202,9 +259,10 @@
                 </svg>
             </a>
             {% if dict_config['flagcounter']['enable'] %}
-                <a class="container d-flex align-items-center justify-content-center" href="{{ dict_config['flagcounter'].get('url', '') }}">
-                    <img src="{{ dict_config['flagcounter'].get('img', '') }}" alt="Flag Counter" border="0">
-                </a>
+            <a class="container d-flex align-items-center justify-content-center"
+                href="{{ dict_config['flagcounter'].get('url', '') }}">
+                <img src="{{ dict_config['flagcounter'].get('img', '') }}" alt="Flag Counter" border="0">
+            </a>
             {% endif %}
             <div class="container-xl mt-1">
                 <div class="row text-center align-items-center">
@@ -214,11 +272,11 @@
                 </div>
             </div>
         </footer>
-        
+
     </div>
-    
+
     {{ footer_template | safe }}
 
-    </body>
+</body>
 
 </html>

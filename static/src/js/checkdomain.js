@@ -283,8 +283,8 @@ function rdap_render_view(domain, data, uuid)
     {
         render_info = render_info.concat(`
             <div class="mb-1 row">
-                <label class="col-4 col-form-label">${item_data.label}</label>
-                <div class="col input-group">
+                <label class="col-12 col-md-4 col-form-label">${item_data.label}</label>
+                <div class="col-12 col-md-8 input-group">
                     <input id="${item_data.id}" type="text" class="form-control" value="${item_data.data}">
                     ${clipboard}
                 </div>
@@ -298,9 +298,9 @@ function rdap_render_view(domain, data, uuid)
                     <label id="label_domain" class="form-label fs-1" style="display: flex;justify-content: center;">${domain}</label>
                     ${render_info}
                     <div class="mb-1 row">
-                        <label class="col-4 col-form-label">Domain Status:</label>
-                        <div class="col input-group">
-                            <div class="card check_domain_whois_status_area">
+                        <label class="col-12 col-md-4 col-form-label">Domain Status:</label>
+                        <div class="col-12 col-md-8 input-group">
+                            <div class="card check_domain_whois_status_area w-100">
                                 ${render_status}
                             </div>
                             
@@ -520,7 +520,12 @@ async function query_single_rdap_domain(domain, index, total_domain, type)
         }
     }
 
-    let uuid = crypto.randomUUID();
+    let uuid = '';
+    if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+        uuid = crypto.randomUUID();
+    } else {
+        uuid = 'id-' + Math.random().toString(36).substring(2, 10) + '-' + Date.now();
+    }
     var parse_rdap = result = rdap_parse_data(result);
     var rdap_render = rdap_render_view(parse_domain.ascii_domain, parse_rdap, uuid);
     $(rdap_render).insertAfter('#check_domain_search');

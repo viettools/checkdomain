@@ -30,7 +30,7 @@ current_path_dir = os.path.dirname(os.path.abspath(__file__))
 app.mount('/static', StaticFiles(directory='{0}/static/src'.format(current_path_dir)), name='static')
 templates = Jinja2Templates('{0}/templates'.format(current_path_dir))
 
-#region Copy code from module 'domain_management' - Odoo17
+#region Copy code from module 'domain_management'
 
 def load_special_regex_data():
     result = {}
@@ -129,10 +129,10 @@ def main(request: Request):
             'enable': config.getboolean('alert', 'enable'),
         })
     
-    header_template = templates.TemplateResponse('header.html', {'request': request})
-    footer_template = templates.TemplateResponse('footer.html', {'request': request, 'dict_config': dict_config})
-    main_template = templates.TemplateResponse('index.html', 
-												{
+    header_template = templates.TemplateResponse(request=request, name='header.html')
+    footer_template = templates.TemplateResponse(request=request, name='footer.html', context={'dict_config': dict_config})
+    main_template = templates.TemplateResponse(request=request, name='index.html',
+                                                context={
 													'request': request,
                                                     'dict_config': dict_config,
 													'header_template': header_template.body.decode('utf-8'),
@@ -224,7 +224,7 @@ def whois_data(domain: str = Body(..., embed=True)):
         result_iana = whois_iana_data.get_data()
         
         if result_iana['result']:
-            check = re.findall('whois:\s+(.+)', result_iana['result'], re.IGNORECASE)
+            check = re.findall(r'whois:\s+(.+)', result_iana['result'], re.IGNORECASE)
             # .AD no whois server --> [status:       ACTIVE]
             if check and check[0] and check[0].find('status') == -1:
                 next_query = check[0].strip()
@@ -304,12 +304,12 @@ def is_docker():
     if not os.path.isfile(path): return False
     with open(path) as f:
         for line in f:
-            if re.match('\d+:[\w=]+:/docker(-[ce]e)?/\w+', line):
+            if re.match(r'\d+:[\w=]+:/docker(-[ce]e)?/\w+', line):
                 return True
     return False
 
 if __name__ == '__main__':
-    assert (sys.version_info.major, sys.version_info.minor) == (3, 11), 'Run Python 3.11 bro!!!'
+    assert (sys.version_info.major, sys.version_info.minor) == (3, 14), 'Run Python 3.14!!!'
     listen_host = '0.0.0.0'
     if not is_docker():
         listen_host= '127.0.0.1'
