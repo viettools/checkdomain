@@ -229,9 +229,9 @@ function rdap_render_view(domain, data, uuid) {
     var render_info = '';
     arr_render_data.forEach(function (item_data, index) {
         render_info = render_info.concat(`
-            <div class="mb-1 row">
+            <div class="mb-1 row align-items-center">
                 <label class="col-4 col-form-label">${item_data.label}</label>
-                <div class="col input-group">
+                <div class="col-8 d-flex gap-2">
                     <input id="${item_data.id}" type="text" class="form-control" value="${item_data.data}">
                     ${clipboard}
                 </div>
