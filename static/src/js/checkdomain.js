@@ -1,13 +1,10 @@
-function remove_hide_btn_view(view_type)
-{
-    if(view_type === 'multi')
-    {
+function remove_hide_btn_view(view_type) {
+    if (view_type === 'multi') {
         $('#single_domain_area').addClass('d-none');
         $('#multi_domain_area_input').removeClass('d-none');
         $('#multi_domain_area_btn').removeClass('d-none');
     }
-    else
-    {
+    else {
         $('#single_domain_area').removeClass('d-none');
         $('#multi_domain_area_input').addClass('d-none');
         $('#multi_domain_area_btn').addClass('d-none');
@@ -15,8 +12,7 @@ function remove_hide_btn_view(view_type)
     $('.sheetjs_export_excel').addClass('d-none');
 }
 
-function rdap_custom_data()
-{
+function rdap_custom_data() {
     return {
         registrar: '',
         registrar_url: '',
@@ -29,26 +25,19 @@ function rdap_custom_data()
     }
 }
 
-function rdap_check_reserved_domain(jsonData)
-{
+function rdap_check_reserved_domain(jsonData) {
     let result = false;
 
-    if (jsonData && jsonData.notices && Array.isArray(jsonData.notices))
-    {
-        for (const notice of jsonData.notices)
-        {
-            if (notice.title === 'Prohibited String - Domain Cannot Be Registered')
-            {
+    if (jsonData && jsonData.notices && Array.isArray(jsonData.notices)) {
+        for (const notice of jsonData.notices) {
+            if (notice.title === 'Prohibited String - Domain Cannot Be Registered') {
                 result = true;
                 break;
             }
-            
-            if (notice.description && Array.isArray(notice.description))
-            {
-                for (const desc of notice.description)
-                {
-                    if (desc.includes('Prohibited String - Domain Cannot Be Registered'))
-                    {
+
+            if (notice.description && Array.isArray(notice.description)) {
+                for (const desc of notice.description) {
+                    if (desc.includes('Prohibited String - Domain Cannot Be Registered')) {
                         result = true;
                         break;
                     }
@@ -59,136 +48,103 @@ function rdap_check_reserved_domain(jsonData)
     return result;
 }
 
-function rdap_parse_data(data)
-{
+function rdap_parse_data(data) {
     var result = rdap_custom_data();
-    if(!jQuery.isEmptyObject(data))
-    {
+    if (!jQuery.isEmptyObject(data)) {
         // .si response data is a string
-        if(typeof data === 'string' || data instanceof String)
-        {
+        if (typeof data === 'string' || data instanceof String) {
             data = JSON.parse(data);
         }
 
         // Check reserved domains
         let reserved_domain = rdap_check_reserved_domain(data);
-        if(reserved_domain)
-        {
+        if (reserved_domain) {
             result.domain_status = ['Reserved Domain'];
             return result;
         }
 
-        if('status' in data && data.status && data.status.length > 0)
-        {
+        if ('status' in data && data.status && data.status.length > 0) {
             result.domain_status = data.status;
         }
-        if('nameservers' in data && data.nameservers && data.nameservers.length > 0)
-        {
+        if ('nameservers' in data && data.nameservers && data.nameservers.length > 0) {
             var nameservers = [];
-            for (let i = 0; i < data.nameservers.length; ++i)
-            {
-                if('ldhName' in data.nameservers[i])
-                {
+            for (let i = 0; i < data.nameservers.length; ++i) {
+                if ('ldhName' in data.nameservers[i]) {
                     nameservers.push(data.nameservers[i]['ldhName']);
                 }
             }
             result.nameservers = nameservers;
         }
-        if('events' in data && data.events && data.events.length > 0)
-        {
-            for (let i = 0; i < data.events.length; ++i)
-            {
-                if('eventAction' in data.events[i] && 'eventDate' in data.events[i])
-                {
-                    if(data.events[i].eventAction === 'registration')
-                    {
+        if ('events' in data && data.events && data.events.length > 0) {
+            for (let i = 0; i < data.events.length; ++i) {
+                if ('eventAction' in data.events[i] && 'eventDate' in data.events[i]) {
+                    if (data.events[i].eventAction === 'registration') {
                         result.creation_date = data.events[i].eventDate;
                     }
-                    if(data.events[i].eventAction === 'last changed')
-                    {
+                    if (data.events[i].eventAction === 'last changed') {
                         result.updated_date = data.events[i].eventDate;
                     }
-                    if(data.events[i].eventAction === 'expiration')
-                    {
+                    if (data.events[i].eventAction === 'expiration') {
                         result.expiry_date = data.events[i].eventDate;
                     }
                 }
             }
         }
-        if('entities' in data && data.entities && data.entities.length > 0)
-        {
-            for (let i = 0; i < data.entities.length; ++i)
-            {
+        if ('entities' in data && data.entities && data.entities.length > 0) {
+            for (let i = 0; i < data.entities.length; ++i) {
                 let entities = data.entities[i];
-                if('url' in entities)
-                {
+                if ('url' in entities) {
                     result.registrar_url = entities.url;
                 }
 
-                if('objectClassName' in entities && 'roles' in entities &&
-                    entities.roles.length >= 1 && entities.roles[0] === 'registrar')
-                {
+                if ('objectClassName' in entities && 'roles' in entities &&
+                    entities.roles.length >= 1 && entities.roles[0] === 'registrar') {
                     let raw_vcard;
-                    if('vcardArray' in entities && entities.vcardArray.length == 2)
-                    {
+                    if ('vcardArray' in entities && entities.vcardArray.length == 2) {
                         raw_vcard = entities.vcardArray;
                     }
-                    else if ('entities' in entities && entities.entities.length === 1 && 
-                            'vcardArray' in entities.entities[0] && entities.entities[0].vcardArray.length === 2)
-                    {
+                    else if ('entities' in entities && entities.entities.length === 1 &&
+                        'vcardArray' in entities.entities[0] && entities.entities[0].vcardArray.length === 2) {
                         raw_vcard = entities.entities[0].vcardArray;
                     }
 
 
-                    if(raw_vcard !== undefined)
-                    {
+                    if (raw_vcard !== undefined) {
                         let vcardArray = raw_vcard[1];
-                        for (let j = 0; j < vcardArray.length; ++j)
-                        {
-                            if(vcardArray[j].length == 4)
-                            {
-                                if(!result.registrar && (vcardArray[j][0] === 'fn' || vcardArray[j][0] === 'org'))
-                                {
+                        for (let j = 0; j < vcardArray.length; ++j) {
+                            if (vcardArray[j].length == 4) {
+                                if (!result.registrar && (vcardArray[j][0] === 'fn' || vcardArray[j][0] === 'org')) {
                                     result.registrar = vcardArray[j][3];
                                 }
-                                if(!result.registrar_url && vcardArray[j][0] === 'url')
-                                {
+                                if (!result.registrar_url && vcardArray[j][0] === 'url') {
                                     result.registrar_url = vcardArray[j][3];
                                 }
                             }
                         }
                     }
-                    else if ('handle' in entities && entities.handle)
-                    {
+                    else if ('handle' in entities && entities.handle) {
                         // RDAP nic.cz
                         result.registrar = entities.handle;
                     }
-                    
+
                 }
 
-                if(result.registrar_url.length == 0 && 'entities' in entities && entities.entities.length > 0)
-                {
+                if (result.registrar_url.length == 0 && 'entities' in entities && entities.entities.length > 0) {
                     let entities_item = entities.entities;
-                    for (let i = 0; i < entities.entities.length; ++i)
-                    {
-                        if('vcardArray' in entities_item[i] && entities_item[i].vcardArray.length > 0)
-                        {
-                            if('vcardArray' in entities_item[i] && entities_item[i].vcardArray.length == 2)
-                            {
+                    for (let i = 0; i < entities.entities.length; ++i) {
+                        if ('vcardArray' in entities_item[i] && entities_item[i].vcardArray.length > 0) {
+                            if ('vcardArray' in entities_item[i] && entities_item[i].vcardArray.length == 2) {
                                 let entities_item_vcard = entities_item[i].vcardArray[1];
-                                for (let j = 0; j < entities_item_vcard.length; ++j)
-                                {
-                                    if(entities_item_vcard[j].length == 4 && entities_item_vcard[j][0] === 'email')
-                                    {
+                                for (let j = 0; j < entities_item_vcard.length; ++j) {
+                                    if (entities_item_vcard[j].length == 4 && entities_item_vcard[j][0] === 'email') {
                                         let email = entities_item_vcard[j][3];
-                                        if(email.indexOf('@') > -1)
-                                        {
+                                        if (email.indexOf('@') > -1) {
                                             result.registrar_url = email.substring(email.length, email.indexOf('@') + 1);
                                         }
                                     }
                                 }
                             }
-                            
+
                         }
                     }
                 }
@@ -198,40 +154,32 @@ function rdap_parse_data(data)
     return result;
 }
 
-function render_status_view(data)
-{
+function render_status_view(data) {
     var render_status = '';
-    for (let i = 0; i < data.domain_status.length; ++i)
-    {
+    for (let i = 0; i < data.domain_status.length; ++i) {
         let class_input_red = '';
         let item_status = data.domain_status[i];
-        if(typeof(item_status) === 'string' && item_status.length > 0)
-        {
+        if (typeof (item_status) === 'string' && item_status.length > 0) {
             item_status = item_status.toLowerCase()
-            if((item_status.indexOf('pending') > -1 && item_status.indexOf('delete') > -1 && item_status.indexOf('delete') > item_status.indexOf('pending'))
+            if ((item_status.indexOf('pending') > -1 && item_status.indexOf('delete') > -1 && item_status.indexOf('delete') > item_status.indexOf('pending'))
                 || (item_status.indexOf('autorenewperiod') > -1) || (item_status.indexOf('auto renew period') > -1)
-                    || (item_status.indexOf('redemptionperiod') > -1) || (item_status.indexOf('redemption period') > -1))
-            {
+                || (item_status.indexOf('redemptionperiod') > -1) || (item_status.indexOf('redemption period') > -1)) {
                 class_input_red = ' is-invalid';
             }
-            else if(item_status.indexOf('dropzone') > -1)
-            {
+            else if (item_status.indexOf('dropzone') > -1) {
                 class_input_red = ' border-warning';
             }
         }
         render_status = render_status + `<input type="text" class="form-control${class_input_red}" value="${data.domain_status[i]}">`;
     }
-    if(data.domain_status.length === 0)
-    {
+    if (data.domain_status.length === 0) {
         render_status = `<input type="text" class="form-control" value="">`;
     }
     return render_status;
 }
 
-function rdap_render_view(domain, data, uuid)
-{
-    if(domain.indexOf('xn--') > -1)
-    {
+function rdap_render_view(domain, data, uuid) {
+    if (domain.indexOf('xn--') > -1) {
         // convert ASCII To Unicode
         domain = punycode.toUnicode(domain);
     }
@@ -279,12 +227,11 @@ function rdap_render_view(domain, data, uuid)
         }
     ];
     var render_info = '';
-    arr_render_data.forEach(function(item_data, index)
-    {
+    arr_render_data.forEach(function (item_data, index) {
         render_info = render_info.concat(`
             <div class="mb-1 row">
-                <label class="col-12 col-md-4 col-form-label">${item_data.label}</label>
-                <div class="col-12 col-md-8 input-group">
+                <label class="col-4 col-form-label">${item_data.label}</label>
+                <div class="col input-group">
                     <input id="${item_data.id}" type="text" class="form-control" value="${item_data.data}">
                     ${clipboard}
                 </div>
@@ -298,9 +245,9 @@ function rdap_render_view(domain, data, uuid)
                     <label id="label_domain" class="form-label fs-1" style="display: flex;justify-content: center;">${domain}</label>
                     ${render_info}
                     <div class="mb-1 row">
-                        <label class="col-12 col-md-4 col-form-label">Domain Status:</label>
-                        <div class="col-12 col-md-8 input-group">
-                            <div class="card check_domain_whois_status_area w-100">
+                        <label class="col-4 col-form-label">Domain Status:</label>
+                        <div class="col input-group">
+                            <div class="card check_domain_whois_status_area">
                                 ${render_status}
                             </div>
                             
@@ -327,41 +274,34 @@ function rdap_render_view(domain, data, uuid)
     return render;
 }
 
-function re_render_view(data, uuid, is_rdap)
-{
+function re_render_view(data, uuid, is_rdap) {
     // Use whois data to fill some inputs
     var query_input_registrar = $('#' + uuid).find('#input_registrar');
-    if(!query_input_registrar.attr('value'))
-    {
+    if (!query_input_registrar.attr('value')) {
         query_input_registrar.attr('value', data.parse.registrar);
     }
-    
+
     var query_input_registrar_url = $('#' + uuid).find('#input_registrar_url');
-    if(!query_input_registrar_url.attr('value'))
-    {
+    if (!query_input_registrar_url.attr('value')) {
         query_input_registrar_url.attr('value', data.parse.registrar_url);
     }
-    
+
     var query_input_creation_date = $('#' + uuid).find('#input_creation_date');
-    if(!query_input_creation_date.attr('value'))
-    {
+    if (!query_input_creation_date.attr('value')) {
         query_input_creation_date.attr('value', data.parse.creation_date);
     }
-    
+
     var query_input_updated_date = $('#' + uuid).find('#input_updated_date');
-    if(!query_input_updated_date.attr('value'))
-    {
+    if (!query_input_updated_date.attr('value')) {
         query_input_updated_date.attr('value', data.parse.updated_date);
     }
-    
+
     var query_input_expiry_date = $('#' + uuid).find('#input_expiry_date');
-    if(!query_input_expiry_date.attr('value'))
-    {
+    if (!query_input_expiry_date.attr('value')) {
         query_input_expiry_date.attr('value', data.parse.expiry_date);
     }
-    
-    if(data.parse.verified)
-    {
+
+    if (data.parse.verified) {
         $('#' + uuid).find('#label_domain').append(
             `
                 <svg viewBox="0 0 24 24" width="20" height="20" style="margin-top: 0.5rem; margin-left: 0.25rem;">
@@ -373,24 +313,21 @@ function re_render_view(data, uuid, is_rdap)
     }
 
     var arr_rdap_status = new Array();
-    $('#' + uuid).find('.check_domain_whois_status_area > input').each(function() {
+    $('#' + uuid).find('.check_domain_whois_status_area > input').each(function () {
         var input = $(this);
         var val = input.val();
-        if(typeof val === "string" && val.length > 0)
-        {
+        if (typeof val === "string" && val.length > 0) {
             arr_rdap_status.push(val);
         }
     });
-    if(arr_rdap_status.length == 0)
-    {
+    if (arr_rdap_status.length == 0) {
         $('#' + uuid).find('.check_domain_whois_status_area').empty();
         var render_status = render_status_view(data.parse);
         $('#' + uuid).find('.check_domain_whois_status_area').append(render_status);
     }
 }
 
-function identify_domain(domain)
-{
+function identify_domain(domain) {
     var result = {
         extension: '',
         ascii_domain: '',
@@ -398,105 +335,90 @@ function identify_domain(domain)
     };
     var rdap_data = JSON.parse(get_rdap_data());
     var rdap_data_extend = JSON.parse(get_rdap_data_extend());
-    rdap_data = {...rdap_data, ...rdap_data_extend};
+    rdap_data = { ...rdap_data, ...rdap_data_extend };
     var parse_domain = domain.replace(/\s+/g, '');
-    if(parse_domain.length == 0)
-    {
+    if (parse_domain.length == 0) {
         return result;
     }
 
-    if(typeof(parse_domain) === 'string')
-    {
-        if(!isAsciiString(parse_domain))
-        {
+    if (typeof (parse_domain) === 'string') {
+        if (!isAsciiString(parse_domain)) {
             parse_domain = punycode.toASCII(parse_domain);
         }
         result.ascii_domain = parse_domain;
 
         let spl_domain = parse_domain.split('.');
-        if(spl_domain.length > 0)
-        {
+        if (spl_domain.length > 0) {
             result.extension = spl_domain.at(-1);
             // pseudo sld
-            if(spl_domain.length > 2)
-            {
-                if((spl_domain.at(-1) === 'com' && ['br', 'cn', 'de', 'eu', 'gr', 'ru',
-                                                    'sa', 'uk', 'us', 'za', 'jpn'].includes(spl_domain.at(-2)))
+            if (spl_domain.length > 2) {
+                if ((spl_domain.at(-1) === 'com' && ['br', 'cn', 'de', 'eu', 'gr', 'ru',
+                    'sa', 'uk', 'us', 'za', 'jpn'].includes(spl_domain.at(-2)))
                     || (spl_domain.at(-1) === 'net' && ['gb', 'in', 'se', 'uk'].includes(spl_domain.at(-2)))
-                )
-                {
+                ) {
                     result.extension = spl_domain.at(-2) + '.' + spl_domain.at(-1);
                 }
-                else if(spl_domain.at(-1) === 'uz' && ['com', 'co', 'net', 'org'].includes(spl_domain.at(-2)))
-                {
+                else if (spl_domain.at(-1) === 'uz' && ['com', 'co', 'net', 'org'].includes(spl_domain.at(-2))) {
                     result.extension = '';
                 }
             }
         }
     }
 
-    if(result.extension in rdap_data)
-    {
-        if(['de', 've', 'tz', 'uz', 'kg', "ye", "ch", "li"].includes(result.extension))
-        {
+    if (result.extension in rdap_data) {
+        if (['de', 've', 'tz', 'uz', 'kg', "ye", "ch", "li"].includes(result.extension)) {
             // Bypass: Response body is not available to scripts (Reason: CORS Missing Allow Origin)
             result.rdap_url = '/api/v1/proxy/rdap?domain=' + parse_domain;
         }
-        else
-        {
+        else {
             result.rdap_url = rdap_data[result.extension].rdap + "domain/" + parse_domain;
         }
     }
     return result;
 }
 
-function query_whois_data(domain, uuid, is_rdap)
-{
+function query_whois_data(domain, uuid, is_rdap) {
     $.ajax({
         type: "POST",
         url: "/api/v1/whois",
         dataType: "json",
         contentType: "application/json;charset=utf-8",
-        headers: {'X-Requested-With': 'XMLHttpRequest'},
+        headers: { 'X-Requested-With': 'XMLHttpRequest' },
         crossDomain: false,
-        data: JSON.stringify ({"domain": domain}),
+        data: JSON.stringify({ "domain": domain }),
 
-        success:  function (data){
+        success: function (data) {
             $('#' + uuid).find('.check_domain_whois_data_area').empty();
-            if(data.status)
-            {
+            if (data.status) {
                 $('#' + uuid).find('.check_domain_whois_data_area').append(data.result);
             }
             $('#' + uuid).find('.check_domain_whois_data_no_progress').removeClass('d-none');
             $('#' + uuid).find('.check_domain_whois_data_progress').addClass('d-none');
             // Some RDAP data does not contain full data. We can use WHOIS to fill it.
-            if('parse' in data && data.parse)
-            {
+            if ('parse' in data && data.parse) {
                 re_render_view(data, uuid, is_rdap);
             }
         },
-        error: function (err){
+        error: function (err) {
         },
         complete: function (data) {
         }
     });
 }
 
-function isAsciiString(text)
-{
+function isAsciiString(text) {
     return /^[\x00-\x7F]+$/g.test(text);
-} 
+}
 
-async function query_rdap_data(domain_url)
-{
+async function query_rdap_data(domain_url) {
     return $.ajax({
         type: "GET",
         url: domain_url,
-        success:  function (data){
-            
+        success: function (data) {
+
         },
-        error: function (err){
-            
+        error: function (err) {
+
         },
         complete: function (data) {
         },
@@ -504,14 +426,12 @@ async function query_rdap_data(domain_url)
     });
 }
 
-async function query_single_rdap_domain(domain, index, total_domain, type)
-{
+async function query_single_rdap_domain(domain, index, total_domain, type) {
     let parse_domain = identify_domain(domain);
     var result = rdap_custom_data();
     var is_rdap = false;
 
-    if(parse_domain.rdap_url)
-    {
+    if (parse_domain.rdap_url) {
         is_rdap = true;
         try {
             result = await query_rdap_data(parse_domain.rdap_url);
@@ -531,21 +451,18 @@ async function query_single_rdap_domain(domain, index, total_domain, type)
     $(rdap_render).insertAfter('#check_domain_search');
     //
     query_whois_data(parse_domain.ascii_domain, uuid, is_rdap);
-    
-    if((index + 1) >= total_domain)
-    {
-        if(type === 'multi')
-        {
+
+    if ((index + 1) >= total_domain) {
+        if (type === 'multi') {
             $('#multi_domain_area_input').removeClass('d-none');
             $('#multi_domain_area_btn').removeClass('d-none');
         }
-        else
-        {
+        else {
             $('#single_domain_area').removeClass('d-none');
         }
         $('#check_domain_progress').addClass('d-none');
     }
-    
+
 }
 
 // Event
@@ -554,14 +471,12 @@ var timeout_value = 1000;
 
 remove_hide_btn_view($('input[name="radio_inline_multi_domain"]:checked').attr('value'));
 
-$('input[name="radio_inline_multi_domain"][value="single"], input[name="radio_inline_multi_domain"][value="multi"]').change(function() {
+$('input[name="radio_inline_multi_domain"][value="single"], input[name="radio_inline_multi_domain"][value="multi"]').change(function () {
     let query_radio = '';
-    if($(this).attr('value') === 'multi')
-    {
+    if ($(this).attr('value') === 'multi') {
         query_radio = 'input[name="radio_inline_multi_domain"][value="single"]';
     }
-    else
-    {
+    else {
         query_radio = 'input[name="radio_inline_multi_domain"][value="multi"]';
     }
     remove_hide_btn_view($(this).attr('value'));
@@ -569,24 +484,24 @@ $('input[name="radio_inline_multi_domain"][value="single"], input[name="radio_in
     $(this).attr('checked', true);
 });
 
-$(document).on('click', '#single_domain_btn', function(){
+$(document).on('click', '#single_domain_btn', function () {
     $('.check_domain_result_area').remove();
     var domain = $('#single_domain_input').val();
 
     $('#single_domain_area').addClass('d-none');
     $('#check_domain_progress').removeClass('d-none');
 
-    setTimeout(function(){ query_single_rdap_domain(domain, 0, 1, 'single'); }, timeout_value);
+    setTimeout(function () { query_single_rdap_domain(domain, 0, 1, 'single'); }, timeout_value);
 });
 
-$('#single_domain_input').keydown(function(event){    
+$('#single_domain_input').keydown(function (event) {
     if (event.which == 13) {
         $('#single_domain_btn').trigger('click');
     }
     $('.sheetjs_export_excel').removeClass('d-none');
 });
 
-$(document).on('click', '#multi_domain_btn', function(){
+$(document).on('click', '#multi_domain_btn', function () {
     $('.check_domain_result_area').remove();
     var arr_domain = $('#multi_domain_input').val().split(/\r?\n/);
 
@@ -595,14 +510,13 @@ $(document).on('click', '#multi_domain_btn', function(){
     $('#check_domain_progress').removeClass('d-none');
 
     var total_domain = arr_domain.length;
-    arr_domain.forEach(function(domain, index)
-    {
-        setTimeout(function(){ query_single_rdap_domain(domain, index, total_domain, 'multi'); }, index * timeout_value);
+    arr_domain.forEach(function (domain, index) {
+        setTimeout(function () { query_single_rdap_domain(domain, index, total_domain, 'multi'); }, index * timeout_value);
     });
     $('.sheetjs_export_excel').removeClass('d-none');
 });
 
-$(window).scroll(function() {
+$(window).scroll(function () {
     if ($(window).scrollTop() > 300) {
         $('.btn-scroll-top').addClass('show');
     } else {
@@ -610,13 +524,13 @@ $(window).scroll(function() {
     }
 });
 
-$('.btn-scroll-top').on('click', function(e) {
+$('.btn-scroll-top').on('click', function (e) {
     e.preventDefault();
-    $('html, body').animate({scrollTop:0}, '300');
+    $('html, body').animate({ scrollTop: 0 }, '300');
 });
 
 new ClipboardJS('.btn_check_domain_clipboard', {
-    text: function(trigger) {
+    text: function (trigger) {
         var result = $(trigger.parentElement.outerHTML).find('input').attr('value');
         $.toast({
             text: '<div style="color: white;">' + result + '</div>', // Text that is to be shown in the toast
@@ -629,24 +543,24 @@ new ClipboardJS('.btn_check_domain_clipboard', {
             position: 'top-center', // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
             bgColor: '#4299e1',
             textColor: 'white',
-            
+
             textAlign: 'left',  // Text alignment i.e. left, right or center
             loader: true,  // Whether to show loader or not. True by default
             loaderBg: '#2fb344',  // Background color of the toast loader
-            beforeShow: function () {}, // will be triggered before the toast is shown
-            afterShown: function () {}, // will be triggered after the toat has been shown
-            beforeHide: function () {}, // will be triggered before the toast gets hidden
-            afterHidden: function () {}  // will be triggered after the toast has been hidden
+            beforeShow: function () { }, // will be triggered before the toast is shown
+            afterShown: function () { }, // will be triggered after the toat has been shown
+            beforeHide: function () { }, // will be triggered before the toast gets hidden
+            afterHidden: function () { }  // will be triggered after the toast has been hidden
         });
         return result;
     }
 });
 
-$(document).on('click', '.sheetjs_export_excel', function(){
+$(document).on('click', '.sheetjs_export_excel', function () {
     var data = [];
-    
+
     var domain_area = $('.check_domain_result_area');
-    for(const area_item of domain_area.toArray()){
+    for (const area_item of domain_area.toArray()) {
         var label_domain = $(area_item).find('#label_domain').text();
         var registrar = $(area_item).find('#input_registrar').attr('value');
         var registrar_url = $(area_item).find('#input_registrar_url').attr('value');
@@ -656,10 +570,10 @@ $(document).on('click', '.sheetjs_export_excel', function(){
 
         var arr_status = [];
         var status_obj = $(area_item).find('.check_domain_whois_status_area > input');
-        
-        for(const item_status of status_obj.toArray()) {
+
+        for (const item_status of status_obj.toArray()) {
             var raw_status = $(item_status).attr('value');
-            if(raw_status !== undefined && raw_status.length > 0){
+            if (raw_status !== undefined && raw_status.length > 0) {
                 arr_status.push(raw_status);
             }
         }
@@ -672,16 +586,16 @@ $(document).on('click', '.sheetjs_export_excel', function(){
 
     // add column headers
     worksheet.columns = [
-        { header: 'Domain Name', width: 20},
-        { header: 'Registrar', width: 20},
-        { header: 'Registrar URL', width: 50},
-        { header: 'Creation Date', width: 30},
-        { header: 'Updated Date', width: 30},
-        { header: 'Expiry Date', width: 30},
-        { header: 'Status', width: 50}
+        { header: 'Domain Name', width: 20 },
+        { header: 'Registrar', width: 20 },
+        { header: 'Registrar URL', width: 50 },
+        { header: 'Creation Date', width: 30 },
+        { header: 'Updated Date', width: 30 },
+        { header: 'Expiry Date', width: 30 },
+        { header: 'Status', width: 50 }
     ];
 
-    for(const item of data){
+    for (const item of data) {
         // Add rows as Array values
         worksheet.addRow(item);
     }
@@ -695,24 +609,21 @@ $(document).on('click', '.sheetjs_export_excel', function(){
     var line_length = data.length;
     line_length += 1; // Header
 
-    for(let i=1; i <= line_length; i++){
-        if(i === 1)
-        {
-            var header_font = {...font};
+    for (let i = 1; i <= line_length; i++) {
+        if (i === 1) {
+            var header_font = { ...font };
             header_font.bold = true;
             worksheet.getRow(i).font = header_font;
             worksheet.getRow(i).alignment = header_alignment;
         }
-        else
-        {
+        else {
             worksheet.getRow(i).font = font;
             worksheet.getRow(i).alignment = normal_alignment;
 
             var wrap_text = { ...normal_alignment };
             wrap_text.wrapText = true;
 
-            if(worksheet.getRow(i).model.cells.length > 6)
-            {
+            if (worksheet.getRow(i).model.cells.length > 6) {
                 // Status Cell
                 var status_cell = worksheet.getRow(i).model.cells[6].address;
                 worksheet.getCell(status_cell).alignment = wrap_text;
@@ -720,7 +631,7 @@ $(document).on('click', '.sheetjs_export_excel', function(){
                     var status_height = Math.ceil((worksheet.getCell(status_cell).text.split('\r\n')).length * (font_size + 4));
                     worksheet.getRow(i).height = status_height;
                 } catch (error) {
-                    
+
                 }
             }
         }
@@ -729,16 +640,16 @@ $(document).on('click', '.sheetjs_export_excel', function(){
     // Save workbook to disk
     try {
         workbook.xlsx.writeBuffer().then((buffer) => {
-            const blob = new Blob([buffer], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+            const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
             saveAs(blob, 'data.xlsx');
         });
     } catch (error) {
         console.log('Error in excel');
     }
-    
+
 });
 
-$(document).on('click', '#generate_domain_keyword_cc_sld', function(){
+$(document).on('click', '#generate_domain_keyword_cc_sld', function () {
     var data = [];
     var dict_cc = {
         "cctld_ac": "ac",
@@ -996,24 +907,21 @@ $(document).on('click', '#generate_domain_keyword_cc_sld', function(){
         "cctld_zw": "zw"
     };
     var keyword = $("#generate_domain_keyword_input").val();
-    if(keyword === undefined)
-    {
+    if (keyword === undefined) {
         keyword = '';
     }
-    for(var key in dict_cc)
-    {
+    for (var key in dict_cc) {
         data.push(keyword + '.' + dict_cc[key]);
     }
 
-    if(data.length > 0)
-    {
+    if (data.length > 0) {
         $('#generate_domain_keyword_result').val(''); // Remove old values
         $('#generate_domain_keyword_result').val(data.join('\n'));
     }
 });
 
 new ClipboardJS('#generate_domain_cut_cc_sld', {
-    text: function(trigger) {
+    text: function (trigger) {
         var result = $('#generate_domain_keyword_result').val();
         $.toast({
             text: '<div style="color: white;">Data was copied!</div>',

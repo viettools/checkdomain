@@ -1,7 +1,7 @@
 services:
     web:
         build: .
-        image: checkdomain:3.x.x
+        image: checkdomain:4.x.x
         command: python3 /data/checkdomain/main.py
         volumes:
             - .:/data/checkdomain
