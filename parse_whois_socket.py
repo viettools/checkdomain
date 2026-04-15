@@ -329,7 +329,7 @@ class ParseWhoisSocket:
                             if raw_ns_tn_data:
                                 raw_ns_tn_data += '\n'
                             
-                            regex_ns_tn = re.findall("Name\.{2,}:(.*?)\n", raw_ns_tn_data, re.DOTALL | re.IGNORECASE)
+                            regex_ns_tn = re.findall(r"Name\.{2,}:(.*?)\n", raw_ns_tn_data, re.DOTALL | re.IGNORECASE)
                             arr_ns_data = []
                             for item_ns_tn in regex_ns_tn:
                                 if item_ns_tn.endswith('.'):
