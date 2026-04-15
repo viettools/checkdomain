@@ -164,7 +164,7 @@ function render_status_view(data) {
             if ((item_status.indexOf('pending') > -1 && item_status.indexOf('delete') > -1 && item_status.indexOf('delete') > item_status.indexOf('pending'))
                 || (item_status.indexOf('autorenewperiod') > -1) || (item_status.indexOf('auto renew period') > -1)
                 || (item_status.indexOf('redemptionperiod') > -1) || (item_status.indexOf('redemption period') > -1)) {
-                class_input_red = ' is-invalid';
+                class_input_red = ' border-danger';
             }
             else if (item_status.indexOf('dropzone') > -1) {
                 class_input_red = ' border-warning';
@@ -343,6 +343,7 @@ function identify_domain(domain) {
 
     if (typeof (parse_domain) === 'string') {
         if (!isAsciiString(parse_domain)) {
+            parse_domain = parse_domain.replace(/[\uFE00-\uFE0F]/g, '');
             parse_domain = punycode.toASCII(parse_domain);
         }
         result.ascii_domain = parse_domain;
