@@ -250,7 +250,7 @@ class TestT(unittest.TestCase):
             return
 
         self.assertEqual(data['parse']['registrar'], 'Markmonitor, Inc.')
-        self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com/')
+        self.assertEqual(data['parse']['registrar_url'], 'https://www.markmonitor.com/')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
