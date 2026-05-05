@@ -68,13 +68,13 @@ class TestPQ(unittest.TestCase):
             print('The .pg whois server was busy!')
             return
 
-        self.assertEqual(data['parse']['registrar'], 'Migration Client')
+        self.assertEqual(data['parse']['registrar'], 'Papua New Guinea University of Technology')
         self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
         self.assertEqual(data['parse']['creation_date'], '2012-04-22T00:00:00Z')
-        self.assertEqual(len(data['parse']['updated_date']), 0)
+        self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
 
     def test_PK(self):
