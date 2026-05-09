@@ -155,6 +155,9 @@ var rdap_data_extend = `
     },
     "jpn.com": {
         "rdap": "https://rdap.centralnic.com/jpn.com/"
+    },
+    "it.com": {
+        "rdap": "https://rdap.it.com/"
     }
 }
 `;

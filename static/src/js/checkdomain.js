@@ -362,6 +362,9 @@ function identify_domain(domain) {
                 else if (spl_domain.at(-1) === 'uz' && ['com', 'co', 'net', 'org'].includes(spl_domain.at(-2))) {
                     result.extension = '';
                 }
+                else if (spl_domain.at(-1) === 'com' && spl_domain.at(-2) === 'it') {
+                    result.extension = 'it.com';
+                }
             }
         }
     }
