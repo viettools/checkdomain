@@ -215,7 +215,7 @@ class TestS(unittest.TestCase):
         response = client.post(
             '/api/v1/whois',
             headers={'X-Requested-With': 'XMLHttpRequest'},
-            json={"domain": "google.sm"},
+            json={"domain": "nic.sm"},
         )
         data = json.loads(response.content)
         if not data['status']:
@@ -227,7 +227,7 @@ class TestS(unittest.TestCase):
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
-        self.assertEqual(data['parse']['creation_date'], '03/04/2003')
+        self.assertEqual(data['parse']['creation_date'], '07/03/2000')
         self.assertEqual(len(data['parse']['updated_date']), 0)
         self.assertEqual(len(data['parse']['expiry_date']), 0)
 

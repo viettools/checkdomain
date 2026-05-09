@@ -162,6 +162,9 @@ var rdap_data = `
     "zip": {
         "rdap": "https://pubapi.registry.google/rdap/"
     },
+    "merck": {
+        "rdap": "https://rdap-merck.dns.business/rdap/"
+    },
     "blog": {
         "rdap": "https://rdap.blog.fury.ca/rdap/"
     },
@@ -2401,7 +2404,7 @@ var rdap_data = `
         "rdap": "https://rdap.nic.grocery/"
     },
     "gs": {
-        "rdap": "https://rdap.coccaregistry.org/"
+        "rdap": "https://rdap.nic.gs/"
     },
     "hamburg": {
         "rdap": "https://rdap.nic.hamburg/v1/"
