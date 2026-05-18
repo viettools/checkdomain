@@ -126,7 +126,7 @@ class TestK(unittest.TestCase):
             return
 
         self.assertEqual(data['parse']['registrar'], 'Solutions by STC')
-        self.assertEqual(data['parse']['registrar_url'], 'https://www.stc.com.kw/')
+        self.assertEqual(data['parse']['registrar_url'], 'https://www.kw')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
