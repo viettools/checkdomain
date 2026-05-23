@@ -268,7 +268,7 @@ def query_rdap_proxy(domain: str | None = None):
         elif spl_domain[-1] == 've':
             rdap_url = 'https://rdap.nic.ve/rdap'
         elif spl_domain[-1] == 'tz':
-            rdap_url = 'https://whois.tznic.or.tz/rdap'
+            rdap_url = 'https://rdap.tznic.or.tz'
         elif spl_domain[-1] == 'uz':
             rdap_url = 'https://rdap.cctld.uz'
         elif spl_domain[-1] == 'kg':

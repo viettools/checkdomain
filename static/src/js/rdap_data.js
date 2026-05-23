@@ -165,6 +165,9 @@ var rdap_data = `
     "merck": {
         "rdap": "https://rdap-merck.dns.business/rdap/"
     },
+    "alibaba": {
+        "rdap": "https://rdap.aliregistry.cn/rdap/"
+    },
     "blog": {
         "rdap": "https://rdap.blog.fury.ca/rdap/"
     },
@@ -676,9 +679,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "akdn": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "alibaba": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "alipay": {
@@ -3592,7 +3592,7 @@ var rdap_data = `
         "rdap": "https://whois.sr/rdap/"
     },
     "tz": {
-        "rdap": "https://whois.tznic.or.tz/rdap/"
+        "rdap": "https://rdap.tznic.or.tz/"
     },
     "fj": {
         "rdap": "https://www.rdap.fj/"
