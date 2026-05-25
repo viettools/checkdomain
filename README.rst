@@ -11,6 +11,12 @@ Support: Whois Socket, RDAP
 
 Docker IPv4: docker-compose -f docker-compose-ipv4.yml build
 
+IPv4-Docker:
+
+.. code-block:: text
+    
+    root@box-739909:~# docker network create checkdomainnet
+
 If your server support connect IPv6 (whois .pt domain). Please using docker-compose-ipv6.yml
 
 Docker IPv6: docker-compose -f docker-compose-ipv6.yml build
