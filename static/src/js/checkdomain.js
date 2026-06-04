@@ -242,7 +242,7 @@ function rdap_render_view(domain, data, uuid) {
         <div id="${uuid}" class="col-sm-12 col-md-12 col-lg-6 offset-lg-3 check_domain_result_area">
             <div class="card">
                 <div class="card-body" style="padding-bottom: 0.25rem !important;">
-                    <label id="label_domain" class="form-label fs-1" style="display: flex;justify-content: center;">${domain}</label>
+                    <label id="label_domain" class="form-label fs-1" style="display: flex;justify-content: center; text-align: center; word-break: break-all;">${domain}</label>
                     ${render_info}
                     <div class="mb-1 row">
                         <label class="col-4 col-form-label">Domain Status:</label>
