@@ -6,9 +6,6 @@ var rdap_data = `
     "mg": {
         "rdap": "https://rdap.nic.mg/"
     },
-    "ng": {
-        "rdap": "https://rdap.nic.net.ng/"
-    },
     "xn--kpry57d": {
         "rdap": "https://ccrdap.twnic.tw/taiwan/"
     },
@@ -2580,6 +2577,9 @@ var rdap_data = `
     "nba": {
         "rdap": "https://rdap.nic.nba/"
     },
+    "ng": {
+        "rdap": "https://rdap.nic.net.ng/"
+    },
     "netbank": {
         "rdap": "https://rdap.nic.netbank/"
     },
@@ -3318,6 +3318,9 @@ var rdap_data = `
     "ec": {
         "rdap": "https://rdap.registry.ec/"
     },
+    "gift": {
+        "rdap": "https://rdap.registry.gift/rdap/"
+    },
     "gy": {
         "rdap": "https://rdap.registry.gy/"
     },
@@ -3411,9 +3414,6 @@ var rdap_data = `
     "food": {
         "rdap": "https://rdap.tucowsregistry.net/rdap/"
     },
-    "gift": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
     "hiv": {
         "rdap": "https://rdap.tucowsregistry.net/rdap/"
     },
@@ -3440,6 +3440,9 @@ var rdap_data = `
     },
     "xn--mxtq1m": {
         "rdap": "https://rdap.twnic.tw/rdap/"
+    },
+    "tz": {
+        "rdap": "https://rdap.tznic.or.tz/"
     },
     "com": {
         "rdap": "https://rdap.verisign.com/com/v1/"
@@ -3590,9 +3593,6 @@ var rdap_data = `
     },
     "sr": {
         "rdap": "https://whois.sr/rdap/"
-    },
-    "tz": {
-        "rdap": "https://rdap.tznic.or.tz/"
     },
     "fj": {
         "rdap": "https://www.rdap.fj/"
