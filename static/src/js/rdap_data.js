@@ -3291,10 +3291,31 @@ var rdap_data = `
     "rest": {
         "rdap": "https://rdap.registry.bar/rdap/"
     },
+    "click": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "country": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "diy": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
     "feedback": {
         "rdap": "https://rdap.registry.click/rdap/"
     },
+    "food": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
     "forum": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "hiv": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "lifestyle": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "living": {
         "rdap": "https://rdap.registry.click/rdap/"
     },
     "observer": {
@@ -3303,7 +3324,19 @@ var rdap_data = `
     "pid": {
         "rdap": "https://rdap.registry.click/rdap/"
     },
+    "property": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
     "realty": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "sexy": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "trust": {
+        "rdap": "https://rdap.registry.click/rdap/"
+    },
+    "vana": {
         "rdap": "https://rdap.registry.click/rdap/"
     },
     "cloud": {
@@ -3402,40 +3435,7 @@ var rdap_data = `
     "to": {
         "rdap": "https://rdap.tonicregistry.to/rdap/"
     },
-    "click": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "country": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "diy": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "food": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "hiv": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "lifestyle": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
     "link": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "living": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "property": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "sexy": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "trust": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
-    "vana": {
         "rdap": "https://rdap.tucowsregistry.net/rdap/"
     },
     "xn--mxtq1m": {
