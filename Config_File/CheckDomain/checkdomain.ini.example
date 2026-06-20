@@ -9,3 +9,7 @@ url = //code.tidio.co/epf1fibyxxhpexzpvrvjjj6lmoyiwcku.js
 
 [alert]
 enable = false
+
+[tawkto]
+enable = false
+url = https://embed.tawk.to/6a3654f79b11ab1d453544e6/1jri3nqph
