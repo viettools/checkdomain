@@ -106,6 +106,9 @@ def main(request: Request):
         },
         'alert': {
             'enable': False
+        },
+        'tawkto': {
+            'enable': False
         }
     }
     
@@ -127,6 +130,11 @@ def main(request: Request):
         
         dict_config['alert'].update({
             'enable': config.getboolean('alert', 'enable'),
+        })
+        
+        dict_config['tawkto'].update({
+            'enable': config.getboolean('tawkto', 'enable'),
+            'url': config.get('tawkto', 'url'),
         })
     
     header_template = templates.TemplateResponse(request=request, name='header.html')
