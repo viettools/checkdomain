@@ -188,7 +188,7 @@ class ParseWhoisSocket:
             elif extension_name == 'hu' and (whois_data.find(' Restricted domain name') > -1 or \
                     whois_data.find(' Restricted domain name') > -1):
                 result = True
-            elif extension_name == 'name' and whois_data.find('Not available for second level registration') > -1:
+            elif extension_name == 'name' and (whois_data.find('Not available for second level registration') > -1 or whois_data.find('Not available for registration') > -1):
                 result = True
             elif extension_name in ['cy'] and whois_data.find('Reserved Domain') > -1: # Special --> Web WHOIS
                 result = True
