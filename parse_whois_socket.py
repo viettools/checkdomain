@@ -136,7 +136,7 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'by' and whois_data.find('object is blocked') > -1:
                 result = True
-            elif extension_name == 'ae' and whois_data.find('has been reserved by aeDA Regulator') > -1:
+            elif extension_name == 'ae' and (whois_data.find('has been reserved by aeDA Regulator') > -1 or whois_data.find('Domain reserved by ae Regulator') > -1):
                 result = True
             elif extension_name == 'am' and whois_data.find('Reserved name: Temporarily reserved') > -1:
                 result = True
