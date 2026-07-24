@@ -233,6 +233,9 @@ def whois_data(domain: str = Body(..., embed=True)):
         
         if result_iana['result']:
             check = re.findall(r'whois:\s+(.+)', result_iana['result'], re.IGNORECASE)
+            # .web -> VeriSign, Inc. (Record last updated 2026-07-23)
+            if final_tld_domain == 'web':
+                check = ['whois.nic.web']
             # .AD no whois server --> [status:       ACTIVE]
             if check and check[0] and check[0].find('status') == -1:
                 next_query = check[0].strip()
