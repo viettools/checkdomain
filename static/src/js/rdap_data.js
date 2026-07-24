@@ -450,12 +450,6 @@ var rdap_data = `
     "jnj": {
         "rdap": "https://rdap.centralnicregistry.com/jnj/"
     },
-    "xn--55qw42g": {
-        "rdap": "https://rdap.conac.cn/"
-    },
-    "xn--zfr164b": {
-        "rdap": "https://rdap.conac.cn/"
-    },
     "crown": {
         "rdap": "https://rdap.crown.fury.ca/rdap/"
     },
@@ -855,6 +849,9 @@ var rdap_data = `
     "cipriani": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "circle": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "citadel": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1146,6 +1143,9 @@ var rdap_data = `
     "goodyear": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "got": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "graphics": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1273,6 +1273,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "jll": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "jot": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "juegos": {
@@ -1617,6 +1620,9 @@ var rdap_data = `
     "rwe": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
+    "safety": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
     "sale": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1666,9 +1672,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "show": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "sina": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "singles": {
@@ -1887,9 +1890,6 @@ var rdap_data = `
     "weber": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "weibo": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "weir": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1918,9 +1918,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "xn--6frz82g": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "xn--9krt00a": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "xn--b4w605ferd": {
@@ -2033,6 +2030,27 @@ var rdap_data = `
     },
     "sling": {
         "rdap": "https://rdap.mobile-registry.com/rdap/"
+    },
+    "sina": {
+        "rdap": "https://rdap.ngtld.cn/"
+    },
+    "weibo": {
+        "rdap": "https://rdap.ngtld.cn/"
+    },
+    "xn--55qw42g": {
+        "rdap": "https://rdap.ngtld.cn/"
+    },
+    "xn--55qx5d": {
+        "rdap": "https://rdap.ngtld.cn/"
+    },
+    "xn--9krt00a": {
+        "rdap": "https://rdap.ngtld.cn/"
+    },
+    "xn--io0a7i": {
+        "rdap": "https://rdap.ngtld.cn/"
+    },
+    "xn--zfr164b": {
+        "rdap": "https://rdap.ngtld.cn/"
     },
     "aaa": {
         "rdap": "https://rdap.nic.aaa/"
@@ -2691,9 +2709,6 @@ var rdap_data = `
     "rugby": {
         "rdap": "https://rdap.nic.rugby/"
     },
-    "safety": {
-        "rdap": "https://rdap.nic.safety/"
-    },
     "sakura": {
         "rdap": "https://rdap.nic.sakura/rdap/"
     },
@@ -3000,9 +3015,6 @@ var rdap_data = `
     "career": {
         "rdap": "https://rdap.nominet.uk/career/"
     },
-    "circle": {
-        "rdap": "https://rdap.nominet.uk/circle/"
-    },
     "cymru": {
         "rdap": "https://rdap.nominet.uk/cymru/"
     },
@@ -3027,9 +3039,6 @@ var rdap_data = `
     "gop": {
         "rdap": "https://rdap.nominet.uk/gop/"
     },
-    "got": {
-        "rdap": "https://rdap.nominet.uk/got/"
-    },
     "gucci": {
         "rdap": "https://rdap.nominet.uk/gucci/"
     },
@@ -3047,9 +3056,6 @@ var rdap_data = `
     },
     "jobs": {
         "rdap": "https://rdap.nominet.uk/jobs/"
-    },
-    "jot": {
-        "rdap": "https://rdap.nominet.uk/jot/"
     },
     "joy": {
         "rdap": "https://rdap.nominet.uk/joy/"
@@ -3435,14 +3441,14 @@ var rdap_data = `
     "to": {
         "rdap": "https://rdap.tonicregistry.to/rdap/"
     },
-    "link": {
-        "rdap": "https://rdap.tucowsregistry.net/rdap/"
-    },
     "xn--mxtq1m": {
         "rdap": "https://rdap.twnic.tw/rdap/"
     },
     "tz": {
         "rdap": "https://rdap.tznic.or.tz/"
+    },
+    "link": {
+        "rdap": "https://rdap.uniregistry.net/rdap/"
     },
     "com": {
         "rdap": "https://rdap.verisign.com/com/v1/"
@@ -3525,12 +3531,6 @@ var rdap_data = `
     "xn--1qqw23a": {
         "rdap": "https://restwhois.ngtld.cn/"
     },
-    "xn--55qx5d": {
-        "rdap": "https://restwhois.ngtld.cn/"
-    },
-    "xn--io0a7i": {
-        "rdap": "https://restwhois.ngtld.cn/"
-    },
     "xn--xhq521b": {
         "rdap": "https://restwhois.ngtld.cn/"
     },
@@ -3545,6 +3545,9 @@ var rdap_data = `
     },
     "verisign": {
         "rdap": "https://tld-rdap.verisign.com/verisign/v1/"
+    },
+    "web": {
+        "rdap": "https://tld-rdap.verisign.com/web/v1/"
     },
     "xn--11b4c3d": {
         "rdap": "https://tld-rdap.verisign.com/xn--11b4c3d/v1/"
