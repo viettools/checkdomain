@@ -25,6 +25,13 @@ def whois_via_web(USER_AGENT, domain, domain_type):
     
     req_cookie = req.cookies.get_dict()
     
+    headers.update({
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-Whois-Token': req_cookie.get('wtok', False),
+        'Sec-Fetch-Dest': 'empty',
+        'Sec-Fetch-Mode': 'cors',
+        'Sec-Fetch-Site': 'same-origin'
+    })
     try:
         req_get = req.get('https://whois.inet.vn/api/whois/domainspecify/{0}'.format(domain), headers=headers, cookies=req_cookie)
     except:
