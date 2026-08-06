@@ -86,11 +86,11 @@ class TestB(unittest.TestCase):
             return
         
         self.assertEqual(data['parse']['registrar'], 'MarkMonitor Inc.')
-        self.assertEqual(data['parse']['registrar_url'], '')
+        self.assertEqual(data['parse']['registrar_url'], 'http://www.markmonitor.com')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
         
-        self.assertEqual(data['parse']['creation_date'], '2020-07-02T12:23:45.0Z')
+        self.assertEqual(data['parse']['creation_date'], '2020-07-02T12:23:45.000Z')
         self.assertGreater(len(data['parse']['updated_date']), 0)
         self.assertGreater(len(data['parse']['expiry_date']), 0)
         
