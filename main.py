@@ -182,7 +182,7 @@ def whois_data(domain: str = Body(..., embed=True)):
                    'dz', 'dj',
                    'es', 'eg', 'ec',
                    'gm', 'gr', 'gt', 'gw',
-                   'hm', 'lk', 'tj', 'jo',
+                   'hm', 'lk', 'tj', # 'jo',
                    'sv', 'np', 'tt', 'pa',
                    'ph', 'vi', 'vn']
     

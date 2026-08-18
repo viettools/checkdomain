@@ -113,7 +113,7 @@ class WhOISccTLD:
             'it': 'whois.nic.it',
             'je': 'whois.je',
             # 'jm': 'http://myspot.mona.uwi.edu/mits/',
-            # 'jo': 'https://dns.jo/FirstPageen.aspx',
+            'jo': 'whois.nic.net.jo',
             'jp': 'whois.jprs.jp',
             'ke': 'whois.kenic.or.ke',
             'kg': 'whois.kg',
