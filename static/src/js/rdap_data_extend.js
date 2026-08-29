@@ -111,6 +111,9 @@ var rdap_data_extend = `
     "sk": {
         "rdap": "https://rdap.sk-nic.sk/sk/"
     },
+    "jo": {
+        "rdap": "https://rdap.nic.net.jo/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },

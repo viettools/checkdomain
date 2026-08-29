@@ -79,6 +79,7 @@ domain_name_ir_whois,domain_name_ir,"whois","whois.nic.ir","","","","nserver:(.*
 domain_name_is_whois,domain_name_is,"whois","whois.isnic.is","","","remarks:(.*?)\n","nserver:(.*?)\n","created:(.*?)\n","","expires:(.*?)\n"
 domain_name_it_whois,domain_name_it,"whois","whois.nic.it","Registrar\n  Organization:(.*?)\n","Web:(.*?)\n","Status:(.*?)\n","Nameservers(.*?)\n\n","Created:(.*?)\n","Last Update:(.*?)\n","Expire Date:(.*?)\n"
 domain_name_je_whois,domain_name_je,"whois","whois.je","Registrar:(.*?)Relevant dates","","Domain Status:(.*?)Registrant","Name servers:(.*?)WHOIS lookup made on","Registered on(.*?)\n","","Registry fee due on(.*?)\n"
+domain_name_jo_whois,domain_name_jo,"whois","whois.nic.net.jo","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Status:(.*?)\n","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_jp_whois,domain_name_jp,"whois","whois.jprs.jp","","","Status\](.*?)\n","\[Name Server\](.*?)\n","\[Created on\](.*?)\n","\[Last Updated\]\s+(.*?)(?:\(|\n)","\[Expires on\](.*?)\n"
 domain_name_ke_whois,domain_name_ke,"whois","whois.kenic.or.ke","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_kg_whois,domain_name_kg,"whois","whois.kg","","","Domain\s+[\w+.]{2,}\s+\((.*?)\)","Name servers in the listed order:\n\n(.*?)\n\n","Record created:(.*?)\n","Record last updated on:(.*?)\n","Record expires on:(.*?)\n"
