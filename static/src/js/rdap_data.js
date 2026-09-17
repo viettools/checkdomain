@@ -372,6 +372,9 @@ var rdap_data = `
     "quest": {
         "rdap": "https://rdap.centralnic.com/quest/"
     },
+    "radio": {
+        "rdap": "https://rdap.centralnic.com/radio/"
+    },
     "reit": {
         "rdap": "https://rdap.centralnic.com/reit/"
     },
@@ -2640,6 +2643,12 @@ var rdap_data = `
     "open": {
         "rdap": "https://rdap.nic.open/"
     },
+    "kr": {
+        "rdap": "https://rdap.nic.or.kr/"
+    },
+    "xn--3e0b707e": {
+        "rdap": "https://rdap.nic.or.kr/"
+    },
     "osaka": {
         "rdap": "https://rdap.nic.osaka/"
     },
@@ -2693,9 +2702,6 @@ var rdap_data = `
     },
     "racing": {
         "rdap": "https://rdap.nic.racing/"
-    },
-    "radio": {
-        "rdap": "https://rdap.nic.radio/"
     },
     "re": {
         "rdap": "https://rdap.nic.re/"
