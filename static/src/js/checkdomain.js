@@ -126,6 +126,16 @@ function rdap_parse_data(data) {
                         // RDAP nic.cz
                         result.registrar = entities.handle;
                     }
+                    else if ('jscontact_card' in entities && entities.jscontact_card) {
+                        // RDAP Korea Internet & Security Agency (KISA)
+                        const jscontact_card = entities.jscontact_card;
+                        if (jscontact_card.name?.full) {
+                            result.registrar = jscontact_card.name.full;
+                        }
+                        if (jscontact_card.links?.url?.uri) {
+                            result.registrar_url = jscontact_card.links.url.uri;
+                        }
+                    }
 
                 }
 
