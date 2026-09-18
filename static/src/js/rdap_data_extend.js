@@ -117,6 +117,18 @@ var rdap_data_extend = `
     "us": {
         "rdap": "https://rdap.nic.us/"
     },
+    "dm": {
+        "rdap": "https://rdap.dmdomains.dm/rdap/"
+    },
+    "kz": {
+        "rdap": "https://rdap.nic.kz/"
+    },
+    "mz": {
+        "rdap": "https://rdap.nic.mz/"
+    },
+    "ws": {
+        "rdap": "https://rdap.website.ws/"
+    },
     "br.com": {
         "rdap": "https://rdap.centralnic.com/br.com/"
     },
