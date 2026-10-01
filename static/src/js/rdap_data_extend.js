@@ -3,9 +3,6 @@ var rdap_data_extend = `
     "me": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "bh": {
-        "rdap": "https://rdap.centralnic.com/bh/"
-    },
     "my": {
         "rdap": "https://rdap.mynic.my/rdap/"
     },
