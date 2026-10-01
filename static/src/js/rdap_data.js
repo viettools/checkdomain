@@ -165,6 +165,12 @@ var rdap_data = `
     "alibaba": {
         "rdap": "https://rdap.aliregistry.cn/rdap/"
     },
+    "bh": {
+        "rdap": "https://rdap.bhregistry.bh/rdap/"
+    },
+    "xn--mgbcpq6gpa1a": {
+        "rdap": "https://rdap.bhregistry.bh/rdap/"
+    },
     "blog": {
         "rdap": "https://rdap.blog.fury.ca/rdap/"
     },
@@ -1282,9 +1288,6 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "juegos": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
-    "juniper": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "kaufen": {
