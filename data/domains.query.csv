@@ -43,6 +43,7 @@ domain_name_de_whois,domain_name_de,"whois","whois.denic.de","","","Status:(.*?)
 domain_name_dk_whois,domain_name_dk,"whois","whois.punktum.dk","Registrar:(.*?)\n","","Status:(.*?)\n","Hostname:(.*?)\n","Registered:(.*?)\n","","Expires:(.*?)\n"
 domain_name_dm_whois,domain_name_dm,"whois","whois.dmdomains.dm","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_do_whois,domain_name_do,"whois","whois.nic.do","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
+domain_name_ec_whois,domain_name_ec,"whois","whois.nic.ec","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_ee_whois,domain_name_ee,"whois","whois.tld.ee","Registrar:\nname:(.*?)url","url:(.*?)phone","status:(.*?)\n","nserver:(.*?)\n","registered:(.*?)\n","changed:(.*?)expire","expire:(.*?)\n"
 domain_name_et_whois,domain_name_et,"whois","whois.ethiotelecom.et","Registrar:(.*?)\n","Registrar URL:(.*?)\n","Domain Status:(.*?)https","Name Server:(.*?)\n","Creation Date:(.*?)\n","Updated Date:(.*?)\n","Registry Expiry Date:(.*?)\n"
 domain_name_eu_whois,domain_name_eu,"whois","whois.eu","Registrar:\s*.*?Name:\s*(.*?)\n","Website:(.*?)Name servers","","Name servers:(.*?)Please visit","","",""

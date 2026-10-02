@@ -180,7 +180,7 @@ def whois_data(domain: str = Body(..., embed=True)):
                    'ba', 'bb', 'bt', # 'bd',
                    'cu', 'cv', 'cy', 'ni',
                    'dz', 'dj',
-                   'es', 'eg', 'ec',
+                   'es', 'eg', #'ec',
                    'gm', 'gr', 'gt', 'gw',
                    'hm', 'lk', 'tj', # 'jo',
                    'sv', 'np', 'tt', 'pa',
