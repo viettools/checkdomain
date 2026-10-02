@@ -28,7 +28,7 @@ class WhOISccTLD:
             'be': 'whois.dns.be',
             'bf': 'whois.registre.bf',
             'bg': 'whois.register.bg',
-            'bh': 'whois.nic.bh',
+            'bh': 'whois.bhregistry.bh',
             'bi': 'whois1.nic.bi',
             'bj': 'whois.nic.bj',
             'bm': 'whois.nic.bm',
