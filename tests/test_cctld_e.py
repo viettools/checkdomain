@@ -12,6 +12,26 @@ client = TestClient(app)
 
 class TestE(unittest.TestCase):
     
+    def test_EC(self):
+            response = client.post(
+                '/api/v1/whois',
+                headers={'X-Requested-With': 'XMLHttpRequest'},
+                json={"domain": "google.ec"},
+            )
+            data = json.loads(response.content)
+            if not data['status']:
+                print('Please check .ec whois server!')
+                return
+    
+            self.assertEqual(data['parse']['registrar'], 'MarkMonitor Inc.')
+            self.assertEqual(data['parse']['registrar_url'], '')
+            self.assertGreater(len(data['parse']['domain_status']), 0)
+            self.assertEqual(len(data['parse']['nameservers']), 0)
+    
+            self.assertEqual(data['parse']['creation_date'], '2003-10-16T23:00:00Z')
+            self.assertGreater(len(data['parse']['updated_date']), 0)
+            self.assertGreater(len(data['parse']['expiry_date']), 0)
+    
     def test_EE(self):
         response = client.post(
             '/api/v1/whois',

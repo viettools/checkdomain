@@ -63,7 +63,7 @@ class WhOISccTLD:
             'dm': 'whois.dmdomains.dm',
             'do': 'whois.nic.do',
             # 'dz': 'whois.nic.dz',
-            # 'ec': 'whois.nic.ec',
+            'ec': 'whois.nic.ec',
             'ee': 'whois.tld.ee',
             # 'eg': 'https://domain.eg/',
             # 'eh': '',
