@@ -1188,9 +1188,6 @@ var rdap_data = `
     "healthcare": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "helsinki": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "hermes": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
@@ -1645,6 +1642,9 @@ var rdap_data = `
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "sbi": {
+        "rdap": "https://rdap.identitydigital.services/rdap/"
+    },
+    "sc": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
     "scholarships": {
