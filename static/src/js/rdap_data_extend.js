@@ -51,9 +51,6 @@ var rdap_data_extend = `
     "lc": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },
-    "sc": {
-        "rdap": "https://rdap.identitydigital.services/rdap/"
-    },
     "vc": {
         "rdap": "https://rdap.identitydigital.services/rdap/"
     },

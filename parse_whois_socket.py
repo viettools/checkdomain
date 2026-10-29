@@ -132,13 +132,13 @@ class ParseWhoisSocket:
                 result = True
             elif extension_name == 'cn' and whois_data.find('you apply can not be registered online') > -1:
                 result = True
-            elif extension_name == 'qa' and whois_data.find('The Domain Name is not Available') > -1:
+            elif extension_name == 'qa' and (whois_data.find('The Domain Name is not Available') > -1 or whois_data.find('Reserved Domain Name') > -1):
                 result = True
             elif extension_name == 'by' and whois_data.find('object is blocked') > -1:
                 result = True
             elif extension_name == 'ae' and (whois_data.find('has been reserved by aeDA Regulator') > -1 or whois_data.find('Domain reserved by ae Regulator') > -1):
                 result = True
-            elif extension_name == 'am' and whois_data.find('Reserved name: Temporarily reserved') > -1:
+            elif extension_name == 'am' and (whois_data.find('Reserved name: Temporarily reserved') > -1 or whois_data.find('Reserved name: Not eligible for registration') > -1):
                 result = True
             elif extension_name == 'be' and whois_data.find('Status:	NOT ALLOWED') > -1:
                 result = True

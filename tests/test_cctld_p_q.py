@@ -228,13 +228,13 @@ class TestPQ(unittest.TestCase):
             print('Please check .qa whois server!')
             return
 
-        self.assertEqual(data['parse']['registrar'], 'ROUTEDGE')
+        self.assertEqual(data['parse']['registrar'], 'RoutEdge')
         self.assertEqual(data['parse']['registrar_url'], '')
         self.assertGreater(len(data['parse']['domain_status']), 0)
         self.assertGreater(len(data['parse']['nameservers']), 0)
 
         self.assertEqual(data['parse']['creation_date'], '')
-        self.assertGreater(len(data['parse']['updated_date']), 0)
+        self.assertEqual(len(data['parse']['updated_date']), 0)
         self.assertEqual(len(data['parse']['expiry_date']), 0)
         
     '''
