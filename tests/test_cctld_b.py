@@ -446,7 +446,7 @@ class TestB(unittest.TestCase):
         response = client.post(
             '/api/v1/whois',
             headers={'X-Requested-With': 'XMLHttpRequest'},
-            json={"domain": "nic.bd"},
+            json={"domain": "gov.bd"},
         )
         data = json.loads(response.content)
         
